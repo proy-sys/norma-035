@@ -1,0 +1,141 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Agregar Actividad</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Nueva Actividad</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <!-- Contenido datos de empresa -->
+                <form [formGroup]="formAddActividad" (ngSubmit)="guardarAddActividad()">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="card card-infi col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong>Nueva Actividad</strong></h3>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="card-body">
+                                        <!-- -------------------- FILA 1 --------------------- -->
+                                        <div class="row mt-2">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de actividad</label>
+                                                    <select class="form-control" formControlName="tipo" [class.is-invalid]="tipoNoValido">
+                                                      <option value="">-- Seleccione --</option>
+                                                      <option value="Apoyo social">Apoyo social</option>
+                                                      <option value="Equilibrio Relación T-F">Equilibrio Relación T-F</option>
+                                                      <option value="Capacitación">Capacitación</option>
+                                                      <option value="Prevención de violencia laboral">Prevención de violencia laboral</option>
+                                                    </select>
+                                                    <small *ngIf="tipoNoValido" class="text-danger">Seleccione un tipo de actividad</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Nombre de la actividad</label>
+                                                    <input type="text" class="form-control" formControlName="nombre" [class.is-invalid]="nombreNoValido" id="nombre" placeholder="Nombre completo">
+                                                    <small *ngIf="nombreNoValido" class="text-danger">Ingrese el nombre</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label>Fecha de actividad</label>
+                                                    <input type="date" class="form-control" formControlName="fecha" [class.is-invalid]="fechaNoValido" name="telefono" id="fecha" placeholder="">
+                                                    <small *ngIf="fechaNoValido" class="text-danger">Seleccione una fecha</small>
+                                                </div>
+                                            </div>
+
+                                            <!-- --------------------------  LINEA 2 -------------------------- -->
+                                            <!-- <div class="row"> -->
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label>Responsable de actividad</label>
+                                                    <select class="form-control" formControlName="responsable_id" [class.is-invalid]="responsableNoValido">
+                                                      <option value="">-- Seleccione --</option>
+                                                      <option *ngFor="let trabajador of trabajadores" value="{{ trabajador.id }}">{{ trabajador.nombre }}</option>
+                                                    </select>
+                                                    <small *ngIf="responsableNoValido" class="text-danger">Seleccione el responsable</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4">
+                                                <label for="imagen" class="col-form-label">Imagen1</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="imagen1xy" aria-describedby="inputGroupFileAddon01" (change)="formatoImagen1($event)">
+                                                    <label class="custom-file-label" id="imagen1" for="inputGroupFile01">Seleccione nueva imagen.</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="imagen" class="col-form-label">Imagen2</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="imagen2xy" aria-describedby="inputGroupFileAddon02" (change)="formatoImagen2($event)">
+                                                    <label class="custom-file-label" id="imagen2" for="inputGroupFile02">Seleccione nueva imagen.</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                        </div>
+
+
+                                        <div class="row mt-3">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-4 text-center">
+                                                <img [src]="srcImagen1" style="width: 200px; height: 160px;" id="imagen1x">
+                                            </div>
+                                            <div class="col-sm-4 text-center">
+                                                <img [src]="srcImagen2" style="width: 200px; height: 160px;" id="imagen2x">
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                        </div>
+
+
+
+                                        <!-- ------------------------------------------- -->
+
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                                            <button type="button" (click)="irListado()" class="btn btn-default float-right">Cancelar</button>
+                                        </div>
+                                        <!-- /.card-footer -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

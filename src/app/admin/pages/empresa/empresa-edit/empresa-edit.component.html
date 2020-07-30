@@ -1,0 +1,125 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Empresa</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Empresa</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+
+                    <div class="col-md-12 text-center mt-3">
+                        <h2><strong><img [src]="srcLogo" style="width: 200px; height: 160px;" id="razon_social_logo" > {{empresa.razon_social}} </strong></h2>
+                    </div>
+                </div>
+                <!-- Contenido datos de empresa -->
+                <form [formGroup]="editaEmpresa" (ngSubmit)="guardarCambios()">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="card card-infi col-md-6">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong> Datos de la empresa</strong></h3>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="card-body">
+                                        
+                                          <div class="form-group">
+                                            <label for="inputAddress">Nombre</label>
+                                             <input [(ngModel)]="empresa.razon_social" type="text" class="form-control" formControlName="razon_social" name="razon_social" id="razon_social" placeholder="Razón Social">
+                                          </div>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-9">
+                                              <label for="inputEmail4">Email</label>
+                                              <input [(ngModel)]="empresa.email" type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputPassword4">Telefono</label>
+                                              <input [(ngModel)]="empresa.telefono" type="text" class="form-control" formControlName="telefono" name="direccion" id="telefono" placeholder="Teléfono">
+                                            </div>
+                                          </div>
+                                          <div class="form-row">
+                                           
+                                            <div class="form-group col-md-2">
+                                              <label for="inputZip">C.P.</label>
+                                              <input type="text" class="form-control" id="" placeholder="72500">
+                                            </div>
+                                            <div class="form-group col-md-5">
+                                                <label for="estado">Estado</label>
+                                                <input type="text" class="form-control" id="estado"  placeholder="Puebla" disabled>
+                                              </div>
+                                              <div class="form-group col-md-5">
+                                                <label for="municipio">Municipio</label>
+                                                <input type="text" class="form-control" id="municipio"  placeholder="Puebla" disabled>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="inputAddress2">Dirección</label>
+                                            <input  [(ngModel)]="empresa.direccion" type="text"  formControlName="direccion"  class="form-control" id="direccion" placeholder="Calle / No-Interior / No-Exterior / Colonia">
+                                          </div>  
+                                          
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-6">
+                                               <label for="inputAddress">Logo</label>
+                                               <div class="custom-file">
+                                                   <input type="file" class="form-control" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change)="actualizarLogo($event);">
+                                                   <label class="custom-file-label" id="label_logo" for="inputGroupFile01">seleccione logo.</label>
+                                               </div>
+                                           </div>
+                                           <div class="form-group col-md-6">
+                                              <label for="inputAddress">Imagen</label>
+                                               <div class="custom-file">
+                                                <input type="file" class="form-control" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01" (change)="actualizarImagen($event);">
+                                                <label class="custom-file-label" id="label_imagen" for="inputGroupFile02">seleccione imagen.</label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                                        <button class="btn btn-default float-right" (click)="componente_empresa()" routerLinkActive="router-link-active">Cancelar</button>
+                                    </div>
+                                    <!-- /.card-footer -->
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-12 col-xs-12 text-center align-self-center">
+                                
+                                           <img [src]="srcImagen" id="razon_social_imagen" alt="" class="img-responsive"  style="width: 550px; height: 400px;">
+                        
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

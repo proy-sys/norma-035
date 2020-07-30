@@ -1,0 +1,43 @@
+[{
+        "seccion": "Para responder las preguntas siguientes considere las condiciones de su centro de trabajo, así como la cantidad y ritmo de trabajo.",
+        "pregunta": [
+            { "num": 1, "preg": "Mi trabajo me exige hacer mucho esfuerzo físico" },
+            { "num": 2, "preg": "Me preocupa sufrir un accidente en mi trabajo" },
+            { "num": 3, "preg": "Considero que las actividades que realizo son peligrosas" },
+            { "num": 4, "preg": "Por la cantidad de trabajo que tengo debo quedarme tiempo adicional a mi turno" },
+            { "num": 5, "preg": "Por la cantidad de trabajo que tengo debo trabajar sin parar" },
+            { "num": 6, "preg": "Considero que es necesario mantener un ritmo de trabajo acelerado" },
+            { "num": 7, "preg": "Mi trabajo exige que esté muy concentrado" },
+            { "num": 8, "preg": "Mi trabajo requiere que memorice mucha información" },
+            { "num": 9, "preg": "Mi trabajo exige que atienda varios asuntos al mismo tiempo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con las actividades que realiza en su trabajo y las responsabilidades que tiene.",
+        "pregunta": [
+            { "num": 10, "preg": "En mi trabajo soy responsable de cosas de mucho valor" },
+            { "num": 11, "preg": "Respondo ante mi jefe por los resultados de toda mi área de trabajo" },
+            { "num": 12, "preg": "En mi trabajo me dan órdenes contradictorias" },
+            { "num": 13, "preg": "Considero que en mi trabajo me piden hacer cosas innecesarias" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con el tiempo destinado a su trabajo y sus responsabilidades familiares.",
+        "pregunta": [
+            { "num": 14, "preg": "Trabajo horas extras más de tres veces a la semana" },
+            { "num": 15, "preg": "Mi trabajo me exige laborar en días de descanso, festivos o fines de semana" },
+            { "num": 16, "preg": "Considero que el tiempo en el trabajo es mucho y perjudica mis actividades familiares o personales" },
+            { "num": 17, "preg": "Pienso en las actividades familiares o personales cuando estoy en mi trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con las decisiones que puede tomar en su trabajo.",
+        "pregunta": [
+            { "num": 18, "preg": "Mi trabajo permite que desarrolle nuevas habilidades" },
+            { "num": 19, "preg": "En mi trabajo puedo aspirar a un mejor puesto" },
+            { "num": 20, "preg": "Durante mi jornada de trabajo puedo tomar pausas cuando las necesito" },
+            { "num": 21, "preg": "Puedo decidir la velocidad a la que realizo mis actividades en mi trabajo" },
+            { "num": 22, "preg": "Puedo cambiar el orden de las actividades que realizo en mi trabajo" }
+        ]
+    }
+]

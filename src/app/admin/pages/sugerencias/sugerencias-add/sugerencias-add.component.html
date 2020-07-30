@@ -1,0 +1,97 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Agregar Sugerencia y/o Queja</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Nueva sugerencia y /o queja</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <!-- Contenido datos de empresa -->
+                <form [formGroup]="formAddQuejaSugerencia" (ngSubmit)="guardarAddSugerenciaQueja()">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="card card-infi col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong>Nueva Queja y/o sugerencia</strong></h3>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Tipo</label>
+                                                      <select class="form-control" formControlName="tipo" [class.is-invalid]="tipoNoValido">
+                                                         <option value="">-- Seleccione --</option>
+                                                         <option value="Queja">Queja</option>
+                                                         <option value="Sugerencia">Sugerencia</option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Trabajador</label>
+                                                      <select class="form-control" formControlName="trabajador_id" [class.is-invalid]="trabajador_idNoValido">
+                                                         <option value="">-- Seleccione --</option>
+                                                         <option  *ngFor="let trabajador of  listaTrabajadores" value="{{trabajador.id}}"> {{trabajador.nombre}} </option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Descripcion</label>
+                                                    <textarea type="text" class="form-control" formControlName="descripcion" [class.is-invalid]="descripcionNoValido" id="descripcion" placeholder="descripcion"></textarea>
+                                                    <!--<small *ngIf="nombreNoValido" class="text-danger">Ingrese la descripcion</small> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <!-- /.card-body -->
+                                         <div class="card-footer">
+                                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                                            <button type="button" (click)="irListado()" class="btn btn-default float-right">Cancelar</button>
+                                        </div>
+                                        <!-- /.card-footer -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

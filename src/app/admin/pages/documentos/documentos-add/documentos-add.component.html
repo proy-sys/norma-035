@@ -1,0 +1,106 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Agregar Documento</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Nueva Documento</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <!-- Contenido datos de empresa -->
+                <form [formGroup]="formAddDocumento" (ngSubmit)="guardarAddDocumento()">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="card card-infi col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong>Nueva Documento</strong></h3>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="card-body">
+                                        <!-- -------------------- FILA 1 --------------------- -->
+                                        <div class="row mt-2">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de documento</label>
+                                                    <select class="form-control" formControlName="tipo" [class.is-invalid]="tipoNoValido">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="DS3">DS3</option>
+                                                    <option value="Documento Prueba">Documento Prueba</option>
+                                                  </select>
+                                                    <small *ngIf="tipoNoValido" class="text-danger">Seleccione un tipo de documento</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <input type="text" class="form-control" formControlName="nombre" [class.is-invalid]="nombreNoValido" id="nombre" placeholder="Nombre de la documento">
+                                                    <small *ngIf="nombreNoValido" class="text-danger">Ingrese el nombre</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label>Fecha</label>
+                                                    <input type="date" class="form-control" formControlName="fecha" [class.is-invalid]="fechaNoValido" name="telefono" id="fecha" placeholder="">
+                                                    <small *ngIf="fechaNoValido" class="text-danger">Seleccione una fecha</small>
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="row"> -->
+                                            <div class="col-sm-2">
+                                                <div class="form-group">
+                                                    <label>Responsable</label>
+                                                    <select class="form-control" formControlName="responsable_id" [class.is-invalid]="responsableNoValido">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option *ngFor="let trabajador of trabajadores" value="{{ trabajador.id }}">{{ trabajador.nombre }}</option>
+                                                  </select>
+                                                    <small *ngIf="responsableNoValido" class="text-danger">Seleccione el responsable</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ------------------------------------------- -->
+
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                                            <button type="button" (click)="irListado()" class="btn btn-default float-right">Cancelar</button>
+                                        </div>
+                                        <!-- /.card-footer -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

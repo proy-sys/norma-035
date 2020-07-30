@@ -1,0 +1,292 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Agregar Trabajador</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Nuevo Trabajador</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <!-- Contenido datos de empresa -->
+                <form [formGroup]="formEditTrabajador" (ngSubmit)="actualizarEditTrabajador()">
+                    <div class="card-body mt-4">
+                        <div class="row">
+                            <div class="card card-infi col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong>Nuevo Trabajador</strong></h3>
+                                </div>
+                                <div class="form-horizontal">
+                                    <div class="card-body">
+                                        <!-- --------------------- DATOS BASICOS ---------------------- -->
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <input [(ngModel)]="trabajador.nombre" type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Nombre completo" [class.is-invalid]="nombreNoValido">
+                                                    <small *ngIf="nombreNoValido" class="text-danger">Ingrese el nombre</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input [(ngModel)]="trabajador.telefono" type="text" class="form-control" formControlName="telefono" id="telefono" [class.is-invalid]="telefonoNoValido">
+                                                    <small *ngIf="telefonoNoValido" class="text-danger">Teléfono invalido</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Correo</label>
+                                                    <input [(ngModel)]="trabajador.email" type="text" class="form-control" formControlName="email" id="email" placeholder="" [class.is-invalid]="emailNoValido">
+                                                    <small *ngIf="emailNoValido" class="text-danger">Correo invalido</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Sexo</label>
+                                                    <select [(ngModel)]="trabajador.sexo" class="form-control" formControlName="sexo" [class.is-invalid]="sexoNoValido">
+                                                  <option value="">-- Seleccione --</option>
+                                                  <option value="M">Masculino</option>
+                                                  <option value="F">Femenino</option>
+                                                </select>
+                                                </div>
+                                                <small *ngIf="sexoNoValido" class="text-danger">Seleccione el sexo</small>
+                                            </div>
+                                        </div>
+                                        <!-- --------------------- CURP - DIRECCION ---------------------- -->
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>CURP</label>
+                                                    <input [(ngModel)]="trabajador.curp" type="text" class="form-control" formControlName="curp" id="curp" maxlength="18" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <div class="form-group">
+                                                    <label>Dirección</label>
+                                                    <input [(ngModel)]="trabajador.direccion" type="text" class="form-control" formControlName="direccion" id="direccion" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- --------------------- SEXO - EDAD - E.CIVIL --------------------- -->
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Edad</label>
+                                                    <select [(ngModel)]="trabajador.edad" class="form-control" formControlName="edad">
+                                                  <option value="">-- Seleccione --</option>
+                                                  <option value="15-19">15-19</option>
+                                                  <option value="20-24">20-24</option>
+                                                  <option value="25-29">25-29</option>
+                                                  <option value="30-34">30-34</option>
+                                                  <option value="35-39">35-39</option>
+                                                  <option value="40-44">40-44</option>
+                                                  <option value="45-49">45-49</option>
+                                                  <option value="50-54">50-54</option>
+                                                  <option value="55-59">55-59</option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Estado civíl</label>
+                                                    <select [(ngModel)]="trabajador.estado_civil" class="form-control" formControlName="estado_civil">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="Casado">Casado</option>
+                                                    <option value="Soltero">Soltero</option>
+                                                    <option value="Union">Unin libre</option>
+                                                    <option value="Divorciado">Divorciado</option>
+                                                    <option value="Viudo">Viudo</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Nivel de estudios</label>
+                                                    <div class="form-row input-group">
+                                                        <div class="col-8">
+                                                            <select [(ngModel)]="trabajador.nivel_estudios" class="form-control" formControlName="nivel_estudios">
+                                                            <option value="">-- Seleccione --</option>
+                                                            <option value="pri">Primaria</option>
+                                                            <option value="sec">Secundaria</option>
+                                                            <option value="bac">Preparatoria o bachillerato</option>
+                                                            <option value="tsu">Técnico Superior</option>
+                                                            <option value="lic">Licenciatura</option>
+                                                            <option value="mae">Maestría</option>
+                                                            <option value="doc">Doctorado</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <select [(ngModel)]="trabajador.nivel_estudios_status" class="form-control" formControlName="nivel_estudios_status">
+                                                              <option value="">-- Seleccione --</option>
+                                                              <option value="Incompleta">Incompleta</option>
+                                                              <option value="Terminada">Terminada</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- -------------------- OCUPACION - DEPARTAMENTO ----------------------- -->
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Ocupación/Profesión/Puesto</label>
+                                                    <textarea [(ngModel)]="trabajador.ocupacion" class="form-control" formControlName="ocupacion" id="ocupacion" rows="1"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Departamento/Sección/Área</label>
+                                                    <textarea [(ngModel)]="trabajador.departamento" class="form-control" formControlName="departamento" id="departamento" rows="1"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- --------------------- TIPOS ---------------------- -->
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de puesto</label>
+                                                    <select [(ngModel)]="trabajador.tipo_puesto" class="form-control" formControlName="tipo_puesto">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="Operativo">Operativo</option>
+                                                    <option value="Profesional">Profesional o técnico</option>
+                                                    <option value="Supervisor">Supervisor</option>
+                                                    <option value="Gerente">Gerente</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de contrato</label>
+                                                    <select [(ngModel)]="trabajador.tipo_contrato" class="form-control" formControlName="tipo_contrato">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="Porobra">Por obra o proyecto</option>
+                                                    <option value="Tiempodeterminado">Por tiempodeterminado(temporal)</option>
+                                                    <option value="Tiempoindeterminado">Tiempo indeterminado</option>
+                                                    <option value="Honorarios">Honorarios</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de personal</label>
+                                                    <select [(ngModel)]="trabajador.tipo_personal" class="form-control" formControlName="tipo_personal">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="Sindicalizado">Sindicalizado</option>
+                                                    <option value="Confianza">Confianza</option>
+                                                    <option value="Ninguno">Ninguno</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tipo de jornada de trabajo</label>
+                                                    <select [(ngModel)]="trabajador.jornada_trabajo" class="form-control" formControlName="jornada_trabajo">
+                                                    <option value="">-- Seleccione --</option>
+                                                    <option value="fijonocturno">Fijo nocturno (entre las 20:00 y 6:00 hrs)</option>
+                                                    <option value="fijodiurno">Fijo diurno (entre las 6:00 y 20:00 hrs)</option>
+                                                    <option value="fijomixto">Fijo mixto (combinación de nocturno y diurno)</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- --------------------- ROTACION - EXPERIENCIA ---------------------- -->
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Realiza rotación de turnos</label>
+                                                    <select [(ngModel)]="trabajador.rotacion_turnos" class="form-control" formControlName="rotacion_turnos">
+                                                <option value="">-- Seleccione --</option>
+                                                <option value="si">Sí</option>
+                                                <option value="no">No</option>
+                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Experiencia (años)</label>
+                                                    <textarea [(ngModel)]="trabajador.experiencia" class="form-control" formControlName="experiencia" id="experiencia" rows="1"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tiempo en el puesto actual</label>
+                                                    <select [(ngModel)]="trabajador.tiempo_puesto_actual" class="form-control" formControlName="tiempo_puesto_actual">
+                                                  <option value="">-- Seleccione --</option>
+                                                  <option value="1">Menos de 6 meses</option>
+                                                  <option value="2">Entre 6 meses y 1 año</option>
+                                                  <option value="3">Entre 1 a 4 años</option>
+                                                  <option value="4">Entre 5 a 9 años</option>
+                                                  <option value="5">Entre 10 a 14 años</option>
+                                                  <option value="6">Entre 15 a 19 años</option>
+                                                  <option value="7">Entre 20 a 24 años</option>
+                                                  <option value="8">25 años o más</option>
+                                          </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Tiempo experiencia laboral</label>
+                                                    <div class="input-group">
+                                                        <select [(ngModel)]="trabajador.tiempo_experiencia" class="form-control" formControlName="tiempo_experiencia">
+                                                      <option value="">-- Seleccione --</option>
+                                                      <option value="1">Menos de 6 meses</option>
+                                                      <option value="2">Entre 6 meses y 1 año</option>
+                                                      <option value="3">Entre 1 a 4 años</option>
+                                                      <option value="4">Entre 5 a 9 años</option>
+                                                      <option value="5">Entre 10 a 14 años</option>
+                                                      <option value="6">Entre 15 a 19 años</option>
+                                                      <option value="7">Entre 20 a 24 años</option>
+                                                      <option value="8">25 años o más</option>
+                                                  </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- -------------------- FIN DEL FORM ----------------------- -->
+
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                                            <button type="button" (click)="irListado()" class="btn btn-default float-right">Cancelar</button>
+                                        </div>
+                                        <!-- /.card-footer -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

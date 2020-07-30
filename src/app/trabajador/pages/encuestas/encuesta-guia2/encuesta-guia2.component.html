@@ -1,0 +1,89 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                    <div class="row">
+                        <div class="content-header">
+                            <div class="container-fluid">
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </div>
+                        <!-- /.content-header -->
+                        <form >
+                            <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6 text-center">
+                                                <span><strong>CUESTIONARIO PARA IDENTIFICAR LOS FACTORES DE RIESGO PSICOSOCIAL<br/> EN LOS CENTROS DE TRABAJO</strong></span>
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <div *ngFor="let seccion of infoGuia2Service.guia2; let i = index">
+                                                <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
+                                                    {{ seccion.seccion }}
+                                                </div>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr class="text-center" style="background-color: #cccccc">
+                                                            <th colspan="2" style="background-color: #ffffff"></th>
+                                                            <th width="6%">Siempre</th>
+                                                            <th width="6%">Casi<br/>Siempre</th>
+                                                            <th width="6%">Algunas<br/>Veces</th>
+                                                            <th width="6%">Casi<br/>nunca</th>
+                                                            <th width="6%">Nunca</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let pregunta of seccion.pregunta; let j = index;">
+                                                            <td width="3%">{{ pregunta.num }}</td>
+                                                            <td>{{ pregunta.preg }}</td>
+                                                            <td width="6%" class="text-center"><span><div class="form-check "><input class="form-check-input " type="radio" name="radio{{j}} " checked></div></span></td>
+                                                            <td width="6%" class="text-center"><span><div class="form-check "><input class="form-check-input " type="radio" name="radio{{j}} " checked></div></span></td>
+                                                            <td width="6%" class="text-center"><span><div class="form-check "><input class="form-check-input " type="radio" name="radio{{j}} " checked></div></span></td>
+                                                            <td width="6%" class="text-center"><span><div class="form-check "><input class="form-check-input " type="radio" name="radio{{j}} " checked></div></span></td>
+                                                            <td width="6%" class="text-center"><span><div class="form-check "><input class="form-check-input " type="radio" name="radio{{j}} " checked></div></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                </div>
+                                <div class="col-md-1 "></div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                            </div>
+                        </form>
+                    </div>
+                    <hr/>
+                    <button type="button" class="btn btn-primary btn-block" (click)="guardarCuestionario()"><b>Finalizar</b></button>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
