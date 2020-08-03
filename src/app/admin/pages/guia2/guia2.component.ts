@@ -10,7 +10,6 @@ export class Guia2Component implements OnInit {
 
   constructor(public infoGuia2Service: InfoGuiasService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

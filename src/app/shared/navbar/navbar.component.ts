@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoAuthenticationService } from 'src/app/services/info-authentication.service';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(   public infoAutoentificacionService: InfoAuthenticationService,
+                 private ruta: Router) { }
 
   ngOnInit(): void {
+  }
+  cerrarSesion(){
+  /*  this.infoAutoentificacionService.logout().subscribe(
+      data => {
+          if (data === 200){
+               this.ruta.navigate(['login']);
+          }
+        }, (err) => {
+          console.log('Hubo un error:' + err);
+        }
+      );*/
+     localStorage.removeItem('usuario');
+     this.ruta.navigate(['login']);
   }
 
 }

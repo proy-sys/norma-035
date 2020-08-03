@@ -50,4 +50,10 @@ export class InfoAuthenticationService extends RoleValidator{
      localStorage.setItem('usuario', JSON.stringify(jwtUser));
   }
 
+  logout(){
+    const usuario = localStorage.getItem('usuario');
+    localStorage.removeItem('usuario');
+    return this.http.post( this.API_REST + 'logout', {headers: this.httpHeaders});
+  }
+
 }
