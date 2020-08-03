@@ -14,7 +14,7 @@ export class EncuestaPoliComponent implements OnInit {
   }
 
   irIntrucciones() {
-    this.ruta.navigate(['/encuesta-inst']);
+    this.ruta.navigate(['trabajador/encuesta-inst']);
   }
 
 }

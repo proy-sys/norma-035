@@ -40,7 +40,7 @@ guardarAddTrabajador() {
   .subscribe(data => {
 
       // console.log(data);
-      this.ruta.navigate(['/trabajadores']);
+      this.ruta.navigate(['administrador/trabajadores']);
   }, error => {
         console.log('error al dar de alta al trabajador:' + error.message);
   });
@@ -93,7 +93,7 @@ get sexoNoValido() {
 // ************************** RUTAS *****************************
 
 irListado() {
-  this.ruta.navigate(['/trabajadores']);
+  this.ruta.navigate(['administrador/trabajadores']);
 }
 
 }

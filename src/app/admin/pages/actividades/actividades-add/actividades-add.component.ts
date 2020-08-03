@@ -94,7 +94,7 @@ guardarAddActividad() {
 
     this.infoActividadService.crearActividad(this.formAddActividad.value)
   .subscribe(data => {
-      this.ruta.navigate(['/actividades']);
+      this.ruta.navigate(['administrador/actividades']);
   }, error => {
         console.log('error al dar de alta al actividad:' + error.message);
   });
@@ -134,7 +134,7 @@ get responsableNoValido() {
 // *************************** RUTAS ****************************
 
 irListado() {
-  this.ruta.navigate(['/actividades']);
+  this.ruta.navigate(['administrador/actividades']);
 }
 
 }

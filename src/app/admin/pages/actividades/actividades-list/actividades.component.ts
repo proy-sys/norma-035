@@ -65,7 +65,10 @@ export class ActividadesComponent implements OnInit {
     });
   }
   irEditar(ide: number) {
-    this.ruta.navigate(['/actividadesedit', ide]);
+    this.ruta.navigate(['administrador/actividadesedit', ide]);
+  }
+  irActividadesadd(){
+    this.ruta.navigate(['administrador/actividadesadd']);
   }
 
 }

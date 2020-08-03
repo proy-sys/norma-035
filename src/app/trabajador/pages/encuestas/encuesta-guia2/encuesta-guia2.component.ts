@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoGuiasService } from '../../../services/info-guias.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { InfoGuiasService } from 'src/app/services/info-guias.service';
 
 @Component({
   selector: 'app-encuesta-guia2',

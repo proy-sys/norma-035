@@ -54,14 +54,14 @@ export class SugerenciasAddComponent implements OnInit {
     } else {
       this.infoSugerenciaQuejaService.crearQuejaSugerencia(this.formAddQuejaSugerencia.value)
     .subscribe(data => {
-        this.ruta.navigate(['/sugerencias']);
+        this.ruta.navigate(['administrador/sugerencias']);
     }, error => {
           console.log('error al dar de alta la queja y/o sugerencia:' + error.message);
     });
     }
   }
   irListado() {
-    this.ruta.navigate(['/sugerencias']);
+    this.ruta.navigate(['administrador/sugerencias']);
   }
   get descripcionNoValido() {
      return this.formAddQuejaSugerencia.get('descripcion').invalid && this.formAddQuejaSugerencia.get('descripcion').touched;

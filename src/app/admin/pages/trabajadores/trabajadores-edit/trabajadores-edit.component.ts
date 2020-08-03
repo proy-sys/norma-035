@@ -50,7 +50,7 @@ actualizarEditTrabajador(){
     .subscribe(data => {
         this.trabajador = data;
         console.log(this.trabajador);
-        this.ruta.navigate(['/trabajadores']);
+        this.ruta.navigate(['administrador/trabajadores']);
     }, error => {
           console.log('error en la modificación del trabajador:' + error.message);
     });
@@ -102,7 +102,7 @@ get sexoNoValido() {
 // ************************** RUTAS *****************************
 
 irListado() {
-  this.ruta.navigate(['/trabajadores']);
+  this.ruta.navigate(['administrador/trabajadores']);
 }
 
 

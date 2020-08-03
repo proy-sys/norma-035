@@ -67,7 +67,7 @@ crearFormulario(){
   }
 
   irListado() {
-    this.ruta.navigate(['/documentos']);
+    this.ruta.navigate(['administrador/documentos']);
   }
 
   // *************************** FUNCIONES MODAL ****************************

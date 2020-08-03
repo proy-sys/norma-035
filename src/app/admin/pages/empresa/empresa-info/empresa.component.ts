@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoEmpresaService } from '../../../services/info-empresa.service';
-import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
-import { InfoEmpresa } from '../../../interfaces/info-empresa.interface';
 import { Router } from '@angular/router';
+import { InfoEmpresa } from 'src/app/interfaces/info-empresa.interface';
+import { InfoEmpresaService } from 'src/app/services/info-empresa.service';
+import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
 
 
 @Component({
@@ -47,6 +47,6 @@ export class EmpresaComponent implements OnInit {
   }
 
   ruta_editar_empresa(): void {
-      this.ruta.navigate(['empresa-edit']);
+      this.ruta.navigate(['administrador/empresa-edit']);
   }
 }

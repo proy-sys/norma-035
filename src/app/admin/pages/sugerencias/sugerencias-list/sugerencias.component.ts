@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoSugerenciaQueja } from 'src/app/interfaces/info-sugerencia-queja.interface.';
 import { InfoSugerenciaQuejaService } from 'src/app/services/info-sugerencia-queja.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sugerencias',
@@ -12,6 +13,7 @@ export class SugerenciasComponent implements OnInit {
   listaSugerencias =  new Array<InfoSugerenciaQueja>();
 
   constructor(public infoSugerenciaQuejaService: InfoSugerenciaQuejaService,
+              private ruta: Router,
               ) {}
 
   ngOnInit(): void {
@@ -34,5 +36,8 @@ export class SugerenciasComponent implements OnInit {
       this.ngOnInit();
     }
   );
+ }
+ irSugerenciaadd(){
+   this.ruta.navigate(['administrador/sugerenciasadd']);
  }
 }

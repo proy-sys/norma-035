@@ -14,6 +14,6 @@ export class EncuestaInstComponent implements OnInit {
   }
 
   irGuia2(){
-      this.ruta.navigate(['/encuesta-guia2']);
+      this.ruta.navigate(['trabajador/encuesta-guia2']);
   }
 }

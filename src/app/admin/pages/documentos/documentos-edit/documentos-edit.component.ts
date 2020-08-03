@@ -62,7 +62,7 @@ crearFormulario(){
     this.infoDocumentoService.actualizarDocumento(this.documento)
     .subscribe(data => {
 
-      this.ruta.navigate(['/documentos']);
+      this.ruta.navigate(['administrador/documentos']);
     }, error => {
         console.log('error al dar de alta al documento:' + error.message);
     });
@@ -105,7 +105,7 @@ get responsableNoValido() {
 // *************************** RUTAS ****************************
 
   irListado() {
-    this.ruta.navigate(['/documentos']);
+    this.ruta.navigate(['administrador/documentos']);
   }
 
 }

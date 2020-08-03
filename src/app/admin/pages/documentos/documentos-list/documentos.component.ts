@@ -62,11 +62,15 @@ export class DocumentosComponent implements OnInit {
  });
   }
   irUpload(ide: number) {
-    this.ruta.navigate(['/documentosupload', ide]);
+    this.ruta.navigate(['administrador/documentosupload', ide]);
   }
 
   irEditar(ide: number) {
-    this.ruta.navigate(['/documentosedit', ide]);
+    this.ruta.navigate(['administrador/documentosedit', ide]);
+  }
+
+  irDocumentosadd(){
+    this.ruta.navigate(['administrador/documentosadd']);
   }
 
 }

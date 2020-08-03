@@ -30,9 +30,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <a [routerLink]="['/actividadesadd']">
-                                <div class="btn btn-warning float-sm-right"><i class="nav-icon fas fa-plus text-white"></i></div>
-                            </a>
+                                <div class="btn btn-warning float-sm-right" (click)="irActividadesadd()"><i class="nav-icon fas fa-plus text-white"></i></div>
                             <br><br>
                         </div>
                     </div>
@@ -51,7 +49,8 @@
                                 <tr *ngFor="let actividad of actividades">
                                     <td>{{ actividad.nombre }}</td>
                                     <td>{{ actividad.tipo }}</td>
-                                    <td>{{ actividad.fecha | date: 'dd/MM/yyyy' }}</td>
+                                  <!--- <td>{{ actividad.fecha | date: 'dd/MM/yyyy' }}</td> -->
+                                   <td>{{actividad.fecha}}</td>
                                     <td class="text-center" *ngIf="actividad.imagen1">Si</td>
                                     <td class="text-center" *ngIf="!actividad.imagen1">No</td>
                                     <td>

@@ -19,12 +19,9 @@ import { AppComponent } from '../app.component';
                  EncuestaInstComponent,
                  EncuestaGuia2Component],
   imports: [
-    CommonModule,
     TrabajadorRoutingModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     HttpClientModule,
   ],
    bootstrap: [AppComponent]

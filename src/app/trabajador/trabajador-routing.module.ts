@@ -7,7 +7,7 @@ import { EncuestaInstComponent } from './pages/encuestas/encuesta-inst/encuesta-
 import { EncuestaGuia2Component } from './pages/encuestas/encuesta-guia2/encuesta-guia2.component';
 
 
-const appRoutes: Routes = [
+const routes: Routes = [
  // { path: '', component: TrabajadorComponent },
   { path: '', component: EncuestaPoliComponent },
   { path: 'encuesta-poli', component: EncuestaPoliComponent },
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot( appRoutes, { useHash: true } )],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 

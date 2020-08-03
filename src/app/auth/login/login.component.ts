@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { InfoAuthenticationService } from 'src/app/services/info-authentication.service';
-import { RoleValidator } from '../helpers/roleValidator';
 import { Router } from '@angular/router';
+import { RoleValidator } from '../helpers/roleValidator';
+
 
 @Component({
   selector: 'app-login',
@@ -21,12 +22,11 @@ export class LoginComponent implements OnInit {
                private infoAutoentificacionService: InfoAuthenticationService,
                private ruta: Router,
                ){}
-
   ngOnInit() {
        this.LoginFormulario();
   }
 
-  LoginFormulario() {
+  LoginFormulario(){
     this.formLogin = this.fb.group({
       username:   ['', Validators.required],
       password:   ['', Validators.required],
@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
   }
 
   get usernameNoValido(){
-        return this.formLogin.get('username').invalid && this.formLogin.get('username').touched;
+          return this.formLogin.get('username').invalid && this.formLogin.get('username').touched;
   }
   get passwordNoValido(){
-        return this.formLogin.get('password').invalid && this.formLogin.get('password').touched;
+         return this.formLogin.get('password').invalid && this.formLogin.get('password').touched;
   }
 
   onLogin(){
@@ -45,26 +45,27 @@ export class LoginComponent implements OnInit {
       return Object.values(this.formLogin.controls).forEach( control => {
         control.markAsTouched();
       });
-    } else {
-        this.infoAutoentificacionService.login(this.formLogin.value).subscribe(data => {
-          if (data.estado === 200){
-            if (data.res){
-               this.toastr.success('Inicio de sesión' , 'successful');
-               if (this.roleValidator.isAdmin(data.user)){
-                   this.ruta.navigate(['admin/empresa']);
-               }
-               else if (this.roleValidator.isEmploye(data.user)){
-                    this.ruta.navigate(['trabajador/encuesta-poli']);
+    } else{
+      this.infoAutoentificacionService.login(this.formLogin.value).subscribe(data => {
+        if (data.estado === 200){
+          if (data.res){
+
+              this.infoAutoentificacionService.updateUser(data);
+              this.toastr.success('Inicio de sesión' , data.msg);
+
+              if (data.user.role === '1'){
+                this.ruta.navigate(['administrador']);
+              }else if (data.user.role === '0'){
+                 this.ruta.navigate(['trabajador']);
               }
-            }else{
-                this.toastr.error('Inicio de sesión' , data.msg);
-            }
+
+          }else{
+              this.toastr.error('Inicio de sesión' , data.msg);
           }
-      }, error => {
-            console.log('error al dar de alta al trabajador:' + error.message);
-      });
+        }
+    }, error => {
+          console.log('error al dar de alta al trabajador:' + error.message);
+    });
     }
    }
-
-
 }

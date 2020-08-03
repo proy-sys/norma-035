@@ -52,7 +52,7 @@ guardarAddDocumento() {
 
     this.infoDocumentoService.crearDocumento(this.formAddDocumento.value)
   .subscribe(data => {
-      this.ruta.navigate(['/documentos']);
+      this.ruta.navigate(['administrador/documentos']);
   }, error => {
         console.log('error al dar de alta al actividad:' + error.message);
   });
@@ -99,7 +99,7 @@ get responsableNoValido() {
 // *************************** RUTAS ****************************
 
 irListado() {
-  this.ruta.navigate(['/documentos']);
+  this.ruta.navigate(['administrador/documentos']);
 }
 
 }

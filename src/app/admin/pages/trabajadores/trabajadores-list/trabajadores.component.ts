@@ -55,7 +55,11 @@ export class TrabajadoresComponent implements OnInit {
   }
 
   irEditar(ide: number) {
-    this.ruta.navigate(['/trabajadoresedit', ide]);
+    this.ruta.navigate(['administrador/trabajadoresedit', ide]);
+  }
+
+  irTrabajadoresadd(){
+    this.ruta.navigate(['administrador/trabajadoresadd']);
   }
 
 }

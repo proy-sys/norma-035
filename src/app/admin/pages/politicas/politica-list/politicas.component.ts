@@ -45,14 +45,14 @@ export class PoliticasComponent implements OnInit {
   }
 
   cargarPolitica(ide: number){
-     this.ruta.navigate(['/politicas-info-edit', ide]);
+     this.ruta.navigate(['administrador/politicas-info-edit', ide]);
   }
 
 
    asignarPolitica(ide: number ){
    this.infoPoliticaService.setPolitica(ide).subscribe(
       data => {
-             this.ruta.navigate(['/politicas-info-edit', ide ]);
+             this.ruta.navigate(['administrador/politicas-info-edit', ide ]);
         }, (err) => {
           console.log('Hubo un error:' + err);
         }

@@ -72,7 +72,7 @@ export class EmpresaEditComponent implements OnInit{
     .pipe(first())
     .subscribe(data => {
         this.empresa = data;
-        this.ruta.navigate(['empresa']);
+        this.ruta.navigate(['administrador/empresa']);
     }, error => {
           console.log('error en la modificación empresas:' + error.message);
     });
@@ -112,7 +112,7 @@ export class EmpresaEditComponent implements OnInit{
 // *************************** RUTAS ****************************
 
    componente_empresa(): void {
-    this.ruta.navigate(['empresa']);
+    this.ruta.navigate(['administrador/empresa']);
  }
 
   }

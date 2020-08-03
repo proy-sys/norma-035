@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { ContentComponent } from './shared/content/content.component';
 import { TrabajadoresComponent } from './pages/trabajadores/trabajadores-list/trabajadores.component';
 import { TrabajadoresAddComponent } from './pages/trabajadores/trabajadores-add/trabajadores-add.component';
 import { Guia1Component } from './pages/guia1/guia1.component';
@@ -29,16 +24,15 @@ import { DocumentosUploadComponent } from './pages/documentos/documentos-upload/
 import { DocumentosEditComponent } from './pages/documentos/documentos-edit/documentos-edit.component';
 import { PoliticaInfoEditComponent } from './pages/politicas/politica-info-edit/politica-info-edit.component';
 import { SugerenciasAddComponent } from './pages/sugerencias/sugerencias-add/sugerencias-add.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxSummernoteModule} from 'ngx-summernote';
+import { EstadisticaComponent } from './pages/estadistica/estadistica.component';
 
 @NgModule({
   declarations:
          [AdminComponent,
-          HeaderComponent,
-          FooterComponent,
-          NavbarComponent,
-          SidebarComponent,
-          ContentComponent,
           TrabajadoresComponent,
           TrabajadoresAddComponent,
           Guia1Component,
@@ -61,10 +55,18 @@ import { SugerenciasAddComponent } from './pages/sugerencias/sugerencias-add/sug
           DocumentosEditComponent,
           PoliticaInfoEditComponent,
           SugerenciasAddComponent,
+          EstadisticaComponent,
           ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule
-  ]
+      imports: [
+          CommonModule,
+          FormsModule,
+          ReactiveFormsModule,
+          AdminRoutingModule,
+          HttpClientModule,
+          NgxSummernoteModule,
+          NgbModule
+       ],
+       providers: [],
+       bootstrap: [AdminComponent]
 })
 export class AdminModule { }
