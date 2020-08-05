@@ -11,6 +11,7 @@ export class Guia1Component implements OnInit {
   constructor( public infoGuia1Service: InfoGuiasService) { }
 
   ngOnInit(): void {
+
   }
 
 }
