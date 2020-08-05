@@ -21,29 +21,28 @@
 <!-- /.content-header -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-1">       
+        <div class="col-md-1">
         </div>
         <div class="col-md-10">
             <div class="card">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-outline card-info">
-                             <h5 class="text-center"> Seleccione una politica de configuración inicial  </h5>
+                            <h5 class="text-center"> Seleccione una politica de configuración inicial </h5>
                         </div>
-                     </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div *ngFor="let pol of  politica.politicas" id = "divPolitica" class="col-md-4 card card-outline" (click)="asignarPolitica(pol.id)">
-                        <h6 class="text-center"> {{ pol.nombre }} </h6>
-                           <img src="{{pol.img}}" style="border: black 5px solid;" alt="" class="src">
-                   </div> 
+                <div class="row col-md-12">
+                    <div *ngFor="let pol of  politica.politicas" id="divPolitica" class="col-md-4 mx-auto card card-outline" (click)="asignarPolitica(pol.id)">
+                        <img src="{{pol.img}}" style="border: black 1px solid; height: 650px;" alt="" class="src">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-1">
-            
+
         </div>
-        
+
     </div>
 </div>
 <!-- /.container-fluid -->
@@ -52,4 +51,3 @@
     <!-- Control sidebar content goes here -->
 </aside>
 <!-- /.control-sidebar -->
-

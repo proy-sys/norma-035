@@ -33,34 +33,38 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <div *ngFor="let seccion of infoGuia3Service.guia3; let i = index">
-                        <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
-                            {{ seccion.seccion }}
+                    <form (ngSubmit)="guardarAddGuia3(forma)" #forma="ngForm">
+                        <div *ngFor="let seccion of infoGuia3Service.guia3; let i = index">
+                            <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
+                                {{ seccion.seccion }}
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th colspan="2"></th>
+                                        <th width="6%">Siempre</th>
+                                        <th width="6%">Casi<br/>Siempre</th>
+                                        <th width="6%">Algunas<br/>Veces</th>
+                                        <th width="6%">Casi<br/>nunca</th>
+                                        <th width="6%">Nunca</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let pregunta of seccion.pregunta; let j = index">
+                                        <td width="3%">{{ pregunta.num }}</td>
+                                        <td>{{ pregunta.preg }}</td>
+                                        <td *ngFor="let key of radioOptions" width="6%" class="text-center">
+                                            <input id="ra_{{pregunta.num}}" [value]='key.op' type="radio" name="{{pregunta.num}}" ngModel> {{pregunta.num}}
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr class="text-center">
-                                    <th colspan="2"></th>
-                                    <th width="6%">Siempre</th>
-                                    <th width="6%">Casi<br/>Siempre</th>
-                                    <th width="6%">Algunas<br/>Veces</th>
-                                    <th width="6%">Casi<br/>nunca</th>
-                                    <th width="6%">Nunca</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let pregunta of seccion.pregunta; let j = index">
-                                    <td width="3%">{{ pregunta.num }}</td>
-                                    <td>{{ pregunta.preg }}</td>
-                                    <td width="6%" class="text-center"><span><div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div></span></td>
-                                    <td width="6%" class="text-center"><span><div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div></span></td>
-                                    <td width="6%" class="text-center"><span><div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div></span></td>
-                                    <td width="6%" class="text-center"><span><div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div></span></td>
-                                    <td width="6%" class="text-center"><span><div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div></span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
+                        </div>
+                    </form>
                 </div>
                 <!-- /.card-body -->
             </div>

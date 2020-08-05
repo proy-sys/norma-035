@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmpresaComponent } from './pages/empresa/empresa-info/empresa.component';
 import { PoliticasComponent } from './pages/politicas/politica-list/politicas.component';
 import { EmpresaEditComponent } from './pages/empresa/empresa-edit/empresa-edit.component';
-import { ReporteComponent } from './pages/reportes/reporte.component';
 import { PoliticaInfoEditComponent } from './pages/politicas/politica-info-edit/politica-info-edit.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias-list/sugerencias.component';
 import { SugerenciasAddComponent } from './pages/sugerencias/sugerencias-add/sugerencias-add.component';
@@ -24,13 +23,16 @@ import { DocumentosAddComponent } from './pages/documentos/documentos-add/docume
 import { DocumentosUploadComponent } from './pages/documentos/documentos-upload/documentos-upload.component';
 import { DocumentosEditComponent } from './pages/documentos/documentos-edit/documentos-edit.component';
 import { EstadisticaComponent } from './pages/estadistica/estadistica.component';
+import { Guia1ListComponent } from './reports/results-guia1/guia1-list/guia1-list.component';
+import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1-result.component';
+import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
+import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
 
 
 const routes: Routes = [
   { path: '', component: EmpresaComponent },
   { path: 'empresa', component: EmpresaComponent },
   { path: 'empresa-edit', component: EmpresaEditComponent },
-  { path: 'reportes', component: ReporteComponent },
   { path: 'politicas', component: PoliticasComponent },
   { path: 'politicas-info-edit/:id', component: PoliticaInfoEditComponent},
   { path: 'sugerencias', component: SugerenciasComponent},
@@ -52,6 +54,10 @@ const routes: Routes = [
   { path: 'documentosadd', component: DocumentosAddComponent},
   { path: 'documentosupload/:id', component: DocumentosUploadComponent},
   { path: 'documentosedit/:id', component: DocumentosEditComponent},
+  { path: 'guia1-list', component: Guia1ListComponent},
+  { path: 'guia1-result/:id', component: Guia1ResultComponent},
+  { path: 'guia2-list', component: Guia2ListComponent},
+  { path: 'guia3-list', component: Guia3ListComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'empresa' }
 ];
 

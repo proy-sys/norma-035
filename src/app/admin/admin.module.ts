@@ -29,6 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgxSummernoteModule} from 'ngx-summernote';
 import { EstadisticaComponent } from './pages/estadistica/estadistica.component';
+import { Guia1ListComponent } from './reports/results-guia1/guia1-list/guia1-list.component';
+import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1-result.component';
+import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
+import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
 
 @NgModule({
   declarations:
@@ -56,6 +60,10 @@ import { EstadisticaComponent } from './pages/estadistica/estadistica.component'
           PoliticaInfoEditComponent,
           SugerenciasAddComponent,
           EstadisticaComponent,
+          Guia1ListComponent,
+          Guia1ResultComponent,
+          Guia2ListComponent,
+          Guia3ListComponent,
           ],
       imports: [
           CommonModule,

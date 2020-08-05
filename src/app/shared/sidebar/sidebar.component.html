@@ -51,35 +51,6 @@
                         <p>Trabajadores</p>
                     </a>
                 </li>
-                <!--<li class="nav-item has-treeview">
-                    <a class="nav-link">
-                        <i class="nav-icon fas fa-tasks"></i>
-                        <p>
-                            Guias de Referencia
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a [routerLink]="['guia1a']" routerLinkActive="router-link-active" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Guia I</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a [routerLink]="['guia2a']" routerLinkActive="router-link-active" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Guia II</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a [routerLink]="['guia3a']" routerLinkActive="router-link-active" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Guia III</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="nav-item has-treeview">
                     <a class="nav-link">
                         <i class="nav-icon fas fa-tasks"></i>
@@ -127,11 +98,34 @@
                         <p>Quejas y Sugerencias</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a [routerLink]="['administrador/reportes']" routerLinkActive="router-link-active" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
-                        <p>Reportes</p>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Reportes
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a [routerLink]="['administrador/guia1-list']" routerLinkActive="router-link-active" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Resultados Guia I</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['administrador/guia2-list']" routerLinkActive="router-link-active" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Resultados Guia II</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['administrador/guia3-list']" routerLinkActive="router-link-active" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Resultados Guia III</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a [routerLink]="['administrador/estadisticas']" routerLinkActive="router-link-active" class="nav-link">
