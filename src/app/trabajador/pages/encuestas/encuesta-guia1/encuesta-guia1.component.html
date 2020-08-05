@@ -1,0 +1,82 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Guia de Referencia I</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Guia I</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 text-center">
+                        <span><strong>CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</strong></span>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                   <!-- <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 0px;">
+                        Marque con una "X" a la respuesta que se le indica
+                    </div> -->
+                    <table class="table table-bordered">
+                        <tr class="text-center">
+                            <th rowspan="2">Sección / Pregunta</th>
+                            <th colspan="2" width="10%">Respuesta</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th>Si</th>
+                            <th>No</th>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered" *ngFor="let seccion of infoGuia1Service.guia1; let i = index">
+                        <thead>
+                            <tr>
+                                <th colspan="4">{{ seccion.seccion }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pregunta of seccion.pregunta; let j = index">
+                                <td width="3%">{{ j + 1 }}</td>
+                                <td>{{ pregunta }}</td>
+                                <td width="5%">
+                                    <div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div>
+                                </td>
+                                <td width="5%"><span>
+                                    <div class="form-check"><input class="form-check-input" type="radio" name="radio{{j}}" checked></div>
+                                </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

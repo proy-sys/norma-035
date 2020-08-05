@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InfoGuias } from '../interfaces/info-guias.interface';
+import { InfoRespuesta } from '../interfaces/info-respuesta.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,14 @@ export class InfoGuiasService {
   guia2: InfoGuias = {};
   guia3: InfoGuias = {};
 
+  private API_REST = 'http://localhost/norma035-back/public/respuesta';
+
+   private httpHeaders = new HttpHeaders(
+    {
+      'Content-Type' : 'application/json' ,
+       Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+    }
+  );
   constructor( private http: HttpClient ) {
     this.cargarGuia1();
     this.cargarGuia2();
@@ -46,4 +55,11 @@ private cargarGuia3() {
 
   });
 }
+
+
+addRespuestasGuia(newRespuestas: InfoRespuesta, id: number): any{
+  
+    return this.http.post( this.API_REST + '/addRespuestasGuia2/' + id, newRespuestas , {headers: this.httpHeaders});
+}
+
 }

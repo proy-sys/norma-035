@@ -8,13 +8,17 @@ import { EncuestaInstComponent } from './pages/encuestas/encuesta-inst/encuesta-
 import { EncuestaGuia2Component } from './pages/encuestas/encuesta-guia2/encuesta-guia2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EncuestaGuia3Component } from './pages/encuestas/encuesta-guia3/encuesta-guia3.component';
+import { EncuestaGuia1Component } from './pages/encuestas/encuesta-guia1/encuesta-guia1.component';
 
 
 @NgModule({
   declarations: [TrabajadorComponent,
                  EncuestaPoliComponent,
                  EncuestaInstComponent,
-                 EncuestaGuia2Component],
+                 EncuestaGuia2Component,
+                 EncuestaGuia3Component,
+                 EncuestaGuia1Component],
   imports: [
     TrabajadorRoutingModule,
     FormsModule,
