@@ -1,42 +1,42 @@
 [{
         "seccion": "I.- Acontecimiento traumático severo",
         "pregunta": [
-            "¿Ha presenciado o sufrido alguna vez, durante o con motivo del trabajo un acontecimiento como los siguientes:",
-            "Accidente que tenga como consecuencia la muerte, la pérdida de un miembro o una lesión grave?",
-            "Asaltos?",
-            "Actos violentos que derivaron en lesiones graves?",
-            "Secuestro?",
-            "Amenazas?, o",
-            "Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?"
+            { "num": 1, "preg": "¿Ha presenciado o sufrido alguna vez, durante o con motivo del trabajo un acontecimiento como los siguientes:" },
+            { "num": 2, "preg": "Accidente que tenga como consecuencia la muerte, la pérdida de un miembro o una lesión grave?" },
+            { "num": 3, "preg": "Asaltos?" },
+            { "num": 4, "preg": "Actos violentos que derivaron en lesiones graves?" },
+            { "num": 5, "preg": "Secuestro?" },
+            { "num": 6, "preg": "Amenazas?, o" },
+            { "num": 7, "preg": "Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?" }
         ]
     },
     {
         "seccion": "II.- Recuerdos persistentes sobre el acontecimiento (durante el último mes):",
         "pregunta": [
-            "¿Ha tenido recuerdos recurrentes sobre el acontecimiento que le provocan malestares?",
-            "¿Ha tenido sueños de carácter recurrente sobre el acontecimiento, que le producen malestar?"
+            { "num": 8, "preg": "¿Ha tenido recuerdos recurrentes sobre el acontecimiento que le provocan malestares?" },
+            { "num": 9, "preg": "¿Ha tenido sueños de carácter recurrente sobre el acontecimiento, que le producen malestar?" }
         ]
     },
     {
         "seccion": "III.- Esfuerzo por evitar circunstancias parecidas o asociadas al acontecimiento (durante el último mes):",
         "pregunta": [
-            "¿Se ha esforzado por evitar todo tipo de sentimientos, conversaciones o situaciones que le puedan recordar el acontecimiento?",
-            "¿Se ha esforzado por evitar todo tipo de actividades, lugares o personas que motivan recuerdos del acontecimiento?",
-            "¿Ha tenido dificultad para recordar alguna parte importante del evento?",
-            "¿Ha disminuido su interés en sus actividades cotidianas?",
-            "¿Se ha sentido usted alejado o distante de los demás?",
-            "¿Ha notado que tiene dificultad para expresar sus sentimientos?",
-            "¿Ha tenido la impresión de que su vida se va a acortar, que va a morir antes que otras personas o que tiene un futuro limitado?"
+            { "num": 10, "preg": "¿Se ha esforzado por evitar todo tipo de sentimientos, conversaciones o situaciones que le puedan recordar el acontecimiento?" },
+            { "num": 11, "preg": "¿Se ha esforzado por evitar todo tipo de actividades, lugares o personas que motivan recuerdos del acontecimiento?" },
+            { "num": 12, "preg": "¿Ha tenido dificultad para recordar alguna parte importante del evento?" },
+            { "num": 13, "preg": "¿Ha disminuido su interés en sus actividades cotidianas?" },
+            { "num": 14, "preg": "¿Se ha sentido usted alejado o distante de los demás?" },
+            { "num": 15, "preg": "¿Ha notado que tiene dificultad para expresar sus sentimientos?" },
+            { "num": 16, "preg": "¿Ha tenido la impresión de que su vida se va a acortar, que va a morir antes que otras personas o que tiene un futuro limitado?" }
         ]
     },
     {
         "seccion": "IV Afectación (durante el último mes):",
         "pregunta": [
-            "¿Ha tenido usted dificultades para dormir?",
-            "¿Ha estado particularmente irritable o le han dado arranques de coraje?",
-            "¿Ha tenido dificultad para concentrarse?",
-            "¿Ha estado nervioso o constantemente en alerta?",
-            "¿Se ha sobresaltado fácilmente por cualquier cosa?"
+            { "num": 17, "preg": "¿Ha tenido usted dificultades para dormir?" },
+            { "num": 18, "preg": "¿Ha estado particularmente irritable o le han dado arranques de coraje?" },
+            { "num": 19, "preg": "¿Ha tenido dificultad para concentrarse?" },
+            { "num": 20, "preg": "¿Ha estado nervioso o constantemente en alerta?" },
+            { "num": 21, "preg": "¿Se ha sobresaltado fácilmente por cualquier cosa?" }
         ]
     }
 ]

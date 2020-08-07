@@ -58,8 +58,21 @@ private cargarGuia3() {
 
 
 addRespuestasGuia(newRespuestas: InfoRespuesta, id: number): any{
-  
+
     return this.http.post( this.API_REST + '/addRespuestasGuia2/' + id, newRespuestas , {headers: this.httpHeaders});
 }
+
+getGuia(id: number){
+  return this.http.get( this.API_REST + '/g/' + id, {headers: this.httpHeaders});
+}
+
+getCalificacionGuia(id, guia: number){
+  return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id + '/' + guia, {headers: this.httpHeaders});
+}
+
+getCalificacionesGuia(guia: number){
+  return this.http.get( this.API_REST + '/califTrabajadoresGuia/' + guia, {headers: this.httpHeaders});
+}
+
 
 }

@@ -26,12 +26,118 @@
         ]
     },
     {
-        "seccion": " Las preguntas siguientes están relacionadas con las actividades que realiza en su trabajo y las responsabilidades que tiene.",
+        "seccion": "Las preguntas siguientes están relacionadas con las actividades que realiza en su trabajo y las responsabilidades que tiene.",
         "pregunta": [
             { "num": 13, "preg": "En mi trabajo soy responsable de cosas de mucho valor" },
             { "num": 14, "preg": "Respondo ante mi jefe por los resultados de toda mi área de trabajo" },
             { "num": 15, "preg": "En el trabajo me dan órdenes contradictorias" },
             { "num": 16, "preg": "Considero que en mi trabajo me piden hacer cosas innecesarias" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con su jornada de trabajo.",
+        "pregunta": [
+            { "num": 17, "preg": "Trabajo horas extras más de tres veces a la semana" },
+            { "num": 18, "preg": "Mi trabajo me exige laborar en días de descanso, festivos o fines de semana" },
+            { "num": 19, "preg": "Considero que el tiempo en el trabajo es mucho y perjudica mis actividades familiares o personales" },
+            { "num": 20, "preg": "Debo atender asuntos de trabajo cuando estoy en casa" },
+            { "num": 21, "preg": "Pienso en las actividades familiares o personales cuando estoy en mi trabajo" },
+            { "num": 22, "preg": "Pienso que mis responsabilidades familiares afectan mi trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con las decisiones que puede tomar en su trabajo.",
+        "pregunta": [
+            { "num": 23, "preg": "Mi trabajo permite que desarrolle nuevas habilidades" },
+            { "num": 24, "preg": "En mi trabajo puedo aspirar a un mejor puesto" },
+            { "num": 25, "preg": "Durante mi jornada de trabajo puedo tomar pausas cuando las necesito" },
+            { "num": 26, "preg": "Puedo decidir cuánto trabajo realizo durante la jornada laboral" },
+            { "num": 27, "preg": "Puedo decidir la velocidad a la que realizo mis actividades en mi trabajo" },
+            { "num": 28, "preg": "Puedo cambiar el orden de las actividades que realizo en mi trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con cualquier tipo de cambio que ocurra en su trabajo (considere los últimos cambios realizados).",
+        "pregunta": [
+            { "num": 29, "preg": "Los cambios que se presentan en mi trabajo dificultan mi labor" },
+            { "num": 30, "preg": "Cuando se presentan cambios en mi trabajo se tienen en cuenta mis ideas o aportaciones" }
+        ]
+    },
+    {
+        "seccion": " Las preguntas siguientes están relacionadas con la capacitación e información que se le proporciona sobre su trabajo.",
+        "pregunta": [
+            { "num": 31, "preg": "Me informan con claridad cuáles son mis funciones" },
+            { "num": 32, "preg": "Me explican claramente los resultados que debo obtener en mi trabajo" },
+            { "num": 33, "preg": "Me explican claramente los objetivos de mi trabajo" },
+            { "num": 34, "preg": "Me informan con quién puedo resolver problemas o asuntos de trabajo" },
+            { "num": 35, "preg": "Me permiten asistir a capacitaciones relacionadas con mi trabajo" },
+            { "num": 36, "preg": "Recibo capacitación útil para hacer mi trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con el o los jefes con quien tiene contacto.",
+        "pregunta": [
+            { "num": 37, "preg": "Mi jefe ayuda a organizar mejor el trabajo" },
+            { "num": 38, "preg": "Mi jefe tiene en cuenta mis puntos de vista y opiniones" },
+            { "num": 39, "preg": "Mi jefe me comunica a tiempo la información relacionada con el trabajo" },
+            { "num": 40, "preg": "La orientación que me da mi jefe me ayuda a realizar mejor mi trabajo" },
+            { "num": 41, "preg": "Mi jefe ayuda a solucionar los problemas que se presentan en el trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes se refieren a las relaciones con sus compañeros.",
+        "pregunta": [
+            { "num": 42, "preg": "Puedo confiar en mis compañeros de trabajo" },
+            { "num": 43, "preg": "Entre compañeros solucionamos los problemas de trabajo de forma respetuosa" },
+            { "num": 44, "preg": "En mi trabajo me hacen sentir parte del grupo" },
+            { "num": 45, "preg": "Cuando tenemos que realizar trabajo de equipo los compañeros colaboran" },
+            { "num": 46, "preg": "Mis compañeros de trabajo me ayudan cuando tengo dificultades" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con la información que recibe sobre su rendimiento en el trabajo, el reconocimiento, el sentido de pertenencia y la estabilidad que le ofrece su trabajo.",
+        "pregunta": [
+            { "num": 47, "preg": "Me informan sobre lo que hago bien en mi trabajo" },
+            { "num": 48, "preg": "La forma como evalúan mi trabajo en mi centro de trabajo me ayuda a mejorar mi desempeño" },
+            { "num": 49, "preg": "En mi centro de trabajo me pagan a tiempo mi salario" },
+            { "num": 50, "preg": "El pago que recibo es el que merezco por el trabajo que realizo" },
+            { "num": 51, "preg": "Si obtengo los resultados esperados en mi trabajo me recompensan o reconocen" },
+            { "num": 52, "preg": "Las personas que hacen bien el trabajo pueden crecer laboralmente" },
+            { "num": 53, "preg": "Considero que mi trabajo es estable" },
+            { "num": 54, "preg": "En mi trabajo existe continua rotación de personal" },
+            { "num": 55, "preg": "Siento orgullo de laborar en este centro de trabajo" },
+            { "num": 56, "preg": "Me siento comprometido con mi trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con actos de violencia laboral (malos tratos, acoso, hostigamiento, acoso psicológico).",
+        "pregunta": [
+            { "num": 57, "preg": "En mi trabajo puedo expresarme libremente sin interrupciones" },
+            { "num": 58, "preg": "Recibo críticas constantes a mi persona y/o trabajo" },
+            { "num": 59, "preg": "Recibo burlas, calumnias, difamaciones, humillaciones o ridiculizaciones" },
+            { "num": 60, "preg": "Se ignora mi presencia o se me excluye de las reuniones de trabajo y en la toma de decisiones" },
+            { "num": 61, "preg": "Se manipulan las situaciones de trabajo para hacerme parecer un mal trabajador" },
+            { "num": 62, "preg": "Se ignoran mis éxitos laborales y se atribuyen a otros trabajadores" },
+            { "num": 63, "preg": "Me bloquean o impiden las oportunidades que tengo para obtener ascenso o mejora en mi trabajo" },
+            { "num": 64, "preg": "He presenciado actos de violencia en mi centro de trabajo" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.",
+        "pregunta": [
+            { "num": 65, "preg": "Atiendo clientes o usuarios muy enojados" },
+            { "num": 66, "preg": "Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas" },
+            { "num": 67, "preg": "Para hacer mi trabajo debo demostrar sentimientos distintos a los míos" },
+            { "num": 68, "preg": "Mi trabajo me exige atender situaciones de violencia" }
+        ]
+    },
+    {
+        "seccion": "Las preguntas siguientes están relacionadas con las actitudes de las personas que supervisa.",
+        "pregunta": [
+            { "num": 69, "preg": "Comunican tarde los asuntos de trabajo" },
+            { "num": 70, "preg": "Dificultan el logro de los resultados del trabajo" },
+            { "num": 71, "preg": "Cooperan poco cuando se necesita" },
+            { "num": 72, "preg": "Ignoran las sugerencias para mejorar su trabajo" }
         ]
     }
 ]

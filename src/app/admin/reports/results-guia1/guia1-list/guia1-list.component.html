@@ -1,1 +1,87 @@
-<p>guia1-list works!</p>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Trabajadores que realizaron la Guía I</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Trabajadores Guía I</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombres y apellidos</th>
+                                <th>Cargo</th>
+                                <th>Teléfono</th>
+                                <th>E-mail</th>
+                                <th>Tipo de Puesto</th>
+                                <th class="text-center">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                                <tr *ngFor="let persona of listaTrabajadores">
+                                    <td>{{ persona.nombre }}</td>
+                                    <td>{{ persona.ocupacion }}</td>
+                                    <td>{{ persona.telefono }}</td>
+                                    <td>{{ persona.email }}</td>
+                                    <td>{{ persona.tipo_puesto }}</td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-3 mx-auto">
+                                                <button type="button" class="btn btn-warning btn-sm" title="Eliminar" (click)="verResult(persona.id)">
+                                                  <i class="nav-icon fas fa-search text-white"></i>
+                                              </button>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nombres y apellidos</th>
+                                    <th>Documento</th>
+                                    <th>Teléfono</th>
+                                    <th>E-mail</th>
+                                    <th>Tipo de contrato</th>
+                                    <th style="text-align: center;">Opciones</th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+<script>
+    $(document).ready(function() {
+        $('.mdb-select').materialSelect();
+    });
+</script>

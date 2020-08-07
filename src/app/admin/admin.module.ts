@@ -33,6 +33,8 @@ import { Guia1ListComponent } from './reports/results-guia1/guia1-list/guia1-lis
 import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1-result.component';
 import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
 import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
+import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2-result.component';
+import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
 
 @NgModule({
   declarations:
@@ -64,6 +66,8 @@ import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-lis
           Guia1ResultComponent,
           Guia2ListComponent,
           Guia3ListComponent,
+          Guia2ResultComponent,
+          Guia3ResultComponent,
           ],
       imports: [
           CommonModule,

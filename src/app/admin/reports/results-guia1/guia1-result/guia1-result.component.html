@@ -1,1 +1,82 @@
-<p>guia1-result works!</p>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mx-auto">
+                <h1 class="text-dark text-center">Resultado de la Guía I</h1>
+                <h1 class="text-dark text-center">{{trabajador.nombre}}</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a (click)="irListado()">Ir atrás</a></li>
+                    <li class="breadcrumb-item active">Guia I</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6 mt-3 mx-auto text-center">
+                        <span><strong>CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</strong></span>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <span *ngFor="let itemx of calificacionesTrabajador">{{itemx.nombre}}</span>
+                <div class="card-body">
+                    <!-- <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 0px;">
+                      Marque con una "X" a la respuesta que se le indica
+                  </div> -->
+                    <!-- <div *ngFor="let item of listaTrabajadores" class="row">{{item.pregunta_id}}</div> -->
+                    <table class="table table-bordered" *ngFor="let seccion of infoGuiasService.guia1; let i = index">
+                        <thead>
+                            <tr class="encabezado-table" style="background-color: #2B579A; color: #FFFFFF;">
+                                <th colspan="2">{{ seccion.seccion }}</th>
+                                <th class="text-center">Si</th>
+                                <th class="text-center">No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pregunta of seccion.pregunta; let j = index">
+                                <td width="3%">{{ pregunta.num }}</td>
+                                <td>{{ pregunta.preg }}</td>
+
+                                <td width="5%" class="text-center">
+                                    <span *ngFor="let item1 of listaTrabajadores">
+                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                    </span>
+                                </td>
+                                <td width="5%" class="text-center">
+                                    <span *ngFor="let item2 of listaTrabajadores">
+                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==1 && trabajador.id==item2.trabajador_id" class="mx-auto">-</span>
+                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==2 && trabajador.id==item2.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
