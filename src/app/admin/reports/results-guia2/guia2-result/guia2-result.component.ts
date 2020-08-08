@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { InfoGuiasService } from 'src/app/services/info-guias.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { InfoTrabajadorService } from '../../../../services/info-trabajador.service';
 import { InfoTrabajador } from '../../../../interfaces/info-trabajador.interfce';
+import { InfoGuiasService } from '../../../../services/info-guias.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-guia2-result',
@@ -37,10 +37,9 @@ export class Guia2ResultComponent {
   }
 
   listadoTrabajadores() {
-    this.infoGuiasService.getGuia(1).subscribe(
+    this.infoGuiasService.getGuia(2).subscribe(
       data => {
         this.listaTrabajadores = data;
-        console.log(this.listaTrabajadores);
       }
     );
   }

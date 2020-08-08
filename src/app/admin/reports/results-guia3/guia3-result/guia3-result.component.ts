@@ -37,10 +37,9 @@ export class Guia3ResultComponent {
   }
 
   listadoTrabajadores() {
-    this.infoGuiasService.getGuia(1).subscribe(
+    this.infoGuiasService.getGuia(3).subscribe(
       data => {
         this.listaTrabajadores = data;
-        console.log(this.listaTrabajadores);
       }
     );
   }

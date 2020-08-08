@@ -70,8 +70,8 @@ getCalificacionGuia(id, guia: number){
   return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id + '/' + guia, {headers: this.httpHeaders});
 }
 
-getCalificacionesGuia(guia: number){
-  return this.http.get( this.API_REST + '/califTrabajadoresGuia/' + guia, {headers: this.httpHeaders});
+getTrabajadorResultado(guia: number){
+  return this.http.get( this.API_REST + '/trabajadorResultado/' + guia, {headers: this.httpHeaders});
 }
 
 

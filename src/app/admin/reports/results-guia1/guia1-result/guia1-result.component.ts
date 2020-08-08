@@ -23,7 +23,7 @@ export class Guia1ResultComponent {
     ) {
       this.cargarTrabajador();
       this.listadoTrabajadores();
-      this.calificacion();
+      // this.calificacion();
     }
 
     listadoTrabajadores() {
@@ -35,18 +35,7 @@ export class Guia1ResultComponent {
       );
     }
 
-    calificacion() {
-     //  this.activatedRoute.params.subscribe(params => {
-        this.infoGuiasService.getCalificacionesGuia(1).subscribe(
-          data => {
-            this.calificacionesTrabajador = data;
-            console.log(data);
-          }, (err) => {
-            console.log('Error al cargar:' + err);
-          }
-        );
-      // });
-    }
+
 
   // listadoTrabajadores() {
   //   this.infoGuia1Service.getGuia(1).subscribe(
