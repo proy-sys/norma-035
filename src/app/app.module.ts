@@ -16,6 +16,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ContentComponent } from './shared/content/content.component';
 import { CanTrabajadorGuard } from './auth/guards/can-trabajador.guard';
 import { CanLoginGuard } from './auth/guards/can-login.guard';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CanLoginGuard } from './auth/guards/can-login.guard';
         HttpClientModule,
         NgbModule,
         BrowserAnimationsModule,
+        ChartsModule,
         ToastrModule.forRoot({
             timeOut: 1000,
              preventDuplicates: false,

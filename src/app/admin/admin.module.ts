@@ -35,6 +35,14 @@ import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-lis
 import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
 import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2-result.component';
 import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
+import { Guia1GeneralComponent } from './statistics/graphics-guia1/guia1-general/guia1-general.component';
+import { Guia2GeneralComponent } from './statistics/graphics-guia2/guia2-general/guia2-general.component';
+import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general/guia3-general.component';
+import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
+import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
+import { ChartsModule } from 'ng2-charts';
+import { Guia2AmbienteComponent } from './statistics/graphics-guia2/guia2-ambiente/guia2-ambiente.component';
+import { Guia2FactoresComponent } from './statistics/graphics-guia2/guia2-factores/guia2-factores.component';
 
 @NgModule({
   declarations:
@@ -68,6 +76,13 @@ import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3
           Guia3ListComponent,
           Guia2ResultComponent,
           Guia3ResultComponent,
+          Guia1GeneralComponent,
+          Guia2GeneralComponent,
+          Guia3GeneralComponent,
+          Guia3OpcionesComponent,
+          Guia2OpcionesComponent,
+          Guia2AmbienteComponent,
+          Guia2FactoresComponent,
           ],
       imports: [
           CommonModule,
@@ -76,7 +91,8 @@ import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3
           AdminRoutingModule,
           HttpClientModule,
           NgxSummernoteModule,
-          NgbModule
+          NgbModule,
+          ChartsModule
        ],
        providers: [],
        bootstrap: [AdminComponent]

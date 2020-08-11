@@ -74,5 +74,12 @@ getTrabajadorResultado(guia: number){
   return this.http.get( this.API_REST + '/trabajadorResultado/' + guia, {headers: this.httpHeaders});
 }
 
+getResultadoTotal(guia: number){
+  return this.http.get( this.API_REST + '/resultadoTotal/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoAmbiente(guia: number){
+  return this.http.get( this.API_REST + '/resultadoAmbiente/' + guia, {headers: this.httpHeaders});
+}
 
 }
