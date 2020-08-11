@@ -19,7 +19,9 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <h6 class="text-center profile-username "> Cuestionario No°2.</h6>
+                            <h6 *ngIf="paramInstr==1" class="text-center profile-username "> Cuestionario No°1.</h6>
+                            <h6 *ngIf="paramInstr==2" class="text-center profile-username "> Cuestionario No°2.</h6>
+                            <h6 *ngIf="paramInstr==3" class="text-center profile-username "> Cuestionario No°3.</h6>
                         </div>
                     </div>
                     <hr>
@@ -30,7 +32,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="container mb-4 align-justify" style="text-indent: 40px;">
+                    <div *ngIf="paramInstr==2 || paramInstr==3 " class="container mb-4 align-justify" style="text-indent: 40px;">
 
                         <ul class="list-group mb-3">
                             <li class="list-group-item">
@@ -47,6 +49,29 @@
                             </li>
                             <li class="list-group-item">
                                 <b>5.- Selecciona en finalizar cuando hayas terminado el cuestionario</b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>6.- Todas las respuestas seran manejadas de manera confidencial</b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div *ngIf="paramInstr==1" class="container mb-4 align-justify" style="text-indent: 40px;">
+
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                <b>1.- Todas las preguntas del cuestionario deben de ser contestadas </b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>2.- Selecione una de las opciones para cada pregunta [si/no]</b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>3.- Lee detalladamente cada pregunta antes de contestar</b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>4.- Selecciona en finalizar cuando hayas terminado el cuestionario</b> <a class="float-right"><i class="fa fa-check"></i></a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>5.- Todas las respuestas seran manejadas de manera confidencial</b> <a class="float-right"><i class="fa fa-check"></i></a>
                             </li>
                         </ul>
                     </div>

@@ -1,9 +1,10 @@
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="text-center m-5 text-dark">Política</h1>
+                <h1 class="text-center m-5 text-dark">ENCUESTA</h1>
             </div>
         </div>
         <!-- /.row -->
@@ -18,19 +19,17 @@
             <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                     <div class="row">
-                       <div class="text-center col-md-3">
-                            <img [src]="empresa.logo" class="profile-user-img img-fluid img-circle" >
-                        </div> 
-                        <div class="text-center col-md-9">
-                            <h3 class="profile-username ">{{politica.politica.nombre}}</h3>
+                       <!--<div class="text-center col-md-4">
+                            <img class="profile-user-img img-fluid img-circle" src="../assets/img/logo_emp.png" alt="User profile picture">
+                        </div> -->
+                        <div class="text-center col-md-12">
+                            <h3 class="profile-username text-center">Ha terminado de realizar la evualuación<br>
+                                                                     ¡Gracias por su participación!</h3>
                         </div>
                     </div>
                     <hr/>
-                    <div class="container mb-4 align-justify" style="text-indent: 40px;">
-                       {{politica.politica.descripcion}}
-                    </div>
 
-                    <button (click)="irIntrucciones()" type="button" class="btn btn-primary btn-block"><b>Acepto haber leído la Política</b></button>
+                    <button (click)="cerrarSesion()" type="button" class="btn btn-primary btn-block"><i class="fas fa-sign-out-alt"></i>Salir</button>
                 </div>
                 <!-- /.card-body -->
             </div>

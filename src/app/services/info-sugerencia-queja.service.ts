@@ -18,7 +18,6 @@ export class InfoSugerenciaQuejaService {
   private API_REST = 'http://localhost/norma035-back/public/sugerencia_queja';
 
   constructor(private http: HttpClient) {
-      console.log('Servicio sugerencia_queja corriendo');
   }
 
   getListadoQueja_Sugerencia(): Observable<any[]> {

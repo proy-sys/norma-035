@@ -30,7 +30,8 @@ export class InfoAuthenticationService extends RoleValidator{
  login(user: User): Observable<any>{
       return this.http.post<JwtResponseI>( this.API_REST, user, { headers: this.httpHeaders});
  }
-  getToken() {
+
+ getToken() {
     const token = JSON.parse(localStorage.getItem('usuario'));
     return token.api_token;
   }

@@ -1,35 +1,11 @@
-<!--  LOGIN    -->
-
-<div *ngIf="!isLogged">
-  <router-outlet></router-outlet>
-</div>
-
+<router-outlet></router-outlet>
 
 <div *ngIf="isLogged">
-
-   <div *ngIf="isAdmin">
-       <app-navbar></app-navbar>
-           <app-sidebar></app-sidebar>
-            <!-- Content Wrapper. Contains page content -->
-           <div class="content-wrapper">
-              <!-- Main content -->
-            <section class="content">
-
-                  <router-outlet></router-outlet>
-
-            </section>
-                <!-- /.content -->
-      </div>
-           <!-- /.content-wrapper -->
-       <app-footer></app-footer>
-   </div>
-   
-   <div *ngIf="isTrabajador">
-        <router-outlet></router-outlet>
-   </div>
-</div>
-
-
-<!--Esta logueado: {{isLogged}} <br>
-Es administrador: {{isAdmin}} <br>
-Es trabajador : {{isTrabajador}} -->
+    <div *ngIf="isAdmin">
+        <app-admin></app-admin>
+    </div>
+    
+    <div *ngIf="isTrabajador">
+        <app-trabajador></app-trabajador>
+    </div>
+ </div>

@@ -34,9 +34,16 @@ import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1
 import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
 import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
 
+
+import { ContentComponent } from '../shared/content/content.component';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { SidebarComponent } from '../shared/sidebar/sidebar.component';
+import { HeaderComponent } from '../shared/header/header.component';
+
 @NgModule({
   declarations:
-         [AdminComponent,
+          [AdminComponent,
           TrabajadoresComponent,
           TrabajadoresAddComponent,
           Guia1Component,
@@ -64,16 +71,23 @@ import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-lis
           Guia1ResultComponent,
           Guia2ListComponent,
           Guia3ListComponent,
+
+          HeaderComponent,
+          SidebarComponent,
+          NavbarComponent,
+          FooterComponent,
+          ContentComponent,
           ],
       imports: [
           CommonModule,
-          FormsModule,
           ReactiveFormsModule,
           AdminRoutingModule,
           HttpClientModule,
           NgxSummernoteModule,
-          NgbModule
+          NgbModule,
+          FormsModule,
        ],
+        exports: [NavbarComponent, HeaderComponent, SidebarComponent, FooterComponent, ContentComponent, AdminComponent],
        providers: [],
        bootstrap: [AdminComponent]
 })

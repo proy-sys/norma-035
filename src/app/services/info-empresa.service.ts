@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { InfoEmpresa } from '../interfaces/info-empresa.interface';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { InfoAuthenticationService } from './info-authentication.service';
+import { JwtResponseI } from '../interfaces/info-jwt.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +12,19 @@ export class InfoEmpresaService {
 
 
   private API_REST  = 'http://localhost/norma035-back/public/empresa';
+
   private httpHeaders = new HttpHeaders(
                                         {
                                           'Content-Type' : 'application/json' ,
-                                           Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+                                           Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ',
                                         }
-);
+  );
 
 
-  constructor(private http: HttpClient) {
-      console.log('Servicio empresa Running...!');
-
-   }
+  constructor(private http: HttpClient, private servicio: InfoAuthenticationService){}
 
   obtenerEmpresa(): Observable<any> {
-
-     return this.http.get<InfoEmpresa>(this.API_REST);
-
+     return this.http.get<InfoEmpresa>(this.API_REST, { headers: this.httpHeaders});
    }
 
    actualizarEmpresa(empresa: InfoEmpresa){

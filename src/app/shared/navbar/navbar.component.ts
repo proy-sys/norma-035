@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
       );*/
      localStorage.removeItem('usuario');
      this.ruta.navigate(['login']);
+     window.location.reload();
   }
 
 }

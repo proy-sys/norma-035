@@ -58,8 +58,7 @@ private cargarGuia3() {
 
 
 addRespuestasGuia(newRespuestas: InfoRespuesta, id: number): any{
-  
-    return this.http.post( this.API_REST + '/addRespuestasGuia2/' + id, newRespuestas , {headers: this.httpHeaders});
+    return this.http.post( this.API_REST + '/addRespuestasGuia/' + id, newRespuestas , {headers: this.httpHeaders});
 }
 
 }

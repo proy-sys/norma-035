@@ -16,7 +16,7 @@ export class InfoActividadService {
   private API_REST = 'http://localhost/norma035-back/public/actividad';
 
   constructor(private http: HttpClient) {
-      console.log('Servicio actividad corriendo');
+
   }
 
   getListadoactividades(): Observable<any[]> {

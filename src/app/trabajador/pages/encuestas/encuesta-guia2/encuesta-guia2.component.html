@@ -31,7 +31,7 @@
                                         </div>
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <div *ngFor="let seccion of infoGuia2Service.guia2; let i = index">
+                                            <div *ngFor="let seccion of infoGuiaService.guia2; let i = index">
                                                 <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
                                                     {{ seccion.seccion }}
                                                 </div>
@@ -79,10 +79,11 @@
                      <button type="submit" class="btn btn-primary btn-block"><b>Guardar Cambios</b></button>
                   </div>
                 </form>
-                <!-- /.card-body -->
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            
+        </div>
     </div>
 </div>
 <!-- /.container-fluid -->

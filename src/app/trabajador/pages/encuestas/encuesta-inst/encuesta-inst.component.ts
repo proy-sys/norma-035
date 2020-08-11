@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
 
 @Component({
@@ -9,9 +9,18 @@ import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service'
 })
 export class EncuestaInstComponent implements OnInit {
 
-  constructor(private ruta: Router, private infoTrabajadorService: InfoTrabajadorService) { }
+  paramInstr: number;
+  constructor(private ruta: Router, private infoTrabajadorService: InfoTrabajadorService, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargarInstrucciones();
+  }
+
+  cargarInstrucciones(){
+   this.activatedRoute.params.subscribe(params => {
+        this.paramInstr = params.id;
+    });
+  }
 
   irGuia(){
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
@@ -24,7 +33,7 @@ export class EncuestaInstComponent implements OnInit {
           }else if (data > 50){
                this.ruta.navigate(['trabajador/encuesta-guia3']);
           }
-        }, (err) =>{
+        }, (err) => {
           console.log('Hubo un error:' + err);
         }
       );

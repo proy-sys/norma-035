@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
               this.toastr.success('Inicio de sesión' , data.msg);
 
               if (data.user.role === '1'){
+                window.location.reload();
                 this.ruta.navigate(['administrador']);
               }else if (data.user.role === '0'){
                  this.ruta.navigate(['trabajador']);

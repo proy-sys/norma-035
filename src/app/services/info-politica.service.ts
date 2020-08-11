@@ -18,7 +18,6 @@ export class InfoPoliticaService {
  );
 
    constructor(private http: HttpClient) {
-        console.log('Servicio politica corriendo...!');
    }
 
    getListadoPoliticas(): Observable<any> {

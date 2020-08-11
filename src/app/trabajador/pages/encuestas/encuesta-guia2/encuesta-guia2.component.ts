@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
 
 export class EncuestaGuia2Component implements OnInit {
 
-  formAddGuia3: any;
   respuesta: InfoRespuesta = {};
   radioOptions = [
     { op1: '0' , op2: '4'},
@@ -24,7 +23,7 @@ export class EncuestaGuia2Component implements OnInit {
     { op1: '4' , op2: '0'}
   ];
 
-  constructor(public infoGuia2Service: InfoGuiasService,
+  constructor(public infoGuiaService: InfoGuiasService,
               public infoAuthenticationService: InfoAuthenticationService,
               private ruta: Router) {}
 
@@ -51,7 +50,7 @@ export class EncuestaGuia2Component implements OnInit {
          con++;
     });
 
-     this.infoGuia2Service.addRespuestasGuia(this.respuesta , 1)
+     this.infoGuiaService.addRespuestasGuia(this.respuesta , 2)
      .subscribe(result => {
 
         if (result.estado === 200){

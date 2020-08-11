@@ -16,7 +16,6 @@ export class InfoDocumentoService {
   private API_REST = 'http://localhost/norma035-back/public/documento';
 
   constructor(private http: HttpClient) {
-      console.log('Servicio documento corriendo');
   }
 
   getListadodocumentos(): Observable<any[]> {
