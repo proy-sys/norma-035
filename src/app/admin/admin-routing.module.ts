@@ -27,6 +27,12 @@ import { Guia1ListComponent } from './reports/results-guia1/guia1-list/guia1-lis
 import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1-result.component';
 import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
 import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
+import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2-result.component';
+import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
+import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
+import { Guia2GeneralComponent } from './statistics/graphics-guia2/guia2-general/guia2-general.component';
+import { Guia2AmbienteComponent } from './statistics/graphics-guia2/guia2-ambiente/guia2-ambiente.component';
+import { Guia2FactoresComponent } from './statistics/graphics-guia2/guia2-factores/guia2-factores.component';
 
 
 const routes: Routes = [
@@ -57,7 +63,13 @@ const routes: Routes = [
   { path: 'guia1-list', component: Guia1ListComponent},
   { path: 'guia1-result/:id', component: Guia1ResultComponent},
   { path: 'guia2-list', component: Guia2ListComponent},
+  { path: 'guia2-result/:id', component: Guia2ResultComponent},
   { path: 'guia3-list', component: Guia3ListComponent},
+  { path: 'guia3-result/:id', component: Guia3ResultComponent},
+  { path: 'guia2-opciones', component: Guia2OpcionesComponent},
+  { path: 'guia2-general', component: Guia2GeneralComponent},
+  { path: 'guia2-ambiente', component: Guia2AmbienteComponent},
+  { path: 'guia2-factores', component: Guia2FactoresComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'empresa' }
 ];
 

@@ -1,0 +1,132 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mx-auto">
+                <h1 class="text-dark text-center">Resultado de la Guía II</h1>
+                <h1 class="text-dark text-center">{{trabajador.nombre}}</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a (click)="irListado()">Ir atrás</a></li>
+                    <li class="breadcrumb-item active">Guia II</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 mt-3 text-center">
+                        <span><strong>CUESTIONARIO PARA IDENTIFICAR LOS FACTORES DE RIESGO PSICOSOCIAL<br/> EN LOS CENTROS DE TRABAJO</strong></span>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div *ngFor="let seccion of infoGuiasService.guia2; let i = index">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center" style="background-color: #2B579A; color: #ffffff">
+                                    <td colspan="2" class="text-left">{{ seccion.seccion }}</td>
+                                    <th width="6%">Siempre</th>
+                                    <th width="6%">Casi<br/>Siempre</th>
+                                    <th width="6%">Algunas<br/>Veces</th>
+                                    <th width="6%">Casi<br/>nunca</th>
+                                    <th width="6%">Nunca</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pregunta of seccion.pregunta; let j = index;">
+                                    <td width="3%">{{ pregunta.num }}</td>
+                                    <td>{{ pregunta.preg }}</td>
+                                    <td width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==5 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                    <td width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==5 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                    <td width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==5 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                    <td width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==5 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                    <td width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==5 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                    </div>
+                    <div class="card-footer mx-auto mb-3">
+                        <button type="button" class="btn btn-dark">Imprimir</button>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-1 ">
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark ">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js "></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js "></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js "></script>

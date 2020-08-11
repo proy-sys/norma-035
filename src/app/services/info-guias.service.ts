@@ -61,4 +61,24 @@ addRespuestasGuia(newRespuestas: InfoRespuesta, id: number): any{
     return this.http.post( this.API_REST + '/addRespuestasGuia/' + id, newRespuestas , {headers: this.httpHeaders});
 }
 
+getGuia(id: number){
+  return this.http.get( this.API_REST + '/g/' + id, {headers: this.httpHeaders});
+}
+
+getCalificacionGuia(id, guia: number){
+  return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id + '/' + guia, {headers: this.httpHeaders});
+}
+
+getTrabajadorResultado(guia: number){
+  return this.http.get( this.API_REST + '/trabajadorResultado/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoTotal(guia: number){
+  return this.http.get( this.API_REST + '/resultadoTotal/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoAmbiente(guia: number){
+  return this.http.get( this.API_REST + '/resultadoAmbiente/' + guia, {headers: this.httpHeaders});
+}
+
 }

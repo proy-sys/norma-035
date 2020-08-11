@@ -14,6 +14,7 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import { TrabajadorModule } from './trabajador/trabajador.module';
 
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TrabajadorModule } from './trabajador/trabajador.module';
         AdminModule,
         TrabajadorModule,
         BrowserAnimationsModule,
+        ChartsModule,
         ToastrModule.forRoot({
             timeOut: 1000,
              preventDuplicates: false,

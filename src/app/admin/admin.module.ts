@@ -33,6 +33,16 @@ import { Guia1ListComponent } from './reports/results-guia1/guia1-list/guia1-lis
 import { Guia1ResultComponent } from './reports/results-guia1/guia1-result/guia1-result.component';
 import { Guia2ListComponent } from './reports/results-guia2/guia2-list/guia2-list.component';
 import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-list.component';
+import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2-result.component';
+import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
+import { Guia1GeneralComponent } from './statistics/graphics-guia1/guia1-general/guia1-general.component';
+import { Guia2GeneralComponent } from './statistics/graphics-guia2/guia2-general/guia2-general.component';
+import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general/guia3-general.component';
+import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
+import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
+import { ChartsModule } from 'ng2-charts';
+import { Guia2AmbienteComponent } from './statistics/graphics-guia2/guia2-ambiente/guia2-ambiente.component';
+import { Guia2FactoresComponent } from './statistics/graphics-guia2/guia2-factores/guia2-factores.component';
 
 
 import { ContentComponent } from '../shared/content/content.component';
@@ -71,12 +81,20 @@ import { HeaderComponent } from '../shared/header/header.component';
           Guia1ResultComponent,
           Guia2ListComponent,
           Guia3ListComponent,
-
           HeaderComponent,
           SidebarComponent,
           NavbarComponent,
           FooterComponent,
           ContentComponent,
+          Guia2ResultComponent,
+          Guia3ResultComponent,
+          Guia1GeneralComponent,
+          Guia2GeneralComponent,
+          Guia3GeneralComponent,
+          Guia3OpcionesComponent,
+          Guia2OpcionesComponent,
+          Guia2AmbienteComponent,
+          Guia2FactoresComponent,
           ],
       imports: [
           CommonModule,
@@ -86,8 +104,9 @@ import { HeaderComponent } from '../shared/header/header.component';
           NgxSummernoteModule,
           NgbModule,
           FormsModule,
+          ChartsModule
        ],
-        exports: [NavbarComponent, HeaderComponent, SidebarComponent, FooterComponent, ContentComponent, AdminComponent],
+      exports: [NavbarComponent, HeaderComponent, SidebarComponent, FooterComponent, ContentComponent, AdminComponent],
        providers: [],
        bootstrap: [AdminComponent]
 })

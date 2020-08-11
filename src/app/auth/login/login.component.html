@@ -1,49 +1,46 @@
-<div class="hold-transition login-page">
+<div class="hold-transition login-page" style="background-color: RGB(43,87,154, .8);">
     <div class="login-box">
-    
-      <!-- /.login-logo -->
-      <div class="card">
-        <div class="row">
-          <div class="col-sm-12">
-               <img [src]="'assets/norma_035.jpg'"  class="img-fluid" alt="">
-          </div>
-      </div>
-        <div class="card-body login-card-body">
-          <div class="text-center">
-            <img [src]="'assets/evaluacion.png'"  class="img-fluid text-center" alt="">
-          </div>
-          <h6 class="login-box-msg">Sign in to start your session</h6>
-          <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
-            <small *ngIf="usernameNoValido" class="text-danger">required username</small>
-            <div class="input-group mb-3">
-              <!-- <input type="username" class="form-control" formControlName="username" name="username" id="username" placeholder="username"  [class.is-invalid]="usernameNoValido" onkeypress="nextFocus('username','password')"> -->
-              <input type="username" class="form-control" formControlName="username" name="username" id="username" placeholder="username"  [class.is-invalid]="usernameNoValido"> 
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
+
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="row mx-auto mt-3">
+                <div class="col-sm-12">
+                    <img [src]="'assets/norma_035.png'" class="img-fluid" alt="">
                 </div>
-              </div>
             </div>
-            <small *ngIf="passwordNoValido" class="text-danger">required password</small>
-            <div class="input-group mb-3">
-              <input type="password" class="form-control" placeholder="password"  formControlName="password" name="password" id="password"  [class.is-invalid]="passwordNoValido">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                   <span class="fas fa-lock"></span>
-                </div>
-              </div>
+            <div class="card-body login-card-body">
+                <!-- <h6 class="login-box-msg">Sign in to start your session</h6> -->
+                <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
+                    <small *ngIf="usernameNoValido" class="text-danger">required username</small>
+                    <div class="input-group mb-3">
+                        <!-- <input type="username" class="form-control" formControlName="username" name="username" id="username" placeholder="username"  [class.is-invalid]="usernameNoValido" onkeypress="nextFocus('username','password')"> -->
+                        <input type="username" class="form-control" formControlName="username" name="username" id="username" placeholder="username" [class.is-invalid]="usernameNoValido">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <small *ngIf="passwordNoValido" class="text-danger">required password</small>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="password" formControlName="password" name="password" id="password" [class.is-invalid]="passwordNoValido">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-dark">Iniciar sesión</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
             </div>
-            <div class="row">
-              <!-- /.col -->
-              <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-              </div>
-              <!-- /.col -->
-            </div>
-          </form>
-    
+            <!-- /.login-card-body -->
         </div>
-        <!-- /.login-card-body -->
-      </div>
     </div>
-    </div>
+</div>

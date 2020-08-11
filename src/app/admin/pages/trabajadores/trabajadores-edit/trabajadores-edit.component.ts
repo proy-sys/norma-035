@@ -14,7 +14,7 @@ export class TrabajadoresEditComponent {
 
 // *********************** DECLARACION DE VARIABLES ************************
 
-  trabajador: InfoTrabajador= {};
+  trabajador: InfoTrabajador = {};
   formEditTrabajador: FormGroup;
   campox: string;
 

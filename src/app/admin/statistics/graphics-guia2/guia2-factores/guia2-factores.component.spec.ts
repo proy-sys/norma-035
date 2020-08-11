@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Guia1ResultComponent } from './guia1-result.component';
+import { Guia2FactoresComponent } from './guia2-factores.component';
 
-describe('Guia1ResultComponent', () => {
-  let component: Guia1ResultComponent;
-  let fixture: ComponentFixture<Guia1ResultComponent>;
+describe('Guia2FactoresComponent', () => {
+  let component: Guia2FactoresComponent;
+  let fixture: ComponentFixture<Guia2FactoresComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Guia1ResultComponent ]
+      declarations: [ Guia2FactoresComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Guia1ResultComponent);
+    fixture = TestBed.createComponent(Guia2FactoresComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

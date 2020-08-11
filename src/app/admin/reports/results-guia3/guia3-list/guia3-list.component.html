@@ -1,1 +1,89 @@
-<p>guia3-list works!</p>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Resultados de la Guía III</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Trabajadores Guía III</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">RESULTADOS DE LA GUIA II</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombres y apellidos</th>
+                                <th>Cargo</th>
+                                <th>E-mail</th>
+                                <th class="text-center">Calificación</th>
+                                <th class="text-center">Opciones</th>
+                                <th class="text-center">Niveles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                                <tr *ngFor="let persona of resultadosTrabajadores; let i = index">
+                                    <td>{{ persona.nombre }}</td>
+                                    <td>{{ persona.ocupacion }}</td>
+                                    <td>{{ persona.email }}</td>
+                                    <td class="text-center">{{ persona.resultado }}</td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-3 mx-auto">
+                                                <button type="button" class="btn btn-warning btn-sm" title="Eliminar" (click)="verResult(persona.id)">
+                                            <i class="nav-icon fas fa-search text-white"></i>
+                                        </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td *ngIf="persona.resultado>=90" class="text-center" style="background-color: #FF0000; color: #ffffff;">Muy alto</td>
+                                    <td *ngIf="persona.resultado>=70 && persona.resultado<90" class="text-center" style="background-color: #FFC000; color: #000000;">Alto</td>
+                                    <td *ngIf="persona.resultado>=45 && persona.resultado<70" class="text-center" style="background-color: #FFFF00; color: #000000;">Medio</td>
+                                    <td *ngIf="persona.resultado>=20 && persona.resultado<45" class="text-center" style="background-color: #12B015; color: #000000;">Bajo</td>
+                                    <td *ngIf="persona.resultado<20" class="text-center" style="background-color: #9BE5F7; color: #000000;">Nulo</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nombres y apellidos</th>
+                                    <th>Cargo</th>
+                                    <th>E-mail</th>
+                                    <th style="text-align: center;">Opciones</th>
+                                    <th class="text-center">Niveles</th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+<script>
+    $(document).ready(function() {
+        $('.mdb-select').materialSelect();
+    });
+</script>
