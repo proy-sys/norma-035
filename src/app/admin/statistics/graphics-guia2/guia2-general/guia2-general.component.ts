@@ -13,12 +13,11 @@ import { default as ChartDataLabels } from 'chartjs-plugin-datalabels';
 export class Guia2GeneralComponent {
 
   resultados: any = [];
-  aa: number;
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
     legend: {
-      position: 'top',
+      position: 'left',
     },
     plugins: {
       datalabels: {
@@ -36,7 +35,7 @@ export class Guia2GeneralComponent {
   public pieChartPlugins = [ChartDataLabels];
   public pieChartColors = [
     {
-      backgroundColor: ['#9BE5F7', '#12B015', '#FFFF00', '#FFC000', '#FF0000',],
+      backgroundColor: ['RGB(16,86,241,0.5)', 'RGB(18,176,21,0.5)', 'RGB(255,255,0,0.8)', 'RGB(255,192,0,0.6)', 'RGB(255,0,0,0.5)'],
     },
   ];
 
@@ -54,7 +53,7 @@ export class Guia2GeneralComponent {
         this.resultados = data;
         this.pieChartLabels = this.resultados.name;
         this.pieChartData = this.resultados.value;
-        console.log(this.resultados.value);
+        console.log(this.resultados);
       }
     );
   }
@@ -67,11 +66,6 @@ export class Guia2GeneralComponent {
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
-  }
-
-
-  changeLegendPosition() {
-    this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
   }
 
   irListado() {

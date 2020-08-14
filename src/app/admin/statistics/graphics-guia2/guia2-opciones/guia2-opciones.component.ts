@@ -17,12 +17,12 @@ export class Guia2OpcionesComponent {
     this.ruta.navigate(['administrador/guia2-general']);
   }
 
-  verGraficaAmbiente() {
-    this.ruta.navigate(['administrador/guia2-ambiente'])
+  verGraficaCategorias() {
+    this.ruta.navigate(['administrador/guia2-categorias'])
   }
 
-  verGraficaFactores() {
-    this.ruta.navigate(['administrador/guia2-factores'])
+  verGraficaDominios() {
+    this.ruta.navigate(['administrador/guia2-dominios'])
   }
 
 }

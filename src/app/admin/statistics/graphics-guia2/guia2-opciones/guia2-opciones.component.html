@@ -39,15 +39,7 @@
                                 <img src="../../../../../assets/estadistic.png" style="width: 50%;" class="card-img-top mx-auto mt-3" alt="...">
                                 <div class="card-body">
                                     <h5 class="mx-auto"><b><p>General por categorías</p></b></h5>
-                                    <div *ngIf="mostrar">
-                                        <p class="card-text" (click)="verGraficaAmbiente()" style="cursor: pointer;">- Ambiente de Trabajo</p>
-                                        <p class="card-text" (click)="verGraficaFactores()" style="cursor: pointer;">- Factores propios de la actividad</p>
-                                        <p class="card-text">- Cargas de alta responsabilidad</p>
-                                        <p class="card-text">- Cargas contradictorias o inconsistentes</p>
-                                        <p class="card-text">- Falta de control sobre el trabajo</p>
-                                    </div>
-                                    <button *ngIf="mostrar" type="button" (click)="mostrar = !mostrar" class="btn btn-danger btn-block mt-3">Ocultar</button>
-                                    <button *ngIf="!mostrar" type="button" (click)="mostrar = !mostrar" class="btn btn-success btn-block mt-3">Ver gráficas</button>
+                                    <button type="button" (click)="verGraficaCategorias()" class="btn btn-success btn-block">Ver gráficas</button>
                                 </div>
                             </div>
                         </div>
@@ -56,15 +48,7 @@
                                 <img src="../../../../../assets/estadistic.png" style="width: 50%;" class="card-img-top mx-auto mt-3" alt="...">
                                 <div class="card-body">
                                     <h5 class="mx-auto"><b><p>General por dominios</p></b></h5>
-                                    <div *ngIf="mostrar2">
-                                        <p class="card-text">- Condiciones en el ambiente de trabajo</p>
-                                        <p class="card-text">- Carga de trabajo</p>
-                                        <p class="card-text">- Falta de control y autonomía sobre el trabajo</p>
-                                        <p class="card-text">- Limitada o nula posibilidad de desarrollo</p>
-                                        <p class="card-text">- Limitada o inexistente capacitación</p>
-                                    </div>
-                                    <button *ngIf="mostrar2" type="button" (click)="mostrar2 = !mostrar2" class="btn btn-danger btn-block">Ocultar</button>
-                                    <button *ngIf="!mostrar2" type="button" (click)="mostrar2 = !mostrar2" class="btn btn-success btn-block">Ver gráficas</button>
+                                    <button type="button" (click)="verGraficaDominios()" class="btn btn-success btn-block">Ver gráficas</button>
                                 </div>
                             </div>
                         </div>

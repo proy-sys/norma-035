@@ -1,1 +1,61 @@
-<p>guia3-opciones works!</p>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mx-auto">
+                <h1 class="text-dark text-center">Estadísticas de la Guía III</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a>Inicio</a></li>
+                    <li class="breadcrumb-item active">Guia III</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card mx-auto">
+                                <img src="../../../../../assets/estadistic.png" style="width: 50%;" class="card-img-top mx-auto mt-3" alt="...">
+                                <div class="card-body">
+                                    <h5 class="mx-auto"><b><p>Total General</p></b></h5>
+                                    <button type="button" (click)="verGraficaTotal()" class="btn btn-success btn-block">Ver gráficas</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card mx-auto">
+                                <img src="../../../../../assets/estadistic.png" style="width: 50%;" class="card-img-top mx-auto mt-3" alt="...">
+                                <div class="card-body">
+                                    <h5 class="mx-auto"><b><p>General por categorías</p></b></h5>
+                                    <button type="button" (click)="verGraficaCategorias()" class="btn btn-success btn-block">Ver gráficas</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card mx-auto">
+                                <img src="../../../../../assets/estadistic.png" style="width: 50%;" class="card-img-top mx-auto mt-3" alt="...">
+                                <div class="card-body">
+                                    <h5 class="mx-auto"><b><p>General por dominios</p></b></h5>
+                                    <button type="button" (click)="verGraficaDominios()" class="btn btn-success btn-block">Ver gráficas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->

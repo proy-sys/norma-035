@@ -37,12 +37,16 @@ export class Guia3ResultComponent {
   }
 
   listadoTrabajadores() {
-    this.infoGuiasService.getGuia(3).subscribe(
+    this.activatedRoute.params.subscribe(params => {
+      this.infoGuiasService.getGuia2(3, params.id).subscribe(
       data => {
         this.listaTrabajadores = data;
+      }, (err) => {
+        console.log('Error al cargar:' + err);
       }
     );
-  }
+  });
+}
 
 // ************************** RUTAS *****************************
   irListado() {

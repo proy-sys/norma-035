@@ -36,13 +36,15 @@ import { Guia3ListComponent } from './reports/results-guia3/guia3-list/guia3-lis
 import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2-result.component';
 import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
 import { Guia1GeneralComponent } from './statistics/graphics-guia1/guia1-general/guia1-general.component';
+import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
 import { Guia2GeneralComponent } from './statistics/graphics-guia2/guia2-general/guia2-general.component';
+import { Guia2CategoriasComponent } from './statistics/graphics-guia2/guia2-categorias/guia2-categorias.component';
+import { Guia2DominiosComponent } from './statistics/graphics-guia2/guia2-dominios/guia2-dominios.component';
 import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general/guia3-general.component';
 import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
-import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
+import { Guia3CategoriasComponent } from './statistics/graphics-guia3/guia3-categorias/guia3-categorias.component';
+import { Guia3DominiosComponent } from './statistics/graphics-guia3/guia3-dominios/guia3-dominios.component';
 import { ChartsModule } from 'ng2-charts';
-import { Guia2AmbienteComponent } from './statistics/graphics-guia2/guia2-ambiente/guia2-ambiente.component';
-import { Guia2FactoresComponent } from './statistics/graphics-guia2/guia2-factores/guia2-factores.component';
 
 
 import { ContentComponent } from '../shared/content/content.component';
@@ -89,12 +91,14 @@ import { HeaderComponent } from '../shared/header/header.component';
           Guia2ResultComponent,
           Guia3ResultComponent,
           Guia1GeneralComponent,
-          Guia2GeneralComponent,
-          Guia3GeneralComponent,
-          Guia3OpcionesComponent,
           Guia2OpcionesComponent,
-          Guia2AmbienteComponent,
-          Guia2FactoresComponent,
+          Guia2GeneralComponent,
+          Guia2CategoriasComponent,
+          Guia2DominiosComponent,
+          Guia3OpcionesComponent,
+          Guia3GeneralComponent,
+          Guia3CategoriasComponent,
+          Guia3DominiosComponent,
           ],
       imports: [
           CommonModule,
