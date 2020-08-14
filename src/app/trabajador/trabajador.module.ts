@@ -9,8 +9,9 @@ import { EncuestaGuia2Component } from './pages/encuestas/encuesta-guia2/encuest
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EncuestaGuia3Component } from './pages/encuestas/encuesta-guia3/encuesta-guia3.component';
-import { EncuestaGuia1Component } from './pages/encuestas/encuesta-guia1/encuesta-guia1.component';
 import { FinalizarComponent } from './pages/finalizar/finalizar.component';
+import { Seccion1Component } from './pages/encuestas/encuesta-guia1/seccion-uno/seccion1.component';
+import { SeccionGeneralComponent } from './pages/encuestas/encuesta-guia1/seccion-general/seccion-general.component';
 
 
 @NgModule({
@@ -20,8 +21,9 @@ import { FinalizarComponent } from './pages/finalizar/finalizar.component';
                  EncuestaInstComponent,
                  EncuestaGuia2Component,
                  EncuestaGuia3Component,
-                 EncuestaGuia1Component,
-                 FinalizarComponent],
+                 FinalizarComponent,
+                 Seccion1Component,
+                 SeccionGeneralComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

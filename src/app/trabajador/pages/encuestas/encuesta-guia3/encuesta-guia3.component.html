@@ -32,10 +32,10 @@
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <div *ngFor="let seccion of infoGuiaService.guia3; let i = index">
-                                                <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
+                                                <div *ngIf="i<12" style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
                                                     {{ seccion.seccion }}
                                                 </div>
-                                                <table class="table table-bordered">
+                                                <table *ngIf="i<12" class="table table-bordered">
                                                     <thead>
                                                         <tr class="text-center">
                                                             <th colspan="2"></th>
@@ -62,11 +62,28 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                <br>
                                             </div>
+                                             <!-- <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 2px;">
+                                                {{ infoGuiaService.guia2[6].seccion}}
+                                              </div>
+                                               <table  class="table table-bordered">
+                                                <tbody>
+                                                     <tr>
+                                                         <td rowspan="2">{{ infoGuiaService.guia2[6].pregunta[0].preg}}</td>
+                                                         <td>Si</td>
+                                                         <td><input id="si_1" value="si" type="radio" name="no_1" (change)="validarRadio($event,1)"></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td>No</td>
+                                                         <td><input id="si_1" value="no" type="radio" name="no_1" (change)="validarRadio($event,1)"></td>
+                                                     </tr>
+                                                 </tbody>
+                                             </table> -->
+
                                         </div>
                                         <!-- /.card-body -->
                                     </div>
+                                    
                                 </div>
                                 <div class="col-md-1 "></div>
                                 <!-- /.col -->

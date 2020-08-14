@@ -6,7 +6,7 @@
         { "num": 3, "preg": "Asaltos?" },
         { "num": 4, "preg": "Actos violentos que derivaron en lesiones graves?" },
         { "num": 5, "preg": "Secuestro?" },
-        { "num": 6, "preg": "Amenazas?, o" },
+        { "num": 6, "preg": "Amenazas?" },
         { "num": 7, "preg": "Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?" }
     ]
 },

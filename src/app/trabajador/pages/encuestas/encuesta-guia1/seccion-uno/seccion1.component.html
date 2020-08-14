@@ -1,0 +1,89 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+            <div class="card card-primary card-outline">
+                <form (ngSubmit)="verificarSeccion(forma)" #forma="ngForm">
+                    <div class="card-body box-profile">
+                        <div class="row">
+                            <div class="content-header">
+                                <div class="container-fluid">
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.container-fluid -->
+                             </div>
+                             <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <div class="card">
+                                            <div class="row">
+                                                <div class="col-md-3"></div>
+                                                <div class="col-md-6 text-center">
+                                                    <span><strong>CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</strong></span>
+                                                </div>
+                                                <div class="col-md-3"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 0px;">
+                                                     Marque con una "X" a la respuesta que se le indica
+                                                 </div> -->
+                                                 <table class="table table-bordered">
+                                                     <tr class="text-center">
+                                                         <th rowspan="2">Sección / Pregunta</th>
+                                                         <th colspan="2" width="10%">Respuesta</th>
+                                                     </tr>
+                                                     <tr class="text-center">
+                                                         <th>Si</th>
+                                                         <th>No</th>
+                                                     </tr>
+                                                 </table>
+                                                 <table class="table table-bordered">
+                                                     <thead>
+                                                         <tr>
+                                                             <th colspan="4">{{ infoGuiaService.guia1[0].seccion }}</th>
+                                                         </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                         <tr *ngFor="let pregunta of infoGuiaService.guia1[0].pregunta; let j = index">
+                                                             <td width="3%">{{pregunta.num}}</td>
+                                                             <td>{{ pregunta.preg}}</td>
+
+                                                             <td *ngFor="let key of radioOptions" width="6%" class="text-center">
+                                                                    <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel>
+                                                             </td>
+                                                         </tr>
+                                                     </tbody>
+                                                 </table>
+                                             </div>
+                                             <!-- /.card-body -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                             </div>
+                        </div>
+                        <hr/>
+                        <button type="submit" class="btn btn-primary btn-block"><b>Continue</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->

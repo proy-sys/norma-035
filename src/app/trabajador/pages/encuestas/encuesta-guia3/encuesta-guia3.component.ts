@@ -13,7 +13,8 @@ import { NgForm } from '@angular/forms';
 export class EncuestaGuia3Component implements OnInit {
 
    respuesta: InfoRespuesta = {};
-
+   c1 = false;
+   c2 = false;
    radioOptions = [
     { op1: '0' , op2: '4'},
     { op1: '1' , op2: '3'},
@@ -56,12 +57,28 @@ export class EncuestaGuia3Component implements OnInit {
           if ( result.cFinal === 'Alto' || result.cFinal === 'Muy Alto'){
              this.ruta.navigate(['trabajador/encuesta-guia1']);
           }else{
-               alert('Encuesta finalizada se  cierra la sesión');
+             this.ruta.navigate(['trabajador/finalizar']);
           }
         }
     }, error => {
           console.log('error al dar de alta al trabajador:' + error.message);
     });
    }
+
+   validarRadio(evt: any, num: any){
+      if (num === 1){
+         if (evt.target.value === 'si'){
+              this.c1 = true;
+         }else{
+              this.c1 = false;
+         }
+      }else if (num === 2){
+        if (evt.target.value === 'si'){
+          this.c2 = true;
+       }else{
+          this.c2 = false;
+        }
+      }
+ }
 
 }

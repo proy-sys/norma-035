@@ -26,7 +26,7 @@ export class EncuestaInstComponent implements OnInit {
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
           if (data <= 15){
-               this.ruta.navigate(['trabajador/encuesta-guia1']);
+               this.ruta.navigate(['trabajador/encuesta-guia1-seccion-1']);
           }
           if (data > 15 && data <= 50){
                this.ruta.navigate(['trabajador/encuesta-guia2']);
