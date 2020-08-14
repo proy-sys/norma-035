@@ -5,18 +5,20 @@ import { TrabajadorComponent } from './trabajador.component';
 import { EncuestaPoliComponent } from './pages/encuestas/encuesta-poli/encuesta-poli.component';
 import { EncuestaInstComponent } from './pages/encuestas/encuesta-inst/encuesta-inst.component';
 import { EncuestaGuia2Component } from './pages/encuestas/encuesta-guia2/encuesta-guia2.component';
-import { EncuestaGuia1Component } from './pages/encuestas/encuesta-guia1/encuesta-guia1.component';
 import { EncuestaGuia3Component } from './pages/encuestas/encuesta-guia3/encuesta-guia3.component';
 import { FinalizarComponent } from './pages/finalizar/finalizar.component';
+import { Seccion1Component } from './pages/encuestas/encuesta-guia1/seccion-uno/seccion1.component';
+import { SeccionGeneralComponent } from './pages/encuestas/encuesta-guia1/seccion-general/seccion-general.component';
 
 
 const routes: Routes = [
  // { path: '', component: TrabajadorComponent },
   { path: '', component: EncuestaPoliComponent },
   { path: 'encuesta-poli', component: EncuestaPoliComponent },
+  { path: 'encuesta-guia1-seccion-1', component: Seccion1Component},
+  { path: 'encuesta-guia1-seccion/:con', component:  SeccionGeneralComponent},
   { path: 'encuesta-inst/:id', component: EncuestaInstComponent},
   { path: 'encuesta-guia2', component: EncuestaGuia2Component },
-  { path: 'encuesta-guia1', component: EncuestaGuia1Component },
   { path: 'encuesta-guia3', component: EncuestaGuia3Component },
   { path: 'finalizar', component: FinalizarComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'encuesta-poli' }

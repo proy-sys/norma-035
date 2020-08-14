@@ -27,7 +27,7 @@ export class InfoPoliticaService {
          return this.http.get(this.API_REST + '/' + id + '/setPolitica');
    }
 
-   getPolitica(id: number) {
+   getPolitica(id: number): Observable<any> {
     return this.http.get<any>(this.API_REST + '/' + id);
   }
 

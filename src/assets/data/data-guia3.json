@@ -125,11 +125,23 @@
 {
     "seccion": "Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.",
     "pregunta": [
+           { "num": 0, "preg": "En mi trabajo debo brindar servicio a clientes y usuarios" }
+       ]
+},
+{
+    "seccion": "Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.",
+    "pregunta": [
         { "num": 65, "preg": "Atiendo clientes o usuarios muy enojados" },
         { "num": 66, "preg": "Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas" },
         { "num": 67, "preg": "Para hacer mi trabajo debo demostrar sentimientos distintos a los míos" },
         { "num": 68, "preg": "Mi trabajo me exige atender situaciones de violencia" }
     ]
+},
+{
+    "seccion": "",
+    "pregunta": [
+           { "num": -1, "preg": "Soy jefe de otros trabajadores" }
+       ]
 },
 {
     "seccion": "Las preguntas siguientes están relacionadas con las actitudes de las personas que supervisa.",

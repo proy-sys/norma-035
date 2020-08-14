@@ -10,7 +10,10 @@
         { "num": 7, "preg": "Mi trabajo exige que esté muy concentrado" },
         { "num": 8, "preg": "Mi trabajo requiere que memorice mucha información" },
         { "num": 9, "preg": "Mi trabajo exige que atienda varios asuntos al mismo tiempo" }
+    
+    
     ]
+
 },
 {
     "seccion": "Las preguntas siguientes están relacionadas con las actividades que realiza en su trabajo y las responsabilidades que tiene.",
@@ -69,12 +72,24 @@
     ]
 },
 {
-    "seccion": "Si su respuesta fue 'SÍ', responda las preguntas siguientes. Si su respuesta fue 'NO' pase a las preguntas de la sección siguiente.",
+    "seccion": "Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.",
+    "pregunta": [
+           { "num": 0, "preg": "En mi trabajo debo brindar servicio a clientes y usuarios" }
+       ]
+},
+{
+    "seccion": "Si su respuesta fue SÍ responda las preguntas siguientes. Si su respuesta fue NO pase a las preguntas de la sección siguiente.",
     "pregunta": [
         { "num": 41, "preg": "Atiendo clientes o usuarios muy enojados" },
         { "num": 42, "preg": "Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas" },
         { "num": 43, "preg": "Para hacer mi trabajo debo demostrar sentimientos distintos a los míos" }
     ]
+},
+{
+    "seccion": "",
+    "pregunta": [
+           { "num": -1, "preg": "Soy jefe de otros trabajadores" }
+       ]
 },
 {
     "seccion": "Las siguientes preguntas están relacionadas con las actitudes de los trabajadores que supervisa.",

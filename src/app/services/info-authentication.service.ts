@@ -5,6 +5,7 @@ import { User } from '../interfaces/info-user.interface';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { JwtResponseI } from '../interfaces/info-jwt.interface';
 import { RoleValidator } from '../auth/helpers/roleValidator';
+import { InfoRespuesta } from '../interfaces/info-respuesta.interface';
 @Injectable({
     providedIn: 'root'
 })
@@ -13,6 +14,7 @@ export class InfoAuthenticationService extends RoleValidator{
 
  private API_REST = 'http://localhost/norma035-back/public/login';
  private jwtUser: JwtResponseI;
+ private respuesta: InfoRespuesta = {};
 
  private httpHeaders = new HttpHeaders(
     {
@@ -55,6 +57,24 @@ export class InfoAuthenticationService extends RoleValidator{
     const usuario = localStorage.getItem('usuario');
     localStorage.removeItem('usuario');
     return this.http.post( this.API_REST + 'logout', {headers: this.httpHeaders});
+  }
+
+  getRespuestas(){
+    const res = sessionStorage.getItem('respuestas');
+    if (res === null || res === undefined || res.trim().length === 0){
+              return null;
+   }else{
+     this.respuesta = JSON.parse(res);
+     return this.respuesta;
+   }
+ }
+
+  updateRespuestas(respuesta: InfoRespuesta): void{
+    sessionStorage.setItem('respuestas', JSON.stringify(respuesta));
+  }
+
+  clearRespuestas(){
+    sessionStorage.removeItem('respuestas');
   }
 
 }

@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-10">
             <div class="card card-primary card-outline">
-                <form (ngSubmit)="guardarAddGuia1(forma)" #forma="ngForm">
+                <form (ngSubmit)="verificarSeccion(forma)" #forma="ngForm">
                     <div class="card-body box-profile">
                         <div class="row">
                             <div class="content-header">
@@ -45,21 +45,20 @@
                                                          <th>No</th>
                                                      </tr>
                                                  </table>
-                                                 <table class="table table-bordered" *ngFor="let seccion of infoGuiaService.guia1; let i = index">
+                                                 <table class="table table-bordered">
                                                      <thead>
                                                          <tr>
-                                                             <th colspan="4">{{ seccion.seccion }}</th>
+                                                             <th colspan="4">{{ infoGuiaService.guia1[0].seccion }}</th>
                                                          </tr>
                                                      </thead>
                                                      <tbody>
-                                                         <tr *ngFor="let pregunta of seccion.pregunta; let j = index">
+                                                         <tr *ngFor="let pregunta of infoGuiaService.guia1[0].pregunta; let j = index">
                                                              <td width="3%">{{pregunta.num}}</td>
                                                              <td>{{ pregunta.preg}}</td>
 
                                                              <td *ngFor="let key of radioOptions" width="6%" class="text-center">
                                                                     <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel>
                                                              </td>
-
                                                          </tr>
                                                      </tbody>
                                                  </table>
@@ -72,7 +71,7 @@
                              </div>
                         </div>
                         <hr/>
-                        <button type="submit" class="btn btn-primary btn-block"><b>Guardar Cambios</b></button>
+                        <button type="submit" class="btn btn-primary btn-block"><b>Continue</b></button>
                     </div>
                 </form>
             </div>
