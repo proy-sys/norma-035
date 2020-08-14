@@ -27,10 +27,9 @@ export class EncuestaInstComponent implements OnInit {
       data => {
           if (data <= 15){
                this.ruta.navigate(['trabajador/encuesta-guia1-seccion-1']);
-          }
-          if (data > 15 && data <= 50){
+          }else if (data > 15 && data < 17){
                this.ruta.navigate(['trabajador/encuesta-guia2']);
-          }else if (data > 50){
+          }else if (data > 16){
                this.ruta.navigate(['trabajador/encuesta-guia3']);
           }
         }, (err) => {
