@@ -1,0 +1,178 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mx-auto">
+                <h1 class="text-dark text-center">Niveles de riesgo por Dominios</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a>Inicio</a></li>
+                    <li class="breadcrumb-item active">Guia II</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <!-- ***************************** 1 y 2 *************************** -->
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Condiciones en el ambiente de trabajo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData1" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Carga de trabajo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                    </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***************************** 3 y 4 *************************** -->
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Falta de control sobre el trabajo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData3" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                      </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Jornada de trabajo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData4" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                  </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***************************** 5 y 6 *************************** -->
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Interferencia en la relación trabajo-familia</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData5" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                    </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Liderazgo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData6" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***************************** 7 y 8 *************************** -->
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Relaciones en el trabajo</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData7" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                    </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Violencia</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData8" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***************************** 9 y 10 *************************** -->
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Reconocimiento del desempeño</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData9" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                  </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card">
+                                <div class="card-header text-center mt-2">
+                                    <h4>Insuficiente sentido de pertenencia e, inestabilidad</h4>
+                                </div>
+                                <div class="card-block mt-2">
+                                    <div class="chart">
+                                        <canvas baseChart [data]="pieChartData10" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                              </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" (click)="irListado()" class="btn btn-danger btn-block">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->

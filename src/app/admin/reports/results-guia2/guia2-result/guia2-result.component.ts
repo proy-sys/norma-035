@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { jsPDF } from 'jspdf';
 import { InfoTrabajadorService } from '../../../../services/info-trabajador.service';
 import { InfoTrabajador } from '../../../../interfaces/info-trabajador.interfce';
 import { InfoGuiasService } from '../../../../services/info-guias.service';
@@ -37,12 +38,27 @@ export class Guia2ResultComponent {
   }
 
   listadoTrabajadores() {
-    this.infoGuiasService.getGuia(2).subscribe(
-      data => {
-        this.listaTrabajadores = data;
-      }
-    );
+      this.activatedRoute.params.subscribe(params => {
+        this.infoGuiasService.getGuia2(2, params.id).subscribe(
+        data => {
+          this.listaTrabajadores = data;
+        }, (err) => {
+          console.log('Error al cargar:' + err);
+        }
+      );
+    });
   }
+
+  imprimirGuia2() {
+    const doc = new jsPDF();
+
+    const elementHTML = $('#reportGuia2').html();
+
+    doc.html(elementHTML);
+    doc.save('listax_guia2.pdf');
+
+    }
+
 
 // ************************** RUTAS *****************************
   irListado() {

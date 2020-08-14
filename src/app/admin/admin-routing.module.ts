@@ -31,8 +31,12 @@ import { Guia2ResultComponent } from './reports/results-guia2/guia2-result/guia2
 import { Guia3ResultComponent } from './reports/results-guia3/guia3-result/guia3-result.component';
 import { Guia2OpcionesComponent } from './statistics/graphics-guia2/guia2-opciones/guia2-opciones.component';
 import { Guia2GeneralComponent } from './statistics/graphics-guia2/guia2-general/guia2-general.component';
-import { Guia2AmbienteComponent } from './statistics/graphics-guia2/guia2-ambiente/guia2-ambiente.component';
-import { Guia2FactoresComponent } from './statistics/graphics-guia2/guia2-factores/guia2-factores.component';
+import { Guia2CategoriasComponent } from './statistics/graphics-guia2/guia2-categorias/guia2-categorias.component';
+import { Guia2DominiosComponent } from './statistics/graphics-guia2/guia2-dominios/guia2-dominios.component';
+import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general/guia3-general.component';
+import { Guia3CategoriasComponent } from './statistics/graphics-guia3/guia3-categorias/guia3-categorias.component';
+import { Guia3DominiosComponent } from './statistics/graphics-guia3/guia3-dominios/guia3-dominios.component';
+import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
 
 
 const routes: Routes = [
@@ -68,8 +72,12 @@ const routes: Routes = [
   { path: 'guia3-result/:id', component: Guia3ResultComponent},
   { path: 'guia2-opciones', component: Guia2OpcionesComponent},
   { path: 'guia2-general', component: Guia2GeneralComponent},
-  { path: 'guia2-ambiente', component: Guia2AmbienteComponent},
-  { path: 'guia2-factores', component: Guia2FactoresComponent},
+  { path: 'guia2-categorias', component: Guia2CategoriasComponent},
+  { path: 'guia2-dominios', component: Guia2DominiosComponent},
+  { path: 'guia3-opciones', component: Guia3OpcionesComponent},
+  { path: 'guia3-general', component: Guia3GeneralComponent},
+  { path: 'guia3-categorias', component: Guia3CategoriasComponent},
+  { path: 'guia3-dominios', component: Guia3DominiosComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'empresa' }
 ];
 

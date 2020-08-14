@@ -65,6 +65,10 @@ getGuia(id: number){
   return this.http.get( this.API_REST + '/g/' + id, {headers: this.httpHeaders});
 }
 
+getGuia2(id: number, trab: number){
+  return this.http.get( this.API_REST + '/gui/' + id + '/' + trab, {headers: this.httpHeaders});
+}
+
 getCalificacionGuia(id, guia: number){
   return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id + '/' + guia, {headers: this.httpHeaders});
 }
@@ -77,8 +81,66 @@ getResultadoTotal(guia: number){
   return this.http.get( this.API_REST + '/resultadoTotal/' + guia, {headers: this.httpHeaders});
 }
 
-getResultadoAmbiente(guia: number){
-  return this.http.get( this.API_REST + '/resultadoAmbiente/' + guia, {headers: this.httpHeaders});
+// ************************************ CATEGORÍAS ********************************
+getResultadoCategoriaAmb(guia: number){
+  return this.http.get( this.API_REST + '/resultadoCategoriaAmb/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoCategoriaFac(guia: number){
+  return this.http.get( this.API_REST + '/resultadoCategoriaFac/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoCategoriaOrg(guia: number){
+  return this.http.get( this.API_REST + '/resultadoCategoriaOrg/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoCategoriaLid(guia: number){
+  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoCategoriaEnt(guia: number){
+  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia, {headers: this.httpHeaders});
+}
+
+// ************************************ DOMINIOS ********************************
+getResultadoDominio1(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio1/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio2(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio2/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio3(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio3/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio4(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio4/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio5(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio5/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio6(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio6/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio7(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio7/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio8(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio8/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio9(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio9/' + guia, {headers: this.httpHeaders});
+}
+
+getResultadoDominio10(guia: number){
+  return this.http.get( this.API_REST + '/resultadoDominio10/' + guia, {headers: this.httpHeaders});
 }
 
 }
