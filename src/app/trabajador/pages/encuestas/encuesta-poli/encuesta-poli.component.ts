@@ -44,9 +44,9 @@ export class EncuestaPoliComponent implements OnInit {
       data => {
           if (data <= 15){
                this.valor = 1;
-          }else if (data > 15 && data <= 50){
+          }else if (data > 15 && data < 17){
                 this.valor = 2;
-          }else if (data > 50){
+          }else if (data > 16){
                 this.valor = 3;
           }
 
