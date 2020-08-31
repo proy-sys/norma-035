@@ -16,15 +16,23 @@ export class EmpresaComponent implements OnInit {
   empresa: InfoEmpresa = {};
   srcLogo: string;
   srcImagen: string;
-  numeroTrabajadores: Object;
+  numeroTrabajadores: any;
+  muestraRepresentativa: any;
 
-  constructor( private infoEmpresaService: InfoEmpresaService, private infoTrabajadorService: InfoTrabajadorService,
+  constructor( private infoEmpresaService: InfoEmpresaService, 
+               private infoTrabajadorService: InfoTrabajadorService,
                private ruta: Router) {}
 
   ngOnInit(): void {
     this.cargarEmpresa();
+    this.calculoRepresentativo();
   }
 
+  calculoRepresentativo(){
+     const a1 = 16 * 0.9604;
+     const a2 = 0.0025 * (16 - 1) + 0.9604;
+     this.muestraRepresentativa = a1 / a2;
+  }
   cargarEmpresa(){
 
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(

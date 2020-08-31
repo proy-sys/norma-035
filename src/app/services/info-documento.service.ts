@@ -33,7 +33,6 @@ export class InfoDocumentoService {
   deleteDocumento(id: number){
      return this.http.delete( this.API_REST + '/' + id, { headers: this.httpHeader});
   }
-
   getTotalDocumentos() {
      return this.http.get(this.API_REST + '/cantidad');
   }

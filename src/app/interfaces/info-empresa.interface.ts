@@ -7,5 +7,4 @@ export interface InfoEmpresa {
   logo?: string;
   imagen?: string;
   codigo_postal?: string;
-  
 }

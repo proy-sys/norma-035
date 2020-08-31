@@ -36,7 +36,7 @@ export class InfoTrabajadorService {
   deleteTrabajador(id: number): Observable<any>{
     return this.http.delete( this.API_REST + '/' + id, { headers: this.httpHeader});
   }
-  getTotalTrabajadores() {
+  getTotalTrabajadores(): any {
      return this.http.get(this.API_REST + '/cantidad', { headers: this.httpHeader});
   }
 }

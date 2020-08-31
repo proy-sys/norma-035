@@ -15,19 +15,18 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   cerrarSesion(){
-  /*  this.infoAutoentificacionService.logout().subscribe(
+  this.infoAutoentificacionService.logout().subscribe(
       data => {
           if (data === 200){
+               localStorage.removeItem('usuario');
                this.ruta.navigate(['login']);
+               window.location.reload();
           }
         }, (err) => {
           console.log('Hubo un error:' + err);
         }
-      );*/
-     localStorage.removeItem('usuario');
-     this.ruta.navigate(['login']);
-     window.location.reload();
+      );
   }
-
 }

@@ -93,6 +93,7 @@ export class EmpresaEditComponent implements OnInit{
     }
   }
 
+
    actualizarImagen(event: any): void {
 
     if (event.target.files && event.target.files[0]) {
@@ -109,6 +110,16 @@ export class EmpresaEditComponent implements OnInit{
      }
    }
 
+   actualizarEstadoMunicipio(){
+    this.infoEmpresaService.actualizarEmpresa(this.empresa)
+    .pipe(first())
+    .subscribe(data => {
+        this.empresa = data;
+        this.ruta.navigate(['administrador/empresa']);
+    }, error => {
+          console.log('error en la modificación empresas:' + error.message);
+    });
+   }
 // *************************** RUTAS ****************************
 
    componente_empresa(): void {

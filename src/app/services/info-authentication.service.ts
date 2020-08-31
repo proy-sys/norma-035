@@ -12,14 +12,14 @@ import { InfoRespuesta } from '../interfaces/info-respuesta.interface';
 
 export class InfoAuthenticationService extends RoleValidator{
 
- private API_REST = 'http://localhost/norma035-back/public/login';
+ private API_REST = 'http://localhost/norma035-back/public';
  private jwtUser: JwtResponseI;
  private respuesta: InfoRespuesta = {};
 
  private httpHeaders = new HttpHeaders(
     {
       'Content-Type' : 'application/json' ,
-       Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+       Authorization: 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
     }
 );
 
@@ -30,7 +30,7 @@ export class InfoAuthenticationService extends RoleValidator{
  }
 
  login(user: User): Observable<any>{
-      return this.http.post<JwtResponseI>( this.API_REST, user, { headers: this.httpHeaders});
+      return this.http.post<JwtResponseI>( this.API_REST + '/login', user, { headers: this.httpHeaders});
  }
 
  getToken() {
@@ -50,13 +50,12 @@ export class InfoAuthenticationService extends RoleValidator{
   }
 
   updateUser(jwtUser: JwtResponseI): void{
-     localStorage.setItem('usuario', JSON.stringify(jwtUser));
+        localStorage.setItem('usuario', JSON.stringify(jwtUser));
   }
 
   logout(){
-    const usuario = localStorage.getItem('usuario');
-    localStorage.removeItem('usuario');
-    return this.http.post( this.API_REST + 'logout', {headers: this.httpHeaders});
+     localStorage.removeItem('usuario');
+     return this.http.post( this.API_REST + '/logout', {headers: this.httpHeaders});
   }
 
   getRespuestas(){
@@ -74,7 +73,7 @@ export class InfoAuthenticationService extends RoleValidator{
   }
 
   clearRespuestas(){
-    sessionStorage.removeItem('respuestas');
+     sessionStorage.removeItem('respuestas');
   }
 
 }

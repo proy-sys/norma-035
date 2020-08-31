@@ -42,14 +42,11 @@ export class EncuestaPoliComponent implements OnInit {
   irIntrucciones(){
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
-          if (data <= 15){
-               this.valor = 1;
-          }else if (data > 15 && data < 17){
-                this.valor = 2;
-          }else if (data > 16){
-                this.valor = 3;
+          if (data <= 50){
+               this.valor = 2;
+          }else if (data > 50){
+               this.valor = 3;
           }
-
           this.ruta.navigate(['trabajador/encuesta-inst', this.valor]);
         }, (err) => {
           console.log('Hubo un error:' + err);

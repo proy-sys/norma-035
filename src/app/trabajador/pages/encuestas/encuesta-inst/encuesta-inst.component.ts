@@ -25,12 +25,10 @@ export class EncuestaInstComponent implements OnInit {
   irGuia(){
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
-          if (data <= 15){
-               this.ruta.navigate(['trabajador/encuesta-guia1-seccion-1']);
-          }else if (data > 15 && data < 17){
-               this.ruta.navigate(['trabajador/encuesta-guia2']);
-          }else if (data > 16){
-               this.ruta.navigate(['trabajador/encuesta-guia3']);
+          if (data <= 50){
+             this.ruta.navigate(['trabajador/encuesta-guia2']);
+          }else if (data > 50 ){
+              this.ruta.navigate(['trabajador/encuesta-guia3']);
           }
         }, (err) => {
           console.log('Hubo un error:' + err);
