@@ -52,6 +52,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { HeaderComponent } from '../shared/header/header.component';
+import { SugerenciasEditComponent } from './pages/sugerencias/sugerencias-edit/sugerencias-edit.component';
 
 @NgModule({
   declarations:
@@ -99,6 +100,7 @@ import { HeaderComponent } from '../shared/header/header.component';
           Guia3GeneralComponent,
           Guia3CategoriasComponent,
           Guia3DominiosComponent,
+          SugerenciasEditComponent,
           ],
       imports: [
           CommonModule,

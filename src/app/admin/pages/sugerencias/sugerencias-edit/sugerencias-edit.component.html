@@ -25,51 +25,36 @@
         <div class="col-md-10">
             <div class="card">
                 <!-- Contenido datos de empresa -->
-                <form [formGroup]="formAddQuejaSugerencia" (ngSubmit)="guardarAddSugerenciaQueja()">
+                <form [formGroup]="formEditQuejaSugerencia" (ngSubmit)="guardarEditSugerenciaQueja()">
                     <div class="card-body mt-4">
                         <div class="row">
                             <div class="card card-infi col-md-12">
                                 <div class="card-header">
-                                    <h3 class="card-title"><strong>Nueva Queja y/o sugerencia</strong></h3>
+                                    <h3 *ngIf="sugerencia.estatus==1" class="card-title"><strong>Investigar Queja o Sugerencia</strong></h3>
+                                    <h3 *ngIf="sugerencia.estatus==2" class="card-title"><strong>Cerrar Queja o Sugerencia</strong></h3>
                                 </div>
                                 <div class="form-horizontal">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-sm-6">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Tipo</label>
-                                                    <select class="form-control" formControlName="tipo" [class.is-invalid]="tipoNoValido">
-                                                         <option value="">-- Seleccione --</option>
-                                                         <option value="Queja">Queja</option>
-                                                         <option value="Sugerencia">Sugerencia</option>
-                                                      </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Trabajador</label>
-                                                    <select class="form-control" formControlName="trabajador_id" [class.is-invalid]="trabajador_idNoValido">
-                                                         <option value="">-- Seleccione --</option>
-                                                         <option  *ngFor="let trabajador of  listaTrabajadores" value="{{trabajador.id}}"> {{trabajador.nombre}} </option>
-                                                      </select>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Descripcion</label>
-                                                    <textarea type="text" class="form-control" formControlName="descripcion" [class.is-invalid]="descripcionNoValido" id="descripcion" placeholder="descripcion"></textarea>
-                                                    <!--<small *ngIf="nombreNoValido" class="text-danger">Ingrese la descripcion</small> -->
+                                                <div [hidden]="sugerencia.estatus==2" class="form-group">
+                                                    <label>Planteamiento</label>
+                                                    <textarea [(ngModel)]="sugerencia.en_proceso" class="form-control" formControlName="en_proceso" id="en_proceso" rows="1"></textarea>
+                                                </div>
+                                                <div [hidden]="sugerencia.estatus==1" class="form-group">
+                                                    <label>Conclusiónes</label>
+                                                    <textarea [(ngModel)]="sugerencia.conclusion" class="form-control" formControlName="conclusion" id="conclusion" rows="1"></textarea>
+                                                </div>
+                                                <div *ngIf="sugerencia.estatus==2" class="form-group">
+                                                    <select [(ngModel)]="sugerencia.status" class="form-control" formControlName="status">
+                                                      <option value="">-- Seleccione --</option>
+                                                      <option value="true">Procede</option>
+                                                      <option value="false">No Procede</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="hidden" class="form-control" formControlName="estatus" id="estatus">
-                                                    <!--<small *ngIf="nombreNoValido" class="text-danger">Ingrese la descripcion</small> -->
+                                                    <input [(ngModel)]="sugerencia.estatus" type="hidden" formControlName="estatus" class="form-control">
                                                 </div>
                                             </div>
                                         </div>

@@ -1,81 +1,90 @@
 <!-- Content Header (Page header) -->
 <div class="content-header">
-  <div class="container-fluid">
-      <div class="row mb-2">
-          <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Quejas y Sugerencias</h1>
-          </div>
-          <!-- /.col -->
-          <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active">Quejas y sugerencias</li>
-              </ol>
-          </div>
-          <!-- /.col -->
-      </div>
-      <!-- /.row -->
-  </div>
-  <!-- /.container-fluid -->
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Quejas y Sugerencias</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Quejas y sugerencias</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
 <div class="container-fluid">
-  <div class="row">
-      <div class="col-12">
-          <div class="card">
-              <div class="card-header">
-                  <h3 class="card-title">Listado de Quejas y sugerencias</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                            <div class="btn btn-warning float-sm-right" (click)="irSugerenciaadd()"><i class="nav-icon fas fa-plus text-white"></i></div>
-                        <br><br>
-                    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Listado de Quejas y sugerencias</h3>
                 </div>
-                  <table id="example1" class="table table-bordered table-striped">
-                      <thead>
-                          <tr>
-
-                              <th>Tipo</th>
-                              <th>Descripcion</th>
-                              <th>Trabajador</th>
-                              <th class="text-center">Estado</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tbody>
-                              <tr *ngFor="let sugerencia of listaSugerencias">
-                                  <td>{{sugerencia.tipo}}</td>
-                                  <td>{{sugerencia.descripcion}}</td>
-                                  <td>{{sugerencia.nombre}}</td>
-                                  <td class="text-center">
-
-                                     <button *ngIf="sugerencia.status" type="button" class="btn btn-primary" (click)="cambiarStatus(sugerencia.id,false)">Procede</button>
-
-                                     <button  *ngIf="!sugerencia.status"  type="button" class="btn btn-success" (click)="cambiarStatus(sugerencia.id,true)" >No Procede</button>
-
-
-                                  </td>
-                              </tr>
-                          </tbody>
-                          <tfoot>
-                              <tr>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="btn btn-warning float-sm-right" (click)="irSugerenciaadd()"><i class="nav-icon fas fa-plus text-white"></i></div>
+                            <br><br>
+                        </div>
+                    </div>
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
                                 <th>Tipo</th>
                                 <th>Descripcion</th>
                                 <th>Trabajador</th>
+                                <th class="text-center">En proceso</th>
+                                <th class="text-center">Conclusiónes</th>
                                 <th class="text-center">Estado</th>
-                              </tr>
-                          </tfoot>
-                  </table>
-              </div>
-              <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-      </div>
-      <!-- /.col -->
-  </div>
-  <!-- /.row -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                                <tr *ngFor="let sugerencia of listaSugerencias">
+                                    <td width="8%">{{sugerencia.tipo}}</td>
+                                    <td width="21%">{{sugerencia.descripcion}}</td>
+                                    <td width="15%">{{sugerencia.nombre}}</td>
+                                    <td width="22%">
+                                        <span *ngIf="sugerencia.estatus==0">-</span>
+                                        <span *ngIf="sugerencia.estatus>0">{{sugerencia.en_proceso}}</span>
+                                    </td>
+                                    <td width="22%">
+                                        <span *ngIf="sugerencia.estatus==0 || sugerencia.estatus==1">-</span>
+                                        <span *ngIf="sugerencia.estatus==2">{{sugerencia.conclusion}}</span>
+                                    </td>
+                                    <td width="12%" class="text-center">
+                                        <button *ngIf="sugerencia.estatus==0" type="button" class="btn btn-warning" (click)="irSugerenciaEdit(sugerencia.id)">Pendiente</button>
+                                        <button *ngIf="sugerencia.estatus==1" type="button" class="btn btn-success" (click)="irSugerenciaEdit(sugerencia.id)">En Proceso</button>
+                                        <span *ngIf="sugerencia.estatus==2 && sugerencia.status==true" class="text-success"><b>Procede</b></span>
+                                        <span *ngIf="sugerencia.estatus==2 && sugerencia.status==false" class="text-danger"><b>No Procede</b></span>
+                                        <!-- <button *ngIf="sugerencia.estatus==2" type="button" class="btn btn-danger">Procede</button>
+                                        <button *ngIf="sugerencia.estatus==2" type="button" class="btn btn-danger">No Procede</button> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Descripcion</th>
+                                    <th>Trabajador</th>
+                                    <th class="text-center">Estado</th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
 </div>
 <!-- /.container-fluid -->

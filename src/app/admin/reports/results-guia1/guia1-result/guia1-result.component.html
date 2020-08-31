@@ -52,14 +52,14 @@
                                 <td width="5%" class="text-center">
                                     <span *ngFor="let item1 of listaTrabajadores">
                                       {{item1.pregunta}}
-                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1 && trabajador.id==item1.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
-                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2 && trabajador.id==item1.trabajador_id" class="mx-auto">-</span>
+                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                    <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
                                     </span>
                                 </td>
                                 <td width="5%" class="text-center">
                                     <span *ngFor="let item2 of listaTrabajadores">
-                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==1 && trabajador.id==item2.trabajador_id" class="mx-auto">-</span>
-                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==2 && trabajador.id==item2.trabajador_id" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==1" class="mx-auto">-</span>
+                                    <span *ngIf="pregunta.num==item2.pregunta_id && item2.respuesta==2" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
                                     </span>
                                 </td>
                             </tr>

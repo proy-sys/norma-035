@@ -37,6 +37,7 @@ import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general
 import { Guia3CategoriasComponent } from './statistics/graphics-guia3/guia3-categorias/guia3-categorias.component';
 import { Guia3DominiosComponent } from './statistics/graphics-guia3/guia3-dominios/guia3-dominios.component';
 import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
+import { SugerenciasEditComponent } from './pages/sugerencias/sugerencias-edit/sugerencias-edit.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'politicas-info-edit/:id', component: PoliticaInfoEditComponent},
   { path: 'sugerencias', component: SugerenciasComponent},
   { path: 'sugerenciasadd', component: SugerenciasAddComponent},
+  { path: 'sugerenciasedit/:id', component: SugerenciasEditComponent},
   { path: 'trabajadores', component: TrabajadoresComponent},
   { path: 'trabajadoresadd', component: TrabajadoresAddComponent},
   { path: 'trabajadoresedit/:id', component: TrabajadoresEditComponent },

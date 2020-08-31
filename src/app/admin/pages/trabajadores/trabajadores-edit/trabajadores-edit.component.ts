@@ -49,7 +49,6 @@ actualizarEditTrabajador(){
     .pipe(first())
     .subscribe(data => {
         this.trabajador = data;
-        console.log(this.trabajador);
         this.ruta.navigate(['administrador/trabajadores']);
     }, error => {
           console.log('error en la modificación del trabajador:' + error.message);

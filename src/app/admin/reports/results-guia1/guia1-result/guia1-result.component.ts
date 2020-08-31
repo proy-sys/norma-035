@@ -26,15 +26,18 @@ export class Guia1ResultComponent {
       // this.calificacion();
     }
 
+
     listadoTrabajadores() {
-      this.infoGuiasService.getGuia(1).subscribe(
+      this.activatedRoute.params.subscribe(params => {
+        this.infoGuiasService.getGuia2(1, params.id).subscribe(
         data => {
           this.listaTrabajadores = data;
-          console.log(this.listaTrabajadores);
+        }, (err) => {
+          console.log('Error al cargar:' + err);
         }
       );
-    }
-
+    });
+  }
 
 
   // listadoTrabajadores() {

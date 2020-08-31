@@ -5,4 +5,7 @@ export interface InfoSugerenciaQueja {
     tipo?: string;
     nombre?: string;
     trabajador_id?: number;
+    en_proceso?: string;
+    conclusion?: string;
+    estatus?: number;
   }
