@@ -29,15 +29,21 @@ export class SugerenciasComponent implements OnInit {
  }
 
 
- cambiarStatus(id , status){
-   this.infoSugerenciaQuejaService.setStatus(id , status).subscribe(
-    data => {
-      console.log(data);
-      this.ngOnInit();
-    }
-  );
- }
+//  cambiarStatus(id, status){
+//    this.infoSugerenciaQuejaService.setStatus(id , status).subscribe(
+//     data => {
+//       console.log(data);
+//       this.ngOnInit();
+//     }
+//   );
+//  }
+
  irSugerenciaadd(){
    this.ruta.navigate(['administrador/sugerenciasadd']);
  }
+
+ irSugerenciaEdit(id: number) {
+  this.ruta.navigate(['administrador/sugerenciasedit', id]);
+}
+
 }

@@ -19,7 +19,7 @@ export class SugerenciasAddComponent implements OnInit {
                private ruta: Router,
                private fb: FormBuilder,
                public infoTrabajadorService: InfoTrabajadorService
-               ){ 
+               ){
                    this.crearFormulario();
                    this.listarTrabajadores();
                 }
@@ -41,7 +41,7 @@ export class SugerenciasAddComponent implements OnInit {
          status: ['false'],
          tipo: ['', Validators.required],
          trabajador_id: ['', Validators.required],
-
+         estatus: [0]
     });
   }
 

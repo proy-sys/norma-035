@@ -26,6 +26,9 @@ export class InfoSugerenciaQuejaService {
   getQueja_Sugerencia(id: number): Observable<any> {
     return this.http.get<InfoSugerenciaQueja>(this.API_REST + '/' + id);
   }
+  actualizarSugerencia(mysugerencia: InfoSugerenciaQueja): Observable<any>{
+    return this.http.put<InfoSugerenciaQueja>( this.API_REST + '/' + mysugerencia.id, mysugerencia, { headers: this.httpHeader});
+  }
   setStatus(id: number, status: boolean){
      console.log(id , status);
      return this.http.get(this.API_REST + '/' + id + '/' + status);
