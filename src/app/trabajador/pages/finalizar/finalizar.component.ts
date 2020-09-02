@@ -19,4 +19,8 @@ export class FinalizarComponent implements OnInit {
     this.ruta.navigate(['login']);
   }
 
+  irBuzon(){
+    this.ruta.navigate(['trabajador/buzon']);
+  }
+
 }

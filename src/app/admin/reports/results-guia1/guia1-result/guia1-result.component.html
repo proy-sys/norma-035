@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-4"></div>
-            <div class="col-sm-4 mx-auto">
+            <div class="col-sm-4 mx-auto" id="element-to-print_uno">
                 <h1 class="text-dark text-center">Resultado de la Guía I</h1>
                 <h1 class="text-dark text-center">{{trabajador.nombre}}</h1>
             </div>
@@ -25,20 +25,16 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="card">
-                <div class="row">
+                <div class="row" id="element-to-print_dos">
                     <div class="col-md-6 mt-3 mx-auto text-center">
-                        <span><strong>CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</strong></span>
+                        <span> <strong>CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS</strong></span>
                     </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
-                    <!-- <div style="height: min-content; vertical-align: bottom; margin: 0px; padding: 0px;">
-                      Marque con una "X" a la respuesta que se le indica
-                  </div> -->
-                    <!-- <div *ngFor="let item of listaTrabajadores" class="row">{{item.pregunta_id}}</div> -->
+                <div class="card-body" id="element-to-print_tres">
                     <table class="table table-bordered" *ngFor="let seccion of infoGuiasService.guia1; let i = index">
                         <thead>
-                            <tr class="encabezado-table" style="background-color: #2B579A; color: #FFFFFF;">
+                            <tr class="encabezado-table">
                                 <th colspan="2">{{ seccion.seccion }}</th>
                                 <th class="text-center">Si</th>
                                 <th class="text-center">No</th>
@@ -66,8 +62,13 @@
 
                         </tbody>
                     </table>
+                    
+                   
                 </div>
                 <!-- /.card-body -->
+                <div class="card-footer mx-auto mb-3 text-center">
+                    <button type="button" class="btn btn-dark"  style="background-color: #2B579A; color: #ffffff" (click)="imprimirGuia1()">Imprimir</button>
+                </div>
             </div>
         </div>
         <!-- /.col -->

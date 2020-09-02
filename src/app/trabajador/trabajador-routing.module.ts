@@ -9,6 +9,7 @@ import { EncuestaGuia3Component } from './pages/encuestas/encuesta-guia3/encuest
 import { FinalizarComponent } from './pages/finalizar/finalizar.component';
 import { Seccion1Component } from './pages/encuestas/encuesta-guia1/seccion-uno/seccion1.component';
 import { SeccionGeneralComponent } from './pages/encuestas/encuesta-guia1/seccion-general/seccion-general.component';
+import { BuzonComponent } from './pages/buzon/buzon.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'encuesta-guia2', component: EncuestaGuia2Component },
   { path: 'encuesta-guia3', component: EncuestaGuia3Component },
   { path: 'finalizar', component: FinalizarComponent },
+  { path: 'buzon', component: BuzonComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'encuesta-poli' }
 ];
 

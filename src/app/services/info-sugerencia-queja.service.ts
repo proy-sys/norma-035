@@ -10,8 +10,7 @@ import { InfoTrabajador } from '../interfaces/info-trabajador.interfce';
 export class InfoSugerenciaQuejaService {
 
   private httpHeader = new HttpHeaders( {
-    'Content-Type' : 'application/json' ,
-     Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+    'Content-Type' : 'application/json'
 });
 
 

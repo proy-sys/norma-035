@@ -1,6 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { TrabajadorModule } from './trabajador/trabajador.module';
 
 import { ChartsModule } from 'ng2-charts';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,16 @@ import { ChartsModule } from 'ng2-charts';
        })
   ],
   exports: [],
-  providers: [CanAdminGuard, CanTrabajadorGuard, CanLoginGuard],
+  providers: [
+              CanAdminGuard,
+              CanTrabajadorGuard,
+              CanLoginGuard,
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: AuthInterceptorService,
+                multi: true
+              }
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

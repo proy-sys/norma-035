@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InfoGuiasService } from '../../../../services/info-guias.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InfoTrabajadorService } from '../../../../services/info-trabajador.service';
-import { InfoTrabajador } from 'src/app/interfaces/info-trabajador.interfce';
+import * as html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-guia1-result',
@@ -65,4 +65,13 @@ export class Guia1ResultComponent {
 irListado() {
   this.ruta.navigate(['administrador/guia1-list']);
 }
+
+imprimirGuia1()
+{
+  /*const w = window.open();
+  w.document.write($('#element-to-print_tres').html());
+  w.print();
+  w.close();*/
+  window.print();
+ }
 }

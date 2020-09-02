@@ -18,8 +18,7 @@ export class InfoAuthenticationService extends RoleValidator{
 
  private httpHeaders = new HttpHeaders(
     {
-      'Content-Type' : 'application/json' ,
-       Authorization: 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+      'Content-Type' : 'application/json'
     }
 );
 
@@ -30,7 +29,8 @@ export class InfoAuthenticationService extends RoleValidator{
  }
 
  login(user: User): Observable<any>{
-      return this.http.post<JwtResponseI>( this.API_REST + '/login', user, { headers: this.httpHeaders});
+   console.log(user);
+   return this.http.post<JwtResponseI>( this.API_REST + '/login', user, { headers: this.httpHeaders});
  }
 
  getToken() {

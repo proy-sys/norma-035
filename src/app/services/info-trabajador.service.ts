@@ -10,8 +10,7 @@ import { InfoAuthenticationService } from './info-authentication.service';
 export class InfoTrabajadorService {
 
   private httpHeader = new HttpHeaders( {
-    'Content-Type' : 'application/json' ,
-    Authorization: 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ',
+    'Content-Type' : 'application/json'
 });
 
 

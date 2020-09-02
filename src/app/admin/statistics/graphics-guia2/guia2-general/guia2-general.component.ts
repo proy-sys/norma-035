@@ -72,4 +72,8 @@ export class Guia2GeneralComponent {
     this.ruta.navigate(['administrador/guia2-opciones']);
   }
 
+  imprimir(){
+    window.print();
+  }
+
 }

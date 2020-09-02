@@ -56,10 +56,10 @@
                                                                  <td *ngFor="let key of radioOptions" width="6%" class="text-center">
     
                                                                       <div *ngIf="verificarPregunta(pregunta.num)">
-                                                                          <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel>
+                                                                          <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel required>
                                                                       </div>
                                                                       <div *ngIf="!verificarPregunta(pregunta.num)">
-                                                                         <input id="ra_{{pregunta.num}}" [value]='key.op2' type="radio" name="{{pregunta.num}}" ngModel>  
+                                                                         <input id="ra_{{pregunta.num}}" [value]='key.op2' type="radio" name="{{pregunta.num}}" ngModel required>  
                                                                       </div>
     
                                                                  </td>
@@ -76,11 +76,11 @@
                                                      <tr>
                                                          <td rowspan="2">{{ infoGuiaService.guia2[6].pregunta[0].preg}}</td>
                                                          <td>Si</td>
-                                                         <td><input id="si_1" value="si" type="radio" name="no_1" (change)="validarRadio($event,1)"></td>
+                                                         <td><input id="si_1" value="si" type="radio" name="no_1" (change)="validarRadio($event,1)" required></td>
                                                      </tr>
                                                      <tr>
                                                          <td>No</td>
-                                                         <td><input id="si_1" value="no" type="radio" name="no_1" (change)="validarRadio($event,1)"></td>
+                                                         <td><input id="si_1" value="no" type="radio" name="no_1" (change)="validarRadio($event,1)" required></td>
                                                      </tr>
                                                  </tbody>
                                              </table>
@@ -127,11 +127,11 @@
                                                          <tr>
                                                              <td rowspan="2">{{ infoGuiaService.guia2[8].pregunta[0].preg }}</td>
                                                              <td>Si</td>
-                                                             <td><input id="si_2" value="si" type="radio" name="no_2" (change)="validarRadio($event,2)"></td>
+                                                             <td><input id="si_2" value="si" type="radio" name="no_2" (change)="validarRadio($event,2)" required></td>
                                                          </tr>
                                                          <tr>
                                                              <td>No</td>
-                                                             <td><input id="si_2" value="no" type="radio" name="no_2" (change)="validarRadio($event,2)"></td>
+                                                             <td><input id="si_2" value="no" type="radio" name="no_2" (change)="validarRadio($event,2)" required></td>
                                                          </tr>
                                                      </tbody>
                                                  </table>
@@ -183,7 +183,7 @@
                         
                       </div>
                        <hr/>
-                     <button type="submit" class="btn btn-primary btn-block"><b>Guardar Cambios</b></button>
+                     <button type="submit" [disabled]="forma.invalid" class="btn btn-primary btn-block"><b>Guardar Cambios</b></button>
                   </div>
                 </form>
             </div>

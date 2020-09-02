@@ -58,9 +58,9 @@
                                         </div>
                                     </td>
                                     <td *ngIf="persona.resultado>=90" class="text-center" style="background-color: #FF0000; color: #ffffff;">Muy alto</td>
-                                    <td *ngIf="persona.resultado>=70 && persona.resultado<90" class="text-center" style="background-color: #FFC000; color: #000000;">Alto</td>
-                                    <td *ngIf="persona.resultado>=45 && persona.resultado<70" class="text-center" style="background-color: #FFFF00; color: #000000;">Medio</td>
-                                    <td *ngIf="persona.resultado>=20 && persona.resultado<45" class="text-center" style="background-color: #12B015; color: #000000;">Bajo</td>
+                                    <td *ngIf="persona.resultado>=70 && persona.resultado<90" class="text-center"  style="background-color: #FFC000; color: #000000;">Alto</td>
+                                    <td *ngIf="persona.resultado>=45 && persona.resultado<70" class="text-center"  style="background-color: #FFFF00; color: #000000;">Medio</td>
+                                    <td *ngIf="persona.resultado>=20 && persona.resultado<45" class="text-center"  style="background-color: #12B015; color: #000000;">Bajo</td>
                                     <td *ngIf="persona.resultado<20" class="text-center" style="background-color: #9BE5F7; color: #000000;">Nulo</td>
                                 </tr>
                             </tbody>
@@ -69,7 +69,8 @@
                                     <th>Nombres y apellidos</th>
                                     <th>Cargo</th>
                                     <th>E-mail</th>
-                                    <th style="text-align: center;">Opciones</th>
+                                    <th class="text-center">Calificación</th>
+                                    <th class="text-center">Opciones</th>
                                     <th class="text-center">Niveles</th>
                                 </tr>
                             </tfoot>

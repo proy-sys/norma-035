@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
           }
         }
     }, error => {
-          console.log('error al dar de alta al trabajador:' + error.message);
+          console.log('error:' + error.message);
     });
     }
    }

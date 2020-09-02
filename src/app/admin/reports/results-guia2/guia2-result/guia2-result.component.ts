@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { jsPDF } from 'jspdf';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { InfoTrabajadorService } from '../../../../services/info-trabajador.service';
 import { InfoTrabajador } from '../../../../interfaces/info-trabajador.interfce';
 import { InfoGuiasService } from '../../../../services/info-guias.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-guia2-result',
@@ -14,6 +15,7 @@ export class Guia2ResultComponent {
 
   trabajador: InfoTrabajador;
   listaTrabajadores: any = [];
+  @ViewChild('htmlData') htmlData: ElementRef;
 
   constructor(public infoGuiasService: InfoGuiasService,
               public infoTrabajadorService: InfoTrabajadorService,
@@ -50,14 +52,17 @@ export class Guia2ResultComponent {
   }
 
   imprimirGuia2() {
-    const doc = new jsPDF();
+    /* const data = document.getElementById('htmlData');
 
-    const elementHTML = $('#reportGuia2').html();
-
-    doc.html(elementHTML);
-    doc.save('listax_guia2.pdf');
-
-    }
+     html2canvas(data).then((canvas) => {
+       console.log(canvas);
+       const imgData = canvas.toDataURL('img/png');
+       const doc = new jsPDF();
+       doc.addImage(imgData, 0 , 0 , 10 , 10);
+       doc.save('ejemplo.pdf');
+    });*/
+    window.print();
+  }
 
 
 // ************************** RUTAS *****************************

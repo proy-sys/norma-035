@@ -54,30 +54,19 @@ export class Seccion1Component implements OnInit {
         this.infoAuthenticationService.updateRespuestas(this.respuesta);
         this.ruta.navigate(['trabajador/encuesta-guia1-seccion', this.contadorRespuestas]);
      }else{
-        this.GuardarGuia1(form);
+        this.GuardarGuia1();
      }
    }
 
 
 
- GuardarGuia1(form: NgForm){
-   this.respuesta.trabajador_id = this.infoAuthenticationService.getCurrentUser().user.id;
-   this.respuesta.respuestas = [];
-
-
-
-   Object.keys(form.controls).forEach(key => {
-       if (form.controls[key].value !== ''){
-          this.respuesta.respuestas[this.contadorRespuestas] = {pregunta_id: key, respuesta: form.controls[key].value};
-          this.contadorRespuestas++;
-       }
-  });
-
+ GuardarGuia1(){
 
    this.infoGuiaService.addRespuestasGuia(this.respuesta , 1)
    .subscribe(result => {
 
      if (result.estado === 200){
+         this.infoAuthenticationService.clearRespuestas();
          this.ruta.navigate(['trabajador/finalizar']);
      }
      }, error => {

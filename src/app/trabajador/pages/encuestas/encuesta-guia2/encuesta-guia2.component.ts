@@ -59,9 +59,9 @@ export class EncuestaGuia2Component implements OnInit {
 
         if (result.estado === 200){
           if ( result.cFinal === 'Alto' || result.cFinal === 'Muy Alto'){
-             this.ruta.navigate(['trabajador/encuesta-guia1-seccion-1']);
+             this.ruta.navigate(['trabajador/encuesta-inst/', 1]);
           }else{
-            this.ruta.navigate(['trabajador/finalizar']);
+              this.ruta.navigate(['trabajador/finalizar']);
           }
         }
     }, error => {

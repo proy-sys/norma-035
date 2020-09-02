@@ -44,14 +44,13 @@ export class SeccionGeneralComponent implements OnInit {
 
 
  guardarGuia(form: NgForm) {
-  this.respuesta.trabajador_id = this.infoAuthenticationService.getCurrentUser().user.id;
 
   Object.keys(form.controls).forEach(key => {
     if (form.controls[key].value !== ''){
        this.respuesta.respuestas[this.contadorRespuestas] = {pregunta_id: key, respuesta: form.controls[key].value};
        this.contadorRespuestas++;
     }
-});
+  });
 
   this.infoGuiaService.addRespuestasGuia(this.respuesta , 1)
 .subscribe(result => {

@@ -45,4 +45,8 @@ export class Guia1ListComponent {
     this.ruta.navigate(['administrador/guia1-result', ide]);
   }
 
+  imprimir(){
+    window.print();
+  }
+
 }
