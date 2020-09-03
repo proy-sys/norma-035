@@ -13,6 +13,8 @@ export class InfoEmpresaService {
 
 
   private API_REST  = 'http://localhost/norma035-back/public/empresa';
+  apiToken = '';
+
   private httpHeaders = new HttpHeaders(
                                         {
                                           'Content-Type' : 'application/json' ,
@@ -21,21 +23,24 @@ export class InfoEmpresaService {
   );
 
 
-  constructor(private http: HttpClient, private servicio: InfoAuthenticationService){}
+  constructor(private http: HttpClient, private servicio: InfoAuthenticationService){
+  }
+
 
   obtenerEmpresa(): Observable<any> {
-
-     return this.http.get<InfoEmpresa>(this.API_REST, { headers: this.httpHeaders});
+     this.apiToken = this.servicio.getCurrentUser().user.api_token;
+     return this.http.get<InfoEmpresa>(this.API_REST  + '?api_token=' + this.apiToken, { headers: this.httpHeaders});
 
   }
 
    actualizarEmpresa(empresa: InfoEmpresa){
-        return this.http.put( this.API_REST + '/' + empresa.id, empresa , { headers: this.httpHeaders});
+      this.apiToken = this.servicio.getCurrentUser().user.api_token;
+      return this.http.put( this.API_REST + '/' + empresa.id  + '?api_token=' + this.apiToken , empresa , { headers: this.httpHeaders});
    }
 
-   obtenerEstadoMunicipio(codigoPostal: number): Observable<InfoLugar>{
-      return this.http.get<InfoLugar>( this.API_REST + '/cp/' + codigoPostal, { headers: this.httpHeaders});
-   }
+   // obtenerEstadoMunicipio(codigoPostal: number): Observable<InfoLugar>{
+   //    return this.http.get<InfoLugar>( this.API_REST + '/cp/' + codigoPostal, { headers: this.httpHeaders});
+   // }
 
 }
 

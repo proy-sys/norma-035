@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InfoGuias } from '../interfaces/info-guias.interface';
 import { InfoRespuesta } from '../interfaces/info-respuesta.interface';
+import { InfoAuthenticationService } from './info-authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class InfoGuiasService {
   guia3: InfoGuias = {};
 
   private API_REST = 'http://localhost/norma035-back/public/respuesta';
+  apiToken = '';
 
    private httpHeaders = new HttpHeaders(
     {
@@ -20,7 +22,7 @@ export class InfoGuiasService {
        Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
     }
   );
-  constructor( private http: HttpClient ) {
+  constructor( private http: HttpClient, private servicio: InfoAuthenticationService) {
     this.cargarGuia1();
     this.cargarGuia2();
     this.cargarGuia3();
@@ -58,89 +60,112 @@ private cargarGuia3() {
 
 
 addRespuestasGuia(newRespuestas: InfoRespuesta, id: number): any{
-    return this.http.post( this.API_REST + '/addRespuestasGuia/' + id, newRespuestas , {headers: this.httpHeaders});
+    this.apiToken = this.servicio.getCurrentUser().user.api_token;
+    return this.http.post( this.API_REST + '/addRespuestasGuia/'
+     + id + '?api_token=' + this.apiToken, newRespuestas , {headers: this.httpHeaders});
 }
 
 getGuia(id: number){
-  return this.http.get( this.API_REST + '/g/' + id, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/g/' + id + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getGuia2(id: number, trab: number){
-  return this.http.get( this.API_REST + '/gui/' + id + '/' + trab, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/gui/' + id + '/' + trab + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getCalificacionGuia(id, guia: number){
-  return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id + '/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/califTrabajadorGuia/' + id +
+   '/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getTrabajadorResultado(guia: number){
-  return this.http.get( this.API_REST + '/trabajadorResultado/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/trabajadorResultado/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoTotal(guia: number){
-  return this.http.get( this.API_REST + '/resultadoTotal/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoTotal/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 // ************************************ CATEGORÍAS ********************************
 getResultadoCategoriaAmb(guia: number){
-  return this.http.get( this.API_REST + '/resultadoCategoriaAmb/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoCategoriaAmb/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoCategoriaFac(guia: number){
-  return this.http.get( this.API_REST + '/resultadoCategoriaFac/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoCategoriaFac/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoCategoriaOrg(guia: number){
-  return this.http.get( this.API_REST + '/resultadoCategoriaOrg/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoCategoriaOrg/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoCategoriaLid(guia: number){
-  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoCategoriaEnt(guia: number){
-  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoCategoriaLid/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 // ************************************ DOMINIOS ********************************
 getResultadoDominio1(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio1/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio1/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio2(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio2/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio2/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio3(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio3/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio3/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio4(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio4/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio4/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio5(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio5/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio5/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio6(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio6/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio6/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio7(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio7/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio7/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio8(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio8/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio8/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio9(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio9/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio9/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 getResultadoDominio10(guia: number){
-  return this.http.get( this.API_REST + '/resultadoDominio10/' + guia, {headers: this.httpHeaders});
+  this.apiToken = this.servicio.getCurrentUser().user.api_token;
+  return this.http.get( this.API_REST + '/resultadoDominio10/' + guia + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
 }
 
 }

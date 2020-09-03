@@ -22,4 +22,5 @@ export interface InfoTrabajador {
     empresa_id?: number;
     status?: boolean;
     nivel_estudios_status?: string;
+    accept_politica?: boolean;
   }

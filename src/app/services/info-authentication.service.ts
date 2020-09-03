@@ -15,6 +15,7 @@ export class InfoAuthenticationService extends RoleValidator{
  private API_REST = 'http://localhost/norma035-back/public';
  private jwtUser: JwtResponseI;
  private respuesta: InfoRespuesta = {};
+ apiToken = '';
 
  private httpHeaders = new HttpHeaders(
     {
@@ -28,8 +29,8 @@ export class InfoAuthenticationService extends RoleValidator{
      super();
  }
 
+
  login(user: User): Observable<any>{
-   console.log(user);
    return this.http.post<JwtResponseI>( this.API_REST + '/login', user, { headers: this.httpHeaders});
  }
 
@@ -54,8 +55,9 @@ export class InfoAuthenticationService extends RoleValidator{
   }
 
   logout(){
+     this.apiToken = this.getCurrentUser().user.api_token;
      localStorage.removeItem('usuario');
-     return this.http.post( this.API_REST + '/logout', {headers: this.httpHeaders});
+     return this.http.post( this.API_REST + '/logout' + '?api_token=' + this.apiToken, {headers: this.httpHeaders});
   }
 
   getRespuestas(){
