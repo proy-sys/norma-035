@@ -22,13 +22,25 @@ export class Guia1ListComponent {
       this.respuestas();
     }
 
+  // listadoTrabajadores() {
+  //   this.infoTrabajadorService.getListadotrabajadores().subscribe(
+  //     data => {
+  //       this.listaTrabajadores = data;
+  //     }
+  //   );
+  // }
+
   listadoTrabajadores() {
-    this.infoTrabajadorService.getListadotrabajadores().subscribe(
-      data => {
-        this.listaTrabajadores = data;
-      }
-    );
-  }
+    //  this.activatedRoute.params.subscribe(params => {
+       this.infoGuiasService.getTrabajadorResultado(1).subscribe(
+         data => {
+           this.listaTrabajadores = data;
+         }, (err) => {
+           console.log('Error al cargar:' + err);
+         }
+       );
+     // });
+   }
 
   respuestas() {
     this.infoGuiasService.getGuia(1).subscribe(
