@@ -40,6 +40,7 @@ export class EncuestaPoliComponent implements OnInit {
    }
 
   irIntrucciones(){
+
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
           if (data <= 50){
