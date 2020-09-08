@@ -33,9 +33,7 @@
                             <tr>
                                 <th>Nombres y apellidos</th>
                                 <th>Cargo</th>
-                                <th>Teléfono</th>
                                 <th>E-mail</th>
-                                <th>Tipo de Puesto</th>
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
@@ -44,9 +42,7 @@
                                 <tr *ngFor="let persona of listaTrabajadores">
                                     <td>{{ persona.nombre }}</td>
                                     <td>{{ persona.ocupacion }}</td>
-                                    <td>{{ persona.telefono }}</td>
                                     <td>{{ persona.email }}</td>
-                                    <td>{{ persona.tipo_puesto }}</td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-3 mx-auto">
@@ -63,9 +59,7 @@
                                 <tr>
                                     <th>Nombres y apellidos</th>
                                     <th>Documento</th>
-                                    <th>Teléfono</th>
                                     <th>E-mail</th>
-                                    <th>Tipo de contrato</th>
                                     <th style="text-align: center;">Opciones</th>
                                 </tr>
                             </tfoot>
