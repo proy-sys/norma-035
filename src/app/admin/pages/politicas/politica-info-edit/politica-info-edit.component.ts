@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { InfoPoliticaService } from 'src/app/services/info-politica.service';
 import { InfoEmpresaService } from '../../../../services/info-empresa.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-politica-info-edit',
@@ -19,7 +20,8 @@ export class PoliticaInfoEditComponent implements OnInit {
                private infoEmpresaService: InfoEmpresaService,
                private ruta: Router,
                private fb: FormBuilder,
-               private activatedRoute: ActivatedRoute ) {
+               private activatedRoute: ActivatedRoute,
+               private toastr: ToastrService ) {
 
      }
 
@@ -27,6 +29,10 @@ export class PoliticaInfoEditComponent implements OnInit {
     this.cargarPolitica();
     this.crearFormulario();
     this.obtenerLogo();
+
+    // this.formEditPolitica = this.fb.group( {
+
+    // });
   }
 
   obtenerLogo() {
@@ -67,9 +73,11 @@ export class PoliticaInfoEditComponent implements OnInit {
     this.infoPoliticaService.actualizarPolitica(this.politica.politica.id , $('#textarea_editor').val().toString())
     .subscribe(data => {
                this.ngOnInit();
+               this.toastr.success('succesful' , 'la politica se actualizo de manera correcta.');
                this.mostrar = !this.mostrar;
     }, error => {
           console.log('error el editar una politica:' + error.message);
+          this.toastr.error('error' , error.message);
     });
     }
 

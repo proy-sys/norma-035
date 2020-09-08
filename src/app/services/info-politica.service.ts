@@ -10,7 +10,8 @@ import { InfoAuthenticationService } from './info-authentication.service';
 export class InfoPoliticaService {
 
 
-  private API_REST  = 'http://localhost/norma035-back/public/politica';
+          // private API_REST  = 'http://itebio-normas.com/norma035-back/public/politica';
+           private API_REST  = 'http://localhost/norma035-back/public/politica';
   apiToken = '';
   private httpHeader = new HttpHeaders(
                                         {

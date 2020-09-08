@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InfoSugerenciaQuejaService } from 'src/app/services/info-sugerencia-queja.service';
+import { InfoAuthenticationService } from 'src/app/services/info-authentication.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-buzon',
@@ -13,10 +15,13 @@ export class BuzonComponent implements OnInit {
 
   constructor(private ruta: Router,
               public infoSugerenciaQuejaService: InfoSugerenciaQuejaService,
-              private fb: FormBuilder
+              private fb: FormBuilder,
+              private servicio: InfoAuthenticationService,
+              private toastr: ToastrService,
               ) {}
 
   ngOnInit(): void {
+    this.crearFormulario();
   }
 
   crearFormulario() {
@@ -24,7 +29,7 @@ export class BuzonComponent implements OnInit {
          descripcion: ['', Validators.required],
          status: ['false'],
          tipo: ['', Validators.required],
-         trabajador_id: 2 ,
+         trabajador_id: this.servicio.getCurrentUser().user.id,
          estatus: [0]
     });
   }
@@ -35,19 +40,23 @@ export class BuzonComponent implements OnInit {
 
   guardarAddSugerenciaQueja() {
 
-    if ( this.formAddQuejaSugerencia.invalid) {
+   if ( this.formAddQuejaSugerencia.invalid) {
         return Object.values(this.formAddQuejaSugerencia.controls).forEach( control => {
            control.markAsTouched();
       });
     } else {
       this.infoSugerenciaQuejaService.crearQuejaSugerencia(this.formAddQuejaSugerencia.value)
     .subscribe(data => {
-           this.ruta.navigate(['trabajador/finalizar']);
+           if ( data === 200){
+               this.toastr.success('Succesful' , 'Se ha registrado correctamente');
+               this.ruta.navigate(['trabajador/finalizar']);
+           }
     }, error => {
           console.log('error al dar de alta la queja y/o sugerencia:' + error.message);
     });
     }
   }
+
    get descripcionNoValido() {
       return this.formAddQuejaSugerencia.get('descripcion').invalid && this.formAddQuejaSugerencia.get('descripcion').touched;
    }

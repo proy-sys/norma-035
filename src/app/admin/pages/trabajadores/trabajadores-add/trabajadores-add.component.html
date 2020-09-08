@@ -31,6 +31,7 @@
                             <div class="card card-infi col-md-12">
                                 <div class="card-header">
                                     <h3 class="card-title"><strong>Nuevo Trabajador</strong></h3>
+                                    <input type="hidden" [(ngModel)] = "empresa.id" formControlName="empresa_id" >
                                 </div>
                                 <div class="form-horizontal">
                                     <div class="card-body">
@@ -47,14 +48,14 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Teléfono</label>
-                                                    <input type="text" class="form-control" formControlName="telefono" id="telefono" [class.is-invalid]="telefonoNoValido">
+                                                    <input type="text" class="form-control" formControlName="telefono" id="telefono"  placeholder="Ingrese telefono" [class.is-invalid]="telefonoNoValido">
                                                     <small *ngIf="telefonoNoValido" class="text-danger">Teléfono invalido</small>
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Correo</label>
-                                                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="" [class.is-invalid]="emailNoValido">
+                                                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="Ingrese correo" [class.is-invalid]="emailNoValido">
                                                     <small *ngIf="emailNoValido" class="text-danger">Correo invalido</small>
                                                 </div>
                                             </div>
@@ -66,8 +67,8 @@
                                                     <option value="M">Masculino</option>
                                                     <option value="F">Femenino</option>
                                                   </select>
+                                                  <small *ngIf="sexoNoValido" class="text-danger">Seleccione el sexo</small>
                                                 </div>
-                                                <small *ngIf="sexoNoValido" class="text-danger">Seleccione el sexo</small>
                                             </div>
                                         </div>
                                         <!-- --------------------- CURP - DIRECCION ---------------------- -->
@@ -75,13 +76,15 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>CURP</label>
-                                                    <input type="text" class="form-control" formControlName="curp" id="curp" maxlength="18" placeholder="">
+                                                    <input type="text" class="form-control"  placeholder="Ingrese Curp" formControlName="curp" id="curp" maxlength="18" [class.is-invalid]="curpNoValido">
+                                                    <small *ngIf="curpNoValido" class="text-danger">curp requerido</small>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
                                                     <label>Dirección</label>
-                                                    <input type="text" class="form-control" formControlName="direccion" id="direccion" placeholder="">
+                                                    <input type="text" class="form-control"  placeholder="Ingrese dirección" formControlName="direccion" id="direccion"  [class.is-invalid]="direccionNoValido">
+                                                    <small *ngIf="direccionNoValido" class="text-danger">dirección requerida</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +93,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Edad</label>
-                                                    <select class="form-control" formControlName="edad">
+                                                    <select class="form-control" formControlName="edad" [class.is-invalid]="edadNoValido">
                                                     <option value="">-- Seleccione --</option>
                                                     <option value="15-19">15-19</option>
                                                     <option value="20-24">20-24</option>
@@ -102,12 +105,14 @@
                                                     <option value="50-54">50-54</option>
                                                     <option value="55-59">55-59</option>
                                                   </select>
+                                                  <small *ngIf="edadNoValido" class="text-danger">dirección requerida</small>
                                                 </div>
+
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Estado civíl</label>
-                                                    <select class="form-control" formControlName="estado_civil">
+                                                    <select class="form-control" formControlName="estado_civil"  [class.is-invalid]="estadoCivilNoValido">
                                                       <option value="">-- Seleccione --</option>
                                                       <option value="Casado">Casado</option>
                                                       <option value="Soltero">Soltero</option>
@@ -115,6 +120,7 @@
                                                       <option value="Divorciado">Divorciado</option>
                                                       <option value="Viudo">Viudo</option>
                                                     </select>
+                                                    <small *ngIf="estadoCivilNoValido" class="text-danger">estado civil requerido</small>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -122,7 +128,7 @@
                                                     <label>Nivel de estudios</label>
                                                     <div class="form-row input-group">
                                                         <div class="col-8">
-                                                            <select [(ngModel)]="trabajador.nivel_estudios" class="form-control" formControlName="nivel_estudios">
+                                                            <select class="form-control" formControlName="nivel_estudios" [class.is-invalid]="nivelEstudiosNoValido">
                                                             <option value="">-- Seleccione --</option>
                                                             <option value="pri">Primaria</option>
                                                             <option value="sec">Secundaria</option>
@@ -132,13 +138,15 @@
                                                             <option value="mae">Maestría</option>
                                                             <option value="doc">Doctorado</option>
                                                       </select>
+                                                      <small *ngIf="nivelEstudiosNoValido" class="text-danger">nivel estudios requerido</small>
                                                         </div>
                                                         <div class="col-4">
-                                                            <select [(ngModel)]="trabajador.nivel_estudios_status" class="form-control" formControlName="nivel_estudios_status">
-                                                          <option value="">-- Seleccione --</option>
-                                                          <option value="Incompleta">Incompleta</option>
-                                                          <option value="Terminada">Terminada</option>
-                                                    </select>
+                                                            <select  class="form-control" formControlName="nivel_estudios_status"  [class.is-invalid]="nivelEstudiosStatusNoValido">
+                                                                <option value="">-- Seleccione --</option>
+                                                                <option value="Incompleta">Incompleta</option>
+                                                                <option value="Terminada">Terminada</option>
+                                                           </select>
+                                                           <small *ngIf="nivelEstudiosStatusNoValido" class="text-danger"> nivel status requerido</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,13 +157,15 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label>Ocupación/Profesión/Puesto</label>
-                                                    <textarea class="form-control" formControlName="ocupacion" id="ocupacion" rows="1"></textarea>
+                                                    <textarea class="form-control"  placeholder="Ingrese ocupacion/profesión/puesto" formControlName="ocupacion" id="ocupacion" rows="1" [class.is-invalid]="ocupacionNoValido" ></textarea>
+                                                    <small *ngIf="ocupacionNoValido" class="text-danger"> ocupacion requerido</small>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label>Departamento/Sección/Área</label>
-                                                    <textarea class="form-control" formControlName="departamento" id="departamento" rows="1"></textarea>
+                                                    <textarea class="form-control"  placeholder="Ingrese departamento/sección/área" formControlName="departamento" id="departamento" rows="1" [class.is-invalid]="departamentoNoValido"></textarea>
+                                                    <small *ngIf="departamentoNoValido" class="text-danger"> ocupacion requerido</small>
                                                 </div>
                                             </div>
                                         </div>

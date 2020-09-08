@@ -13,7 +13,8 @@ export class InfoGuiasService {
   guia2: InfoGuias = {};
   guia3: InfoGuias = {};
 
-  private API_REST = 'http://localhost/norma035-back/public/respuesta';
+   private API_REST = 'http://itebio-normas.com/norma035-back/public/respuesta';
+  //  private API_REST  = 'http://localhost/norma035-back/public/respuesta';
   apiToken = '';
 
    private httpHeaders = new HttpHeaders(

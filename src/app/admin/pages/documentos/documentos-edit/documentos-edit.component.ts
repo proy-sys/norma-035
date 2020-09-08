@@ -5,6 +5,7 @@ import { InfoDocumento } from 'src/app/interfaces/info-documento.interface';
 import { InfoTrabajador } from 'src/app/interfaces/info-trabajador.interfce';
 import { InfoDocumentoService } from 'src/app/services/info-documento.service';
 import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class DocumentosEditComponent {
                private infoTrabajadorService: InfoTrabajadorService,
                private ruta: Router,
                private activatedRoute: ActivatedRoute,
-               private fb: FormBuilder )
+               private fb: FormBuilder,
+               private toastr: ToastrService )
     {
       this.crearFormulario();
       this.editarFormulario();
@@ -61,10 +63,11 @@ crearFormulario(){
 
     this.infoDocumentoService.actualizarDocumento(this.documento)
     .subscribe(data => {
-
+      this.toastr.success('succesful' , 'el documento se actualizo correctamente');
       this.ruta.navigate(['administrador/documentos']);
     }, error => {
-        console.log('error al dar de alta al documento:' + error.message);
+        console.log('error al actualizar el documento:' + error.message);
+        this.toastr.error('error al actualizar el documento' + error.message);
     });
   }
 }

@@ -43,16 +43,19 @@
                                         
                                           <div class="form-group">
                                             <label for="inputAddress">Nombre</label>
-                                             <input [(ngModel)]="empresa.razon_social" type="text" class="form-control" formControlName="razon_social" name="razon_social" id="razon_social" placeholder="Razón Social">
+                                             <input [(ngModel)]="empresa.razon_social" type="text" class="form-control" formControlName="razon_social" name="razon_social" id="razon_social" placeholder="Razón Social" [class.is-invalid]="razonNoValido">
+                                             <small *ngIf="razonNoValido" class="text-danger">Ingrese el nombre y/o razón social</small>
                                           </div>
                                           <div class="form-row">
-                                            <div class="form-group col-md-9">
+                                            <div class="form-group col-md-8">
                                               <label for="inputEmail4">Email</label>
-                                              <input [(ngModel)]="empresa.email" type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email">
+                                              <input [(ngModel)]="empresa.email" type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email"  [class.is-invalid]="emailNoValido">
+                                              <small *ngIf="emailNoValido" class="text-danger">Ingrese email</small>
                                             </div>
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-4">
                                               <label for="inputPassword4">Telefono</label>
-                                              <input [(ngModel)]="empresa.telefono" type="text" class="form-control" formControlName="telefono" name="direccion" id="telefono" placeholder="Teléfono">
+                                              <input [(ngModel)]="empresa.telefono" type="text" class="form-control" formControlName="telefono" name="direccion" id="telefono" placeholder="Teléfono" [class.is-invalid]="telefonoNoValido">
+                                              <small *ngIf="telefonoNoValido" class="text-danger">Ingrese telefono</small>
                                             </div>
                                           </div>
                                           <!-- <div class="form-row">
@@ -72,7 +75,8 @@
                                           </div> -->
                                           <div class="form-group">
                                             <label for="inputAddress2">Dirección</label>
-                                            <input  [(ngModel)]="empresa.direccion" type="text"  formControlName="direccion"  class="form-control" id="direccion" placeholder="Calle / No-Interior / No-Exterior / Colonia">
+                                            <input  [(ngModel)]="empresa.direccion" type="text"  formControlName="direccion"  class="form-control" id="direccion" placeholder="Calle / No-Interior / No-Exterior / Colonia" [class.is-invalid]="direccionNoValido">
+                                            <small *ngIf="direccionNoValido" class="text-danger">Ingrese direccion</small>
                                           </div>  
                                           
                                         <div class="form-group row">

@@ -23,9 +23,10 @@ export class Guia2ListComponent {
     }
 
   listadoTrabajadores() {
-    this.infoTrabajadorService.getListadotrabajadores().subscribe(
+    this.infoTrabajadorService.getContestaronTrabajadores(2).subscribe(
       data => {
         this.listaTrabajadores = data;
+        console.log('trabajadores' + this.listaTrabajadores);
       }
     );
   }

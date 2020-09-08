@@ -48,7 +48,7 @@ export class EncuestaGuia2Component implements OnInit {
      let con = 0;
 
      Object.keys(form.controls).forEach(key => {
-      if (form.controls[key].value !== ''){
+      if (form.controls[key].value !== '' && form.controls[key].value !== 'no' && form.controls[key].value !== 'si'){
          this.respuesta.respuestas[con] = {pregunta_id: key, respuesta: form.controls[key].value};
          con++;
       }

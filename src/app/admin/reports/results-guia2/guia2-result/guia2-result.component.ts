@@ -70,4 +70,12 @@ export class Guia2ResultComponent {
     this.ruta.navigate(['administrador/guia2-list']);
   }
 
+  verificarPregunta(pregunta: number): boolean{
+    if (pregunta >= 18 && pregunta <= 33){
+      return true;
+   }else{
+      return false;
+   }
+}
+
 }

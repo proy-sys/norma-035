@@ -7,4 +7,5 @@ export interface InfoActividad {
   imagen1?: string;
   imagen2?: string;
   status?: boolean;
+  empresa_id?: number;
 }

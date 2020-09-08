@@ -14,8 +14,9 @@ export class InfoDocumentoService {
     Authorization: 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
   });
 
-  private API_REST = 'http://localhost/norma035-back/public/documento';
-  apiToken = '';
+      // private API_REST = 'http://itebio-normas.com/norma035-back/public/documento';
+      private API_REST = 'http://localhost/norma035-back/public/documento';
+     apiToken = '';
 
   constructor(private http: HttpClient, private servicio: InfoAuthenticationService) {
   }

@@ -44,7 +44,8 @@
                                 <th>Teléfono</th>
                                 <th>E-mail</th>
                                 <th>Tipo de Puesto</th>
-                                <th>Evidencias</th>
+                                <!-- <th>Evidencias</th> -->
+                                <th>Politica</th>
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
@@ -56,18 +57,18 @@
                                     <td>{{ persona.telefono }}</td>
                                     <td>{{ persona.email }}</td>
                                     <td>{{ persona.tipo_puesto }}</td>
-                                    <td>-----</td>
+                                    <td *ngIf="persona.accept_politica"class="text-center"><i class="nav-icon fa fa-check"></i></td>
+                                    <td *ngIf="!persona.accept_politica" class="text-center">-</td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-3"></div>
-                                            <div class="col-md-3 text-center">
+                                            <div class="col-md-3">
                                                 <button type="button" class="btn btn-success btn-sm" title="Editar" (click)="irEditar(persona.id)">
-                                                    <i class="nav-icon fas fa-edit text-white"></i>
+                                                    <i class="nav-icon fas fa-edit text-white"></i> 
                                                 </button>
-
                                             </div>
                                             <div class="col-md-3 text-center">
-                                                <button type="button" class="btn btn-danger btn-sm" title="Eliminar" (click)="eliminar_trabajador(persona.id,persona.nombre)">
+                                                <button type="button" class="btn btn-danger btn-sm " title="Eliminar" (click)="eliminar_trabajador(persona.id,persona.nombre)">
                                                     <i class="nav-icon fas fa-trash text-white"></i>
                                                 </button>
                                             </div>
@@ -84,7 +85,8 @@
                                     <th>Teléfono</th>
                                     <th>E-mail</th>
                                     <th>Tipo de contrato</th>
-                                    <th>Evidencias</th>
+                                    <!-- <th>Evidencias</th> -->
+                                    <th>Politica</th>
                                     <th style="text-align: center;">Opciones</th>
                                 </tr>
                             </tfoot>

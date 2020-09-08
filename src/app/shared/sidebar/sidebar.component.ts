@@ -9,12 +9,11 @@ import { InfoTrabajadorService } from '../../services/info-trabajador.service';
 export class SidebarComponent {
 
   numeroTrabajadores: any;
-  constructor(public infoTrabajadorService: InfoTrabajadorService
-    ) {
+  constructor(public infoTrabajadorService: InfoTrabajadorService){
       this.cargarNumTrabajadores();
-     }
+  }
 
-     cargarNumTrabajadores(){
+  cargarNumTrabajadores(){
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
           this.numeroTrabajadores = data;

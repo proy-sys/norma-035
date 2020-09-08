@@ -51,16 +51,27 @@
                                 <tr *ngFor="let pregunta of seccion.pregunta; let j = index;">
                                     <td width="3%">{{ pregunta.num }}</td>
                                     <td>{{ pregunta.preg }}</td>
-                                    <td width="5%" class="text-center">
+                                    <!-- Fila 1-->
+                                    <td  *ngIf="pregunta.num>=18 && pregunta.num<=33" width="5%" class="text-center">
+                                            <span *ngFor="let item1 of listaTrabajadores">
+                                            <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                            <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
+                                            <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                            <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto">-</span>
+                                            <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                            </span>
+                                    </td>
+                                    <td  *ngIf="pregunta.num<18 || pregunta.num>33" width="5%" class="text-center">
                                         <span *ngFor="let item1 of listaTrabajadores">
-                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
-                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
-                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto">-</span>
-                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
                                         </span>
                                     </td>
-                                    <td width="5%" class="text-center">
+                                    <!-- Fila 2-->
+                                    <td  *ngIf="pregunta.num>=18 && pregunta.num<=33" width="5%" class="text-center">
                                         <span *ngFor="let item1 of listaTrabajadores">
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
@@ -69,7 +80,19 @@
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
                                         </span>
                                     </td>
-                                    <td width="5%" class="text-center">
+                                    
+                                    <td  *ngIf="pregunta.num<18 || pregunta.num>33" width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                   
+                                    <!-- Fila 3 -->
+                                    <td *ngIf="pregunta.num>=18 && pregunta.num<=33" width="5%" class="text-center">
                                         <span *ngFor="let item1 of listaTrabajadores">
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
@@ -78,7 +101,19 @@
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
                                         </span>
                                     </td>
-                                    <td width="5%" class="text-center">
+                                    
+                                    <td *ngIf="pregunta.num<18 || pregunta.num>33" width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+                                    
+                                     <!-- Fila 4 -->
+                                     <td  *ngIf="pregunta.num>=18 && pregunta.num<=33" width="5%" class="text-center">
                                         <span *ngFor="let item1 of listaTrabajadores">
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
@@ -87,7 +122,20 @@
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
                                         </span>
                                     </td>
-                                    <td width="5%" class="text-center">
+
+                                    <td *ngIf="pregunta.num<18 || pregunta.num>33"  width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
+                                        </span>
+                                    </td>
+
+                                     <!-- Fila 5 -->
+
+                                     <td *ngIf="pregunta.num>=18 && pregunta.num<=33" width="5%" class="text-center">
                                         <span *ngFor="let item1 of listaTrabajadores">
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto">-</span>
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
@@ -96,6 +144,17 @@
                                         <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
                                         </span>
                                     </td>
+                                    
+                                    <td *ngIf="pregunta.num<18 || pregunta.num>33"  width="5%" class="text-center">
+                                        <span *ngFor="let item1 of listaTrabajadores">
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==4" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==3" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==2" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==1" class="mx-auto">-</span>
+                                        <span *ngIf="pregunta.num==item1.pregunta_id && item1.respuesta==0" class="mx-auto"><i class="nav-icon fa fa-check"></i></span>
+                                        </span>
+                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>

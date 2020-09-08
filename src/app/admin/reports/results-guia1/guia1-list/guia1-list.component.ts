@@ -23,7 +23,7 @@ export class Guia1ListComponent {
     }
 
   listadoTrabajadores() {
-    this.infoTrabajadorService.getListadotrabajadores().subscribe(
+    this.infoTrabajadorService.getContestaronTrabajadores(1).subscribe(
       data => {
         this.listaTrabajadores = data;
       }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { InfoAuthenticationService } from 'src/app/services/info-authentication.service';
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
                private toastr: ToastrService,
                private infoAutoentificacionService: InfoAuthenticationService,
                private ruta: Router,
+               private zone: NgZone
                ){}
   ngOnInit() {
        this.LoginFormulario();
@@ -54,8 +55,10 @@ export class LoginComponent implements OnInit {
               this.toastr.success('Inicio de sesión' , data.msg);
 
               if (data.user.role === '1'){
-                window.location.reload();
-                this.ruta.navigate(['administrador']);
+                   this.zone.runOutsideAngular(() => {
+                       location.reload();
+                    });
+                   this.ruta.navigate(['administrador']);
               }else if (data.user.role === '0'){
                  this.ruta.navigate(['trabajador']);
               }

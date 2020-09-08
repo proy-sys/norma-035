@@ -7,4 +7,5 @@ export interface InfoDocumento {
   trabajadores?: number;
   status?: boolean;
   trabajador?: string;
+  empresa_id?: number;
 }

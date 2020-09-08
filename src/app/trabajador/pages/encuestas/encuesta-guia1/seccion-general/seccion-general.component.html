@@ -57,7 +57,7 @@
                                                             <td>{{ pregunta.preg}}</td>
 
                                                             <td *ngFor="let key of radioOptions" width="6%" class="text-center">
-                                                                   <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel >
+                                                                   <input id="ra_{{pregunta.num}}" [value]='key.op1' type="radio" name="{{pregunta.num}}" ngModel required>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -71,7 +71,7 @@
                              </div>
                         </div>
                         <hr/>
-                        <button type="submit" class="btn btn-primary btn-block"><b>Finalizar encuesta</b></button>
+                        <button type="submit" [disabled]="forma.invalid" class="btn btn-primary btn-block"><b>Finalizar encuesta</b></button>
                     </div>
                 </form>
             </div>

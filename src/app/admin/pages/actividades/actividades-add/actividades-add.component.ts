@@ -5,6 +5,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InfoTrabajador } from 'src/app/interfaces/info-trabajador.interfce';
 import { InfoActividadService } from 'src/app/services/info-actividad.service';
 import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
+import { InfoEmpresaService } from 'src/app/services/info-empresa.service';
+import { InfoEmpresa } from 'src/app/interfaces/info-empresa.interface';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -20,13 +23,16 @@ export class ActividadesAddComponent {
   trabajadores: Array<InfoTrabajador>;
   srcImagen1: string;
   srcImagen2: string;
+  empresa: InfoEmpresa = {};
 
 // *********************** CONSTRUCTOR ************************
 
   constructor( private infoActividadService: InfoActividadService,
                private infoTrabajadorService: InfoTrabajadorService,
+               private infoEmpresaService: InfoEmpresaService,
                private ruta: Router,
-               private fb: FormBuilder ) {
+               private fb: FormBuilder,
+               private toastr: ToastrService) {
 
                  this.crearFormulario();
                  this.listarTrabajadores();
@@ -94,9 +100,11 @@ guardarAddActividad() {
 
     this.infoActividadService.crearActividad(this.formAddActividad.value)
   .subscribe(data => {
+      this.toastr.success('succesful' , 'la actividad se agrego correctamente');
       this.ruta.navigate(['administrador/actividades']);
   }, error => {
-        console.log('error al dar de alta al actividad:' + error.message);
+        console.log('error al agregar al actividad:' + error.message);
+        this.toastr.error('error al agregar la actividad' , error.message);
   });
   }
 }
@@ -104,6 +112,17 @@ guardarAddActividad() {
 // *************************** VALIDACION FORM ****************************
 
 crearFormulario() {
+
+  this.infoEmpresaService.obtenerEmpresa().subscribe(
+    data => {
+        this.empresa = data;
+        console.log(this.empresa.id);
+      }, (err) => {
+        console.log('Hubo un error:' + err);
+      }
+    );
+
+
   this.formAddActividad = this.fb.group({
     nombre: ['', Validators.required],
     tipo: ['', Validators.required],
@@ -111,6 +130,7 @@ crearFormulario() {
     responsable_id: ['', Validators.required],
     imagen1: [''],
     imagen2: [''],
+    empresa_id : [''],
     status: ['true']
   });
 }

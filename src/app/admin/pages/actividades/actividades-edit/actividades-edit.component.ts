@@ -5,7 +5,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InfoTrabajador } from 'src/app/interfaces/info-trabajador.interfce';
 import { InfoActividadService } from 'src/app/services/info-actividad.service';
 import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
-
+import { InfoEmpresa } from 'src/app/interfaces/info-empresa.interface';
+import { ToastrService } from 'ngx-toastr';
+import { InfoEmpresaService } from 'src/app/services/info-empresa.service';
 
 @Component({
   selector: 'app-actividades-edit',
@@ -19,14 +21,17 @@ export class ActividadesEditComponent {
   trabajadores: Array<InfoTrabajador>;
   srcImagen1: string;
   srcImagen2: string;
+  empresa: InfoEmpresa = {};
 
 // *********************** CONSTRUCTOR ************************
 
   constructor( private infoActividadService: InfoActividadService,
                private infoTrabajadorService: InfoTrabajadorService,
+               private infoEmpresaService: InfoEmpresaService,
                private ruta: Router,
                private activatedRoute: ActivatedRoute,
-               private fb: FormBuilder) {
+               private fb: FormBuilder,
+               private toastr: ToastrService) {
 
                   this.crearFormulario();
                   this.editarFormulario();
@@ -101,16 +106,17 @@ guardarEditActividad() {
       control.markAsTouched();
     });
   } else {
-
+    
     this.actividad.imagen1 = this.getBase64Image(document.getElementById('imagen1x'), 200, 170);
     this.actividad.imagen2 = this.getBase64Image(document.getElementById('imagen2x'), 200, 170);
 
     this.infoActividadService.actualizarActividad(this.actividad)
     .subscribe(data => {
-
+      this.toastr.success('succesful' , 'la actividad se actualizo correctamente');
       this.ruta.navigate(['administrador/actividades']);
     }, error => {
         console.log('error al dar de alta al actividad:' + error.message);
+        this.toastr.error('error al editar la actividad' , error.message);
     });
   }
 }
@@ -118,6 +124,14 @@ guardarEditActividad() {
 // *************************** VALIDACION FORM ****************************
 
 editarFormulario() {
+  this.infoEmpresaService.obtenerEmpresa().subscribe(
+    data => {
+        this.empresa = data;
+        console.log(this.empresa.id);
+      }, (err) => {
+        console.log('Hubo un error:' + err);
+      }
+    );
   this.formEditActividad = this.fb.group({
     nombre: ['', Validators.required],
     tipo: ['', Validators.required],
@@ -125,6 +139,7 @@ editarFormulario() {
     responsable_id: ['', Validators.required],
     imagen1: [''],
     imagen2: [''],
+    empresa_id : [''],
     status: ['true']
   });
 }

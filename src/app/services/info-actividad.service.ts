@@ -13,8 +13,9 @@ export class InfoActividadService {
     'Content-Type' : 'application/json' ,
     Authorization: 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
   });
-
-  private API_REST = 'http://localhost/norma035-back/public/actividad';
+ 
+   // private API_REST = 'http://itebio-normas.com/norma035-back/public/actividad';
+     private API_REST = 'http://localhost/norma035-back/public/actividad';
   apiToken = '';
   constructor(private http: HttpClient, private servicio: InfoAuthenticationService) {
 

@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="text-center m-5 text-dark">Buzón</h1>
+                <h1 class="text-center m-5 text-dark">Sugerencia / Comentario</h1>
             </div>
         </div>
         <!-- /.row -->
@@ -26,10 +26,11 @@
                             <div class="form-group">
                                 <label>Tipo</label>
                                 <select class="form-control" formControlName="tipo" [class.is-invalid]="tipoNoValido">
-                                     <option value="">-- Seleccione --</option>
+                                     <option value="">-- Seleccione tipo--</option>
                                      <option value="Queja">Queja</option>
                                      <option value="Sugerencia">Sugerencia</option>
                                   </select>
+                                  <small *ngIf="tipoNoValido" class="text-danger">Seleccione el tipo de comentario</small> 
                             </div>
                         </div>
                       </div>
@@ -39,7 +40,7 @@
                             <div class="form-group">
                                 <label>Descripcion</label>
                                 <textarea type="text" class="form-control" formControlName="descripcion" [class.is-invalid]="descripcionNoValido" id="descripcion" placeholder="descripcion"></textarea>
-                                <!--<small *ngIf="nombreNoValido" class="text-danger">Ingrese la descripcion</small> -->
+                                <small *ngIf="descripcionNoValido" class="text-danger">Ingrese la descripción</small> 
                             </div>
                             <div class="form-group">
                                 <input type="hidden" class="form-control" formControlName="estatus" id="estatus">

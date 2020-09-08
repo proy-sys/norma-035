@@ -18,7 +18,8 @@ export class InfoSugerenciaQuejaService {
   apiToken = '';
 
 
-  private API_REST = 'http://localhost/norma035-back/public/sugerencia_queja';
+     // private API_REST = 'http://itebio-normas.com/norma035-back/public/sugerencia_queja';
+       private API_REST = 'http://localhost/norma035-back/public/sugerencia_queja';
 
   constructor(private http: HttpClient, private servicio: InfoAuthenticationService) {
   }
@@ -39,7 +40,7 @@ export class InfoSugerenciaQuejaService {
   setStatus(id: number, status: boolean){
      this.apiToken = this.servicio.getCurrentUser().user.api_token;
      return this.http.get(this.API_REST + '/' + id + '/' + status + '?api_token=' + this.apiToken );
-   }
+  }
    crearQuejaSugerencia(newSugerenciaQueja: InfoSugerenciaQueja){
      this.apiToken = this.servicio.getCurrentUser().user.api_token;
      return this.http.post( this.API_REST + '?api_token=' + this.apiToken , newSugerenciaQueja, { headers: this.httpHeader});

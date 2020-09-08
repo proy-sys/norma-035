@@ -40,17 +40,24 @@ export class EncuestaPoliComponent implements OnInit {
    }
 
   irIntrucciones(){
-
-    this.infoTrabajadorService.getTotalTrabajadores().subscribe(
+    this.infoTrabajadorService.asignarPoliticaTrabajador().subscribe(
       data => {
-          if (data <= 50){
-               this.valor = 2;
-          }else if (data > 50){
-               this.valor = 3;
-          }
-          this.ruta.navigate(['trabajador/encuesta-inst', this.valor]);
+         if (data === 200){
+          this.infoTrabajadorService.getTotalTrabajadores().subscribe(
+             result => {
+                if (result <= 50){
+                     this.valor = 2;
+                }else if (data > 50){
+                     this.valor = 3;
+                }
+                this.ruta.navigate(['trabajador/encuesta-inst', this.valor]);
+              }, (err) => {
+                  console.log('Hubo un error en pasar instrucciones:' + err);
+              }
+            );
+         }
         }, (err) => {
-          console.log('Hubo un error:' + err);
+          console.log('Hubo un error en asignar politica:' + err);
         }
       );
   }

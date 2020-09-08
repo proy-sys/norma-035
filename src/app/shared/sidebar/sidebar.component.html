@@ -113,13 +113,13 @@
                                 <p>Resultados Guia I</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li *ngIf="numeroTrabajadores <= 50" class="nav-item">
                             <a [routerLink]="['administrador/guia2-list']" routerLinkActive="router-link-active" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Resultados Guia II</p>
                             </a>
                         </li>
-                        <li *ngIf="numeroTrabajadores>2" class="nav-item">
+                        <li *ngIf="numeroTrabajadores >= 50" class="nav-item">
                             <a [routerLink]="['administrador/guia3-list']" routerLinkActive="router-link-active" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Resultados Guia III</p>
@@ -127,7 +127,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                <!-- <li class="nav-item has-treeview">
                     <a class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Estadística<i class="fas fa-angle-left right"></i>
@@ -140,20 +140,20 @@
                                 <p>Resultados Guia I</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li *ngIf="numeroTrabajadores <= 50" class="nav-item">
                             <a [routerLink]="['administrador/guia2-opciones']" routerLinkActive="router-link-active" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Resultados Guia II</p>
                             </a>
                         </li>
-                        <li *ngIf="numeroTrabajadores>2" class="nav-item">
+                        <li *ngIf="numeroTrabajadores>=50" class="nav-item">
                             <a [routerLink]="['administrador/guia3-opciones']" routerLinkActive="router-link-active" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Resultados Guia III</p>
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

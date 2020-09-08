@@ -3,13 +3,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Agregar Actividad</h1>
+                <h1 class="m-0 text-dark">Editar Actividad</h1>
+                <input type="hidden" [(ngModel)] = "empresa.id" formControlName="empresa_id" >
             </div>
             <!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Nueva Actividad</li>
+                    <li class="breadcrumb-item active">Editar Actividad</li>
                 </ol>
             </div>
             <!-- /.col -->
@@ -30,7 +31,7 @@
                         <div class="row">
                             <div class="card card-infi col-md-12">
                                 <div class="card-header">
-                                    <h3 class="card-title"><strong>Nueva Actividad</strong></h3>
+                                    <h3 class="card-title"><strong>Editar Actividad</strong></h3>
                                 </div>
                                 <div class="form-horizontal">
                                     <div class="card-body">

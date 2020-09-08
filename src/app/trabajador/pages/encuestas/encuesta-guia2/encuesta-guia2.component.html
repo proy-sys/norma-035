@@ -76,11 +76,11 @@
                                                      <tr>
                                                          <td rowspan="2">{{ infoGuiaService.guia2[6].pregunta[0].preg}}</td>
                                                          <td>Si</td>
-                                                         <td><input id="si_1" value="si" type="radio" name="no_1" (change)="validarRadio($event,1)" required></td>
+                                                         <td><input id="si_1" value="si" type="radio" name="no_1" (change)="validarRadio($event,1)" ngModel required></td>
                                                      </tr>
                                                      <tr>
                                                          <td>No</td>
-                                                         <td><input id="si_1" value="no" type="radio" name="no_1" (change)="validarRadio($event,1)" required></td>
+                                                         <td><input id="si_1" value="no" type="radio" name="no_1" (change)="validarRadio($event,1)" ngModel required></td>
                                                      </tr>
                                                  </tbody>
                                              </table>
@@ -127,11 +127,11 @@
                                                          <tr>
                                                              <td rowspan="2">{{ infoGuiaService.guia2[8].pregunta[0].preg }}</td>
                                                              <td>Si</td>
-                                                             <td><input id="si_2" value="si" type="radio" name="no_2" (change)="validarRadio($event,2)" required></td>
+                                                             <td><input id="si_2" value="si" type="radio" name="no_2" (change)="validarRadio($event,2)" ngModel required></td>
                                                          </tr>
                                                          <tr>
                                                              <td>No</td>
-                                                             <td><input id="si_2" value="no" type="radio" name="no_2" (change)="validarRadio($event,2)" required></td>
+                                                             <td><input id="si_2" value="no" type="radio" name="no_2" (change)="validarRadio($event,2)" ngModel required></td>
                                                          </tr>
                                                      </tbody>
                                                  </table>

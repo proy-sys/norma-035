@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {first} from 'rxjs/operators';
 import { InfoEmpresa } from 'src/app/interfaces/info-empresa.interface';
 import { InfoEmpresaService } from 'src/app/services/info-empresa.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-empresa',
@@ -18,7 +19,10 @@ export class EmpresaEditComponent implements OnInit{
   srcLogo: string;
   srcImagen: string;
 
-  constructor( private infoEmpresaService: InfoEmpresaService, private formBuilder: FormBuilder, private ruta: Router) {
+  constructor( private infoEmpresaService: InfoEmpresaService,
+               private formBuilder: FormBuilder,
+               private ruta: Router,
+               private toastr: ToastrService) {
 
   }
 
@@ -28,15 +32,16 @@ export class EmpresaEditComponent implements OnInit{
       this.cargarEmpresa();
 
       this.editaEmpresa = this.formBuilder.group( {
-        id: [],
+        id: this.empresa.id,
         razon_social:  ['', Validators.required],
         direccion:  ['', Validators.required],
         telefono:  ['', Validators.required],
         email:  ['', Validators.required],
-        logo:  ['', Validators.required],
-        imagen: ['', Validators.required],
+        logo : '',
+        imagen: '',
     });
    }
+
 
   cargarEmpresa(){
 
@@ -65,17 +70,33 @@ export class EmpresaEditComponent implements OnInit{
 // *************************** EDIT ****************************
 
   guardarCambios(){
-    this.empresa.logo = this.getBase64Image(document.getElementById('razon_social_logo'), 200, 170);
-    this.empresa.imagen = this.getBase64Image(document.getElementById('razon_social_imagen'), 600, 400);
 
-    this.infoEmpresaService.actualizarEmpresa(this.empresa)
-    .pipe(first())
-    .subscribe(data => {
-        this.empresa = data;
-        this.ruta.navigate(['administrador/empresa']);
-    }, error => {
-          console.log('error en la modificación empresas:' + error.message);
-    });
+     const razonLogo: Element = document.getElementById('razon_social_logo');
+     const razonImage: Element = document.getElementById('razon_social_imagen');
+     this.empresa.logo = this.getBase64Image(document.getElementById('razon_social_logo'), 200, 170);
+     this.empresa.imagen = this.getBase64Image(document.getElementById('razon_social_imagen'), 600, 400);
+    //  if (razonLogo != null){
+    //     this.empresa.logo = this.getBase64Image(document.getElementById('razon_social_logo'), 200, 170);
+    //  }
+    //  if ( razonImage != null){
+    //     this.empresa.imagen = this.getBase64Image(document.getElementById('razon_social_imagen'), 600, 400);
+    //  }
+     if (this.editaEmpresa .invalid) {
+      return Object.values( this.editaEmpresa.controls).forEach( control => {
+        control.markAsTouched();
+      });
+    }else{
+      this.infoEmpresaService.actualizarEmpresa(this.empresa)
+      .pipe(first())
+      .subscribe(data => {
+          this.empresa = data;
+          this.toastr.success('succesful' , 'la empresa se actualizo correctamente');
+          this.ruta.navigate(['administrador/empresa']);
+      }, error => {
+            console.log('error en la modificación empresas:' + error.message);
+            this.toastr.error('error' , error.message);
+      });
+    }
   }
 
   actualizarLogo(event: any): void {
@@ -110,16 +131,29 @@ export class EmpresaEditComponent implements OnInit{
      }
    }
 
-   actualizarEstadoMunicipio(){
-    this.infoEmpresaService.actualizarEmpresa(this.empresa)
-    .pipe(first())
-    .subscribe(data => {
-        this.empresa = data;
-        this.ruta.navigate(['administrador/empresa']);
-    }, error => {
-          console.log('error en la modificación empresas:' + error.message);
-    });
-   }
+   get razonNoValido() {
+    return this.editaEmpresa.get('razon_social').invalid && this.editaEmpresa.get('razon_social').touched;
+  }
+  get direccionNoValido() {
+    return this.editaEmpresa.get('direccion').invalid && this.editaEmpresa.get('direccion').touched;
+  }
+  get telefonoNoValido() {
+    return this.editaEmpresa.get('telefono').invalid && this.editaEmpresa.get('telefono').touched;
+  }
+  get emailNoValido() {
+    return this.editaEmpresa.get('email').invalid && this.editaEmpresa.get('email').touched;
+  }
+  
+  //  actualizarEstadoMunicipio(){
+  //   this.infoEmpresaService.actualizarEmpresa(this.empresa)
+  //   .pipe(first())
+  //   .subscribe(data => {
+  //       this.empresa = data;
+  //       this.ruta.navigate(['administrador/empresa']);
+  //   }, error => {
+  //         console.log('error en la modificación empresas:' + error.message);
+  //   });
+  //  }
 // *************************** RUTAS ****************************
 
    componente_empresa(): void {

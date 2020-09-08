@@ -54,16 +54,14 @@
                                         <td width="3%">{{ pregunta.num }}</td>
                                         <td>{{ pregunta.preg }}</td>
                                         <td *ngFor="let key of radioOptions" width="6%" class="text-center">
-                                            <input id="ra_{{pregunta.num}}" [value]='key.op' type="radio" name="{{pregunta.num}}" ngModel> {{pregunta.num}}
+                                            <input id="ra_{{pregunta.num}}" [value]='key.op' type="radio" name="{{pregunta.num}}" ngModel>
                                         </td>
 
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-info">Guardar Cambios</button>
-                        </div>
+                       
                     </form>
                 </div>
                 <!-- /.card-body -->
