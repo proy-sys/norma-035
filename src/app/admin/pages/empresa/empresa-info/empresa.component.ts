@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { InfoEmpresa } from 'src/app/interfaces/info-empresa.interface';
 import { InfoEmpresaService } from 'src/app/services/info-empresa.service';
 import { InfoTrabajadorService } from 'src/app/services/info-trabajador.service';
+import { FLOAT } from 'html2canvas/dist/types/css/property-descriptors/float';
 
 
 @Component({
@@ -16,8 +17,9 @@ export class EmpresaComponent implements OnInit {
   empresa: InfoEmpresa = {};
   srcLogo: string;
   srcImagen: string;
-  numeroTrabajadores: any;
-  muestraRepresentativa: any;
+  numeroTrabajadores: number;
+  muestra: any;
+  muestraRedondeo: any;
 
   constructor( private infoEmpresaService: InfoEmpresaService, 
                private infoTrabajadorService: InfoTrabajadorService,
@@ -29,14 +31,20 @@ export class EmpresaComponent implements OnInit {
   }
 
   calculoRepresentativo(){
-     const a1 = 16 * 0.9604;
-     const a2 = 0.0025 * (16 - 1) + 0.9604;
-     this.muestraRepresentativa = a1 / a2;
+    //  const a1 = 16 * 0.9604;
+    //  const a2 = 0.0025 * (16 - 1) + 0.9604;
   }
   cargarEmpresa(){
 
     this.infoTrabajadorService.getTotalTrabajadores().subscribe(
       data => {
+
+          const a = 0.9604 * data;
+          const b = (0.0025 * (data - 1)) + 0.9604;
+          this.muestra = (a / b).toFixed(3);
+          this.muestraRedondeo = Math.round(a / b);
+
+
           this.numeroTrabajadores = data;
         }, (err) => {
           console.log('Hubo un error:' + err);

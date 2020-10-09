@@ -13,6 +13,7 @@ import { FinalizarComponent } from './pages/finalizar/finalizar.component';
 import { Seccion1Component } from './pages/encuestas/encuesta-guia1/seccion-uno/seccion1.component';
 import { SeccionGeneralComponent } from './pages/encuestas/encuesta-guia1/seccion-general/seccion-general.component';
 import { BuzonComponent } from './pages/buzon/buzon.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { BuzonComponent } from './pages/buzon/buzon.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
+    NgxSpinnerModule,
   ],
    bootstrap: [TrabajadorComponent],
    exports: [TrabajadorComponent]

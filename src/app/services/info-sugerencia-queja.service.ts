@@ -18,8 +18,8 @@ export class InfoSugerenciaQuejaService {
   apiToken = '';
 
 
-     // private API_REST = 'http://itebio-normas.com/norma035-back/public/sugerencia_queja';
-       private API_REST = 'http://localhost/norma035-back/public/sugerencia_queja';
+          //  private API_REST = 'http://itebio-normas.com/norma035-back/public/sugerencia_queja';
+              private API_REST = 'http://localhost/norma035-back/public/sugerencia_queja';
 
   constructor(private http: HttpClient, private servicio: InfoAuthenticationService) {
   }

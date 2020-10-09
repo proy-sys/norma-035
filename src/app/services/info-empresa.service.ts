@@ -12,9 +12,9 @@ import { InfoLugar } from '../interfaces/info-lugar';
 export class InfoEmpresaService {
 
 
-    //private API_REST  = 'http://itebio-normas.com/norma035-back/public/empresa';
+          //  private API_REST  = 'http://itebio-normas.com/norma035-back/public/empresa';
 
-     private API_REST  = 'http://localhost/norma035-back/public/empresa';
+              private API_REST  = 'http://localhost/norma035-back/public/empresa';
 
   apiToken = '';
 

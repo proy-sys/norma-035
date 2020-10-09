@@ -33,7 +33,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData1" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="conAmbienteTrabajo.pieChartData"
+                                        [data]="conAmbienteTrabajo.pieChartData" 
+                                        [labels]="conAmbienteTrabajo.pieChartLabels" 
+                                        [chartType]="conAmbienteTrabajo.pieChartType" 
+                                        [options]="conAmbienteTrabajo.pieChartOptions"
+                                        [plugins]="conAmbienteTrabajo.pieChartPlugins"
+                                        [colors]="conAmbienteTrabajo.pieChartColors" 
+                                        [legend]="conAmbienteTrabajo.pieChartLegend">
                                           </canvas>
                                     </div>
                                 </div>
@@ -46,7 +53,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="cargaTrabajo.pieChartData"
+                                        [data]="cargaTrabajo.pieChartData" 
+                                        [labels]="cargaTrabajo.pieChartLabels" 
+                                        [chartType]="cargaTrabajo.pieChartType" 
+                                        [options]="cargaTrabajo.pieChartOptions" 
+                                        [plugins]="cargaTrabajo.pieChartPlugins" 
+                                        [colors]="cargaTrabajo.pieChartColors" 
+                                        [legend]="cargaTrabajo.pieChartLegend">
                                       </canvas>
                                     </div>
                                 </div>
@@ -62,7 +76,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData3" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="faltaControlTrabajo.pieChartData"
+                                         [data]="faltaControlTrabajo.pieChartData" 
+                                         [labels]="faltaControlTrabajo.pieChartLabels"
+                                         [chartType]="faltaControlTrabajo.pieChartType"
+                                         [options]="faltaControlTrabajo.pieChartOptions" 
+                                         [plugins]="faltaControlTrabajo.pieChartPlugins" 
+                                         [colors]="faltaControlTrabajo.pieChartColors" 
+                                         [legend]=" faltaControlTrabajo.pieChartLegend">
                                         </canvas>
                                     </div>
                                 </div>
@@ -75,7 +96,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData4" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="jornadaTrabajo.pieChartData"
+                                           [data]="jornadaTrabajo.pieChartData" 
+                                           [labels]="jornadaTrabajo.pieChartLabels" 
+                                           [chartType]="jornadaTrabajo.pieChartType" 
+                                           [options]="jornadaTrabajo.pieChartOptions"
+                                           [plugins]="jornadaTrabajo.pieChartPlugins" 
+                                           [colors]="jornadaTrabajo.pieChartColors" 
+                                           [legend]="jornadaTrabajo.pieChartLegend">
                                     </canvas>
                                     </div>
                                 </div>
@@ -91,7 +119,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData5" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="interferenciaTrabajoFam.pieChartData"
+                                           [data]="interferenciaTrabajoFam.pieChartData" 
+                                           [labels]="interferenciaTrabajoFam.pieChartLabels" 
+                                           [chartType]="interferenciaTrabajoFam.pieChartType" 
+                                           [options]="interferenciaTrabajoFam.pieChartOptions" 
+                                           [plugins]="interferenciaTrabajoFam.pieChartPlugins" 
+                                           [colors]="interferenciaTrabajoFam.pieChartColors" 
+                                           [legend]="interferenciaTrabajoFam.pieChartLegend">
                                       </canvas>
                                     </div>
                                 </div>
@@ -104,7 +139,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData6" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf=" liderazgo.pieChartData"
+                                        [data]="liderazgo.pieChartData" 
+                                        [labels]="liderazgo.pieChartLabels" 
+                                        [chartType]="liderazgo.pieChartType" 
+                                        [options]="liderazgo.pieChartOptions"
+                                        [plugins]="liderazgo.pieChartPlugins"
+                                        [colors]="liderazgo.pieChartColors" 
+                                        [legend]="liderazgo.pieChartLegend">
                                   </canvas>
                                     </div>
                                 </div>
@@ -120,7 +162,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData7" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="relacionTrabajo.pieChartData"
+                                        [data]="relacionTrabajo.pieChartData" 
+                                        [labels]="relacionTrabajo.pieChartLabels" 
+                                        [chartType]="relacionTrabajo.pieChartType" 
+                                        [options]="relacionTrabajo.pieChartOptions" 
+                                        [plugins]="relacionTrabajo.pieChartPlugins" 
+                                        [colors]="relacionTrabajo.pieChartColors" 
+                                        [legend]="relacionTrabajo.pieChartLegend">
                                       </canvas>
                                     </div>
                                 </div>
@@ -133,7 +182,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData8" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="violencia.pieChartData"
+                                        [data]="violencia.pieChartData" 
+                                        [labels]="violencia.pieChartLabels"
+                                        [chartType]="violencia.pieChartType" 
+                                        [options]="violencia.pieChartOptions" 
+                                        [plugins]="violencia.pieChartPlugins" 
+                                        [colors]="violencia.pieChartColors" 
+                                        [legend]="violencia.pieChartLegend">
                                   </canvas>
                                     </div>
                                 </div>

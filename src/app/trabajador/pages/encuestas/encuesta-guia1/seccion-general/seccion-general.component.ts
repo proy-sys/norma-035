@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 import { Seccion1Component } from '../seccion-uno/seccion1.component';
 import { param } from 'jquery';
 import { InfoComunicacionService } from 'src/app/services/info-comunicacion.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-seccion-general',
@@ -27,7 +28,7 @@ export class SeccionGeneralComponent implements OnInit {
               public infoAuthenticationService: InfoAuthenticationService,
               private ruta: Router,
               private activatedRoute: ActivatedRoute,
-              private comunicacion: InfoComunicacionService,
+              private spinner: NgxSpinnerService
 
               ){this.cargarRespuestas();}
 
@@ -44,23 +45,26 @@ export class SeccionGeneralComponent implements OnInit {
 
 
  guardarGuia(form: NgForm) {
+  this.spinner.show();
+  setTimeout(() => {
+    this.spinner.hide();
+    Object.keys(form.controls).forEach(key => {
+      if (form.controls[key].value !== ''){
+         this.respuesta.respuestas[this.contadorRespuestas] = {pregunta_id: key, respuesta: form.controls[key].value};
+         this.contadorRespuestas++;
+      }
+    });
 
-  Object.keys(form.controls).forEach(key => {
-    if (form.controls[key].value !== ''){
-       this.respuesta.respuestas[this.contadorRespuestas] = {pregunta_id: key, respuesta: form.controls[key].value};
-       this.contadorRespuestas++;
-    }
+    this.infoGuiaService.addRespuestasGuia(this.respuesta , 1)
+  .subscribe(result => {
+
+     if (result.estado === 200){
+         this.infoAuthenticationService.clearRespuestas();
+         this.ruta.navigate(['trabajador/finalizar']);
+     }
+  }, error => {
+       console.log('error:' + error.message);
   });
-
-  this.infoGuiaService.addRespuestasGuia(this.respuesta , 1)
-.subscribe(result => {
-
-   if (result.estado === 200){
-       this.infoAuthenticationService.clearRespuestas();
-       this.ruta.navigate(['trabajador/finalizar']);
-   }
-}, error => {
-     console.log('error:' + error.message);
-});
+  }, 11000);
  }
 }

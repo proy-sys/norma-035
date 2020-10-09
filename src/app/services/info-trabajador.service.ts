@@ -11,11 +11,11 @@ export class InfoTrabajadorService {
 
   private httpHeader = new HttpHeaders( {
     'Content-Type' : 'application/json',
-    Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
+     Authorization : 'RcgkvUAAOpGckyWonLANuTAZEFtU7VkZ'
  });
 
-    // private API_REST = 'http://itebio-normas.com/norma035-back/public/trabajador';
-       private API_REST = 'http://localhost/norma035-back/public/trabajador';
+      //   private API_REST = 'http://itebio-normas.com/norma035-back/public/trabajador';
+        private API_REST = 'http://localhost/norma035-back/public/trabajador';
      apiToken = '';
 
   constructor(private http: HttpClient, private servicio: InfoAuthenticationService) {

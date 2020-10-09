@@ -15,8 +15,15 @@ export class FinalizarComponent implements OnInit {
   }
 
   cerrarSesion(){
-    localStorage.removeItem('usuario');
-    this.ruta.navigate(['login']);
+    this.infoAutoentificacionService.logout().subscribe(
+      data => {
+        if (data === 200){
+            this.ruta.navigate(['login']);
+        }
+      }, (err) => {
+        console.log('Hubo un error:' + err);
+      }
+    );
   }
 
   irBuzon(){

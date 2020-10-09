@@ -32,7 +32,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="ambienteTrabajo.pieChartData"
+                                         [data]="ambienteTrabajo.pieChartData"
+                                         [labels]="ambienteTrabajo.pieChartLabels" 
+                                         [chartType]="ambienteTrabajo.pieChartType" 
+                                         [options]="ambienteTrabajo.pieChartOptions" 
+                                         [plugins]="ambienteTrabajo.pieChartPlugins" 
+                                         [colors]="ambienteTrabajo.pieChartColors"
+                                         [legend]="ambienteTrabajo.pieChartLegend">
                                             </canvas>
                                     </div>
                                 </div>
@@ -45,7 +52,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData2" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="propiosActividad.pieChartData"
+                                        [data]="propiosActividad.pieChartData" 
+                                        [labels]="propiosActividad.pieChartLabels"
+                                        [chartType]="propiosActividad.pieChartType" 
+                                        [options]="propiosActividad.pieChartOptions" 
+                                        [plugins]="propiosActividad.pieChartPlugins"
+                                        [colors]="propiosActividad.pieChartColors" 
+                                        [legend]="propiosActividad.pieChartLegend">
                                         </canvas>
                                     </div>
                                 </div>
@@ -60,7 +74,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData3" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="tiempoTrabajo.pieChartData"
+                                          [data]="tiempoTrabajo.pieChartData"
+                                          [labels]="tiempoTrabajo.pieChartLabels"
+                                          [chartType]="tiempoTrabajo.pieChartType" 
+                                          [options]="tiempoTrabajo.pieChartOptions" 
+                                          [plugins]="tiempoTrabajo.pieChartPlugins"
+                                          [colors]="tiempoTrabajo.pieChartColors" 
+                                          [legend]="tiempoTrabajo.pieChartLegend">
                                           </canvas>
                                     </div>
                                 </div>
@@ -73,7 +94,14 @@
                                 </div>
                                 <div class="card-block mt-2">
                                     <div class="chart">
-                                        <canvas baseChart [data]="pieChartData4" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                                        <canvas baseChart *ngIf="liderazgoRelaciones.pieChartData"
+                                          [data]="liderazgoRelaciones.pieChartData" 
+                                          [labels]="liderazgoRelaciones.pieChartLabels" 
+                                          [chartType]="liderazgoRelaciones.pieChartType" 
+                                          [options]="liderazgoRelaciones.pieChartOptions"
+                                          [plugins]="liderazgoRelaciones.pieChartPlugins" 
+                                          [colors]="liderazgoRelaciones.pieChartColors"
+                                          [legend]="liderazgoRelaciones.pieChartLegend">
                                       </canvas>
                                     </div>
                                 </div>

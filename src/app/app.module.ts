@@ -32,7 +32,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
         BrowserAnimationsModule,
         ChartsModule,
         ToastrModule.forRoot({
-            timeOut: 1000,
+            timeOut: 2000,
              preventDuplicates: false,
        })
   ],

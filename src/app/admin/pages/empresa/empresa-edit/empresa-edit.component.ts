@@ -143,7 +143,7 @@ export class EmpresaEditComponent implements OnInit{
   get emailNoValido() {
     return this.editaEmpresa.get('email').invalid && this.editaEmpresa.get('email').touched;
   }
-  
+
   //  actualizarEstadoMunicipio(){
   //   this.infoEmpresaService.actualizarEmpresa(this.empresa)
   //   .pipe(first())

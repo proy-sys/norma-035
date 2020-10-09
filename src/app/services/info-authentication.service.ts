@@ -12,9 +12,9 @@ import { InfoRespuesta } from '../interfaces/info-respuesta.interface';
 
 export class InfoAuthenticationService extends RoleValidator{
 
- // private API_REST = 'http://itebio-normas.com/norma035-back/public';
+        //  private API_REST = 'http://itebio-normas.com/norma035-back/public';
 
-  private API_REST = 'http://localhost/norma035-back/public';
+           private API_REST = 'http://localhost/norma035-back/public';
 
  private jwtUser: JwtResponseI;
  private respuesta: InfoRespuesta = {};

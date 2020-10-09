@@ -44,15 +44,13 @@ import { Guia3GeneralComponent } from './statistics/graphics-guia3/guia3-general
 import { Guia3OpcionesComponent } from './statistics/graphics-guia3/guia3-opciones/guia3-opciones.component';
 import { Guia3CategoriasComponent } from './statistics/graphics-guia3/guia3-categorias/guia3-categorias.component';
 import { Guia3DominiosComponent } from './statistics/graphics-guia3/guia3-dominios/guia3-dominios.component';
-import { ChartsModule } from 'ng2-charts';
-
-
 import { ContentComponent } from '../shared/content/content.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { SugerenciasEditComponent } from './pages/sugerencias/sugerencias-edit/sugerencias-edit.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations:
@@ -110,7 +108,7 @@ import { SugerenciasEditComponent } from './pages/sugerencias/sugerencias-edit/s
           NgxSummernoteModule,
           NgbModule,
           FormsModule,
-          ChartsModule
+          ChartsModule,
        ],
       exports: [NavbarComponent, HeaderComponent, SidebarComponent, FooterComponent, ContentComponent, AdminComponent],
        providers: [],

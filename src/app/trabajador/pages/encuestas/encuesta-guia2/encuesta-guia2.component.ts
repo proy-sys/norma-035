@@ -4,6 +4,7 @@ import { InfoRespuesta } from 'src/app/interfaces/info-respuesta.interface';
 import { InfoAuthenticationService } from 'src/app/services/info-authentication.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -27,9 +28,11 @@ export class EncuestaGuia2Component implements OnInit {
 
   constructor(public infoGuiaService: InfoGuiasService,
               public infoAuthenticationService: InfoAuthenticationService,
-              private ruta: Router) {}
+              private ruta: Router,
+              private spinner: NgxSpinnerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 
 
@@ -41,33 +44,33 @@ export class EncuestaGuia2Component implements OnInit {
      }
   }
   guardarAddGuia2(form: NgForm){
+      this.spinner.show();
+      setTimeout(() => {
+           this.spinner.hide();
+           this.respuesta.trabajador_id = this.infoAuthenticationService.getCurrentUser().user.id;
+           this.respuesta.respuestas = [];
 
-     this.respuesta.trabajador_id = this.infoAuthenticationService.getCurrentUser().user.id;
-     this.respuesta.respuestas = [];
+           let con = 0;
 
-     let con = 0;
-
-     Object.keys(form.controls).forEach(key => {
-      if (form.controls[key].value !== '' && form.controls[key].value !== 'no' && form.controls[key].value !== 'si'){
-         this.respuesta.respuestas[con] = {pregunta_id: key, respuesta: form.controls[key].value};
-         con++;
-      }
-    });
-
-     this.infoGuiaService.addRespuestasGuia(this.respuesta , 2)
-     .subscribe(result => {
-
-        if (result.estado === 200){
-          if ( result.cFinal === 'Alto' || result.cFinal === 'Muy Alto'){
-             this.ruta.navigate(['trabajador/encuesta-inst/', 1]);
-          }else{
-              this.ruta.navigate(['trabajador/finalizar']);
-          }
-        }
-    }, error => {
-          console.log('error:' + error.message);
-    });
-
+           Object.keys(form.controls).forEach(key => {
+           if (form.controls[key].value !== '' && form.controls[key].value !== 'no' && form.controls[key].value !== 'si'){
+              this.respuesta.respuestas[con] = {pregunta_id: key, respuesta: form.controls[key].value};
+              con++;
+           }
+         });
+           this.infoGuiaService.addRespuestasGuia(this.respuesta , 2)
+          .subscribe(result => {
+             if (result.estado === 200){
+              if ( result.cFinal === 'Alto' || result.cFinal === 'Muy Alto'){
+                 this.ruta.navigate(['trabajador/encuesta-inst/', 1]);
+              }else{
+                  this.ruta.navigate(['trabajador/finalizar']);
+              }
+            }
+         }, error => {
+               console.log('error:' + error.message);
+         });
+     }, 16000);
    }
    validarRadio(evt: any, num: any){
         if (num === 1){
