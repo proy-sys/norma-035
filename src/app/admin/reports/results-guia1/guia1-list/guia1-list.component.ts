@@ -22,8 +22,16 @@ export class Guia1ListComponent {
       this.respuestas();
     }
 
+  // listadoTrabajadores() {
+  //   this.infoTrabajadorService.getListadotrabajadores().subscribe(
+  //     data => {
+  //       this.listaTrabajadores = data;
+  //     }
+  //   );
+  // }
+
   listadoTrabajadores() {
-    this.infoTrabajadorService.getContestaronTrabajadores(1).subscribe(
+    this.infoTrabajadorService.getListadotrabajadores().subscribe(
       data => {
         this.listaTrabajadores = data;
       }
